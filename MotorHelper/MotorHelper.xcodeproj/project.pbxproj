@@ -14,9 +14,11 @@
 		9B124A6C1E7FC77400393658 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B124A6B1E7FC77400393658 /* Assets.xcassets */; };
 		9B124A6F1E7FC77400393658 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B124A6D1E7FC77400393658 /* LaunchScreen.storyboard */; };
 		9B124A791E7FD56500393658 /* GetSOAPInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B124A781E7FD56500393658 /* GetSOAPInfo.swift */; };
+		FE70F77D31623EB70743087F /* Pods_MotorHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C1DF6B770BCA77B601A0A53 /* Pods_MotorHelper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C1DF6B770BCA77B601A0A53 /* Pods_MotorHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MotorHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B124A5E1E7FC77400393658 /* MotorHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotorHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B124A611E7FC77400393658 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B124A631E7FC77400393658 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		9B124A6E1E7FC77400393658 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B124A701E7FC77400393658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B124A781E7FD56500393658 /* GetSOAPInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetSOAPInfo.swift; sourceTree = "<group>"; };
+		D9E65A01FE51FBA9DFDADAE8 /* Pods-MotorHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotorHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MotorHelper/Pods-MotorHelper.debug.xcconfig"; sourceTree = "<group>"; };
+		F2BBA2F1A8E887AED888DCD5 /* Pods-MotorHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotorHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-MotorHelper/Pods-MotorHelper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE70F77D31623EB70743087F /* Pods_MotorHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05A6D4E588A8BFDBC8B1DB43 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D9E65A01FE51FBA9DFDADAE8 /* Pods-MotorHelper.debug.xcconfig */,
+				F2BBA2F1A8E887AED888DCD5 /* Pods-MotorHelper.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		630908B6E109CDA277814195 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C1DF6B770BCA77B601A0A53 /* Pods_MotorHelper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9B124A551E7FC77300393658 = {
 			isa = PBXGroup;
 			children = (
 				9B124A601E7FC77400393658 /* MotorHelper */,
 				9B124A5F1E7FC77400393658 /* Products */,
+				05A6D4E588A8BFDBC8B1DB43 /* Pods */,
+				630908B6E109CDA277814195 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,10 +101,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B124A731E7FC77400393658 /* Build configuration list for PBXNativeTarget "MotorHelper" */;
 			buildPhases = (
+				53375D901DABDB55F048E23E /* [CP] Check Pods Manifest.lock */,
 				9B124A5A1E7FC77300393658 /* Sources */,
 				9B124A5B1E7FC77300393658 /* Frameworks */,
 				9B124A5C1E7FC77300393658 /* Resources */,
 				9B124A771E7FCBBA00393658 /* ShellScript */,
+				3FBB5E471B012D6A8C83245E /* [CP] Embed Pods Frameworks */,
+				CDB90A2F55DC9F876F8C40D0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -140,6 +167,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3FBB5E471B012D6A8C83245E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MotorHelper/Pods-MotorHelper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53375D901DABDB55F048E23E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		9B124A771E7FCBBA00393658 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -152,6 +209,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		CDB90A2F55DC9F876F8C40D0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MotorHelper/Pods-MotorHelper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -284,6 +356,7 @@
 		};
 		9B124A741E7FC77400393658 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9E65A01FE51FBA9DFDADAE8 /* Pods-MotorHelper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YX74XFK6Z8;
@@ -297,6 +370,7 @@
 		};
 		9B124A751E7FC77400393658 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2BBA2F1A8E887AED888DCD5 /* Pods-MotorHelper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YX74XFK6Z8;
