@@ -12,7 +12,7 @@ import StringExtensionHTML
 import AEXML
 
 class GetSOAPInfo {
-    func getOilData(oilType: String) {
+    func getOilData(oilType: String, completion: @escaping ((_ name: String, _ price: String) -> Void)) {
         let soapRequest = AEXMLDocument()
         let envelopeAttributes = ["xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
                                   "xmlns:xsd": "http://www.w3.org/2001/XMLSchema",
@@ -37,6 +37,7 @@ class GetSOAPInfo {
                     let xmlInner = SWXMLHash.parse(oilElement.description)
                     let productName = xmlInner["NewDataSet"]["tbTable"][oilElement.children.count-1]["產品名"].element!.text!
                     let productPrice = xmlInner["NewDataSet"]["tbTable"][oilElement.children.count-1]["參考牌價"].element!.text!
+                    completion(productName, productPrice)
                 }
             } else {
                 print("error fetching XML")
