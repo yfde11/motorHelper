@@ -15,14 +15,16 @@ class OilPriceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        for i in 1...4 {
-            oilInfo.getOilData(oilType: "\(i)") { (productName, productPrice) in
-                print("\(productName), \(productPrice)元／公升")
-                let prod = Petroleum(oilName: productName, oilPrice: productPrice)
-                self.product.append(prod)
-            }
+//        for i in 1...4 {
+//            oilInfo.getOilData(oilType: "\(i)") { (productName, productPrice) in
+//                print("\(productName), \(productPrice)元／公升")
+//                let prod = Petroleum(oilName: productName, oilPrice: productPrice)
+//                self.product.append(prod)
+//            }
+//        }
+        oilInfo.getOilData { (product) in
+            print(product[0].oilName)
         }
-        print(product.count)
     }
 
     override func didReceiveMemoryWarning() {
