@@ -15,6 +15,7 @@
 		9B124A6F1E7FC77400393658 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B124A6D1E7FC77400393658 /* LaunchScreen.storyboard */; };
 		9B124A791E7FD56500393658 /* GetSOAPInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B124A781E7FD56500393658 /* GetSOAPInfo.swift */; };
 		9BB08BCA1E8228E000982CF1 /* Petroleum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB08BC91E8228E000982CF1 /* Petroleum.swift */; };
+		9BB08BF11E83A60C00982CF1 /* StoreOilConsumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB08BF01E83A60C00982CF1 /* StoreOilConsumeViewController.swift */; };
 		FE70F77D31623EB70743087F /* Pods_MotorHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C1DF6B770BCA77B601A0A53 /* Pods_MotorHelper.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		9B124A701E7FC77400393658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B124A781E7FD56500393658 /* GetSOAPInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetSOAPInfo.swift; sourceTree = "<group>"; };
 		9BB08BC91E8228E000982CF1 /* Petroleum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Petroleum.swift; sourceTree = "<group>"; };
+		9BB08BF01E83A60C00982CF1 /* StoreOilConsumeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreOilConsumeViewController.swift; sourceTree = "<group>"; };
 		D9E65A01FE51FBA9DFDADAE8 /* Pods-MotorHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotorHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MotorHelper/Pods-MotorHelper.debug.xcconfig"; sourceTree = "<group>"; };
 		F2BBA2F1A8E887AED888DCD5 /* Pods-MotorHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotorHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-MotorHelper/Pods-MotorHelper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +95,7 @@
 				9B124A681E7FC77400393658 /* MotorHelper.xcdatamodeld */,
 				9B124A781E7FD56500393658 /* GetSOAPInfo.swift */,
 				9BB08BC91E8228E000982CF1 /* Petroleum.swift */,
+				9BB08BF01E83A60C00982CF1 /* StoreOilConsumeViewController.swift */,
 			);
 			path = MotorHelper;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				9B124A641E7FC77400393658 /* OilPriceViewController.swift in Sources */,
 				9BB08BCA1E8228E000982CF1 /* Petroleum.swift in Sources */,
 				9B124A621E7FC77400393658 /* AppDelegate.swift in Sources */,
+				9BB08BF11E83A60C00982CF1 /* StoreOilConsumeViewController.swift in Sources */,
 				9B124A791E7FD56500393658 /* GetSOAPInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
