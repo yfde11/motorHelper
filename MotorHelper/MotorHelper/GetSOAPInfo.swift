@@ -13,7 +13,7 @@ import AEXML
 
 class GetSOAPInfo {
     func getOilData(oiltype: String, completion: @escaping ((_ name: String, _ price: String) -> Void)) {
-        
+
             var product: [Petroleum] = []
             var prod: Petroleum?
             let soapRequest = AEXMLDocument()
@@ -53,5 +53,4 @@ class GetSOAPInfo {
             }
 //            completion(product)
         }
-    
 }
