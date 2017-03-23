@@ -12,8 +12,8 @@ import StringExtensionHTML
 import AEXML
 
 class GetSOAPInfo {
-    func getOilData(completion: @escaping ((_ product: [Petroleum]) -> Void)) {
-        for oilType in 1...4 {
+    func getOilData(oiltype: String, completion: @escaping ((_ name: String, _ price: String) -> Void)) {
+        
             var product: [Petroleum] = []
             var prod: Petroleum?
             let soapRequest = AEXMLDocument()
@@ -25,7 +25,7 @@ class GetSOAPInfo {
             let att = ["xmlns": "http://tmtd.cpc.com.tw/"]
             let prodid = body.addChild(name: "getCPCMainProdListPrice_Historical", attributes: att)
             //value決定跳出來的油品
-            prodid.addChild(name: "prodid", value: "\(oilType)")
+            prodid.addChild(name: "prodid", value: "\(oiltype)")
             let url = URL(string: "https://vipmember.tmtd.cpc.com.tw/OpenData/ListPriceWebService.asmx")
 
             var mutableR = URLRequest(url: url! as URL)
@@ -43,14 +43,15 @@ class GetSOAPInfo {
                         let productPrice = xmlInner["NewDataSet"]["tbTable"][oilElement.children.count-1]["參考牌價"].element!.text!
                         prod = Petroleum(oilName: productName, oilPrice: productPrice)
                         product.append(prod!)
+                        completion(productName, productPrice)
                     }
 //                    completion(product)
                 } else {
                     print("error fetching XML")
                 }
-                completion(product)
+//                completion(product)
             }
 //            completion(product)
         }
-    }
+    
 }
