@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pK5-fa-30c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Mz9-ZJ-dtO">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -94,7 +94,82 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="399" y="642"/>
+            <point key="canvasLocation" x="1336.8" y="641.82908545727139"/>
+        </scene>
+        <!--Oil Consumption View Controller-->
+        <scene sceneID="cmj-Af-vF5">
+            <objects>
+                <viewController id="Yaj-oT-6tw" customClass="OilConsumptionViewController" customModule="MotorHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="luf-lX-FFl"/>
+                        <viewControllerLayoutGuide type="bottom" id="vti-R3-a9o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NBX-p7-ciW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jbc-Nz-tZN">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jbc-Nz-tZN" firstAttribute="top" secondItem="luf-lX-FFl" secondAttribute="bottom" id="k7x-15-nWt"/>
+                            <constraint firstItem="vti-R3-a9o" firstAttribute="top" secondItem="jbc-Nz-tZN" secondAttribute="bottom" id="rYt-uK-NN4"/>
+                            <constraint firstItem="jbc-Nz-tZN" firstAttribute="leading" secondItem="NBX-p7-ciW" secondAttribute="leading" id="rmr-cU-PZJ"/>
+                            <constraint firstAttribute="trailing" secondItem="jbc-Nz-tZN" secondAttribute="trailing" id="sGm-DM-x4J"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tWO-KS-dQe">
+                        <barButtonItem key="rightBarButtonItem" image="Add-icon" style="plain" id="oe4-SS-TWd">
+                            <connections>
+                                <segue destination="5QR-IU-hSn" kind="show" id="6Gm-fx-w3Q"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oqj-pJ-79e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1327" y="-113"/>
+        </scene>
+        <!--Add Oil Record View Controller-->
+        <scene sceneID="xjo-un-J24">
+            <objects>
+                <viewController id="5QR-IU-hSn" customClass="AddOilRecordViewController" customModule="MotorHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="96Y-kl-jQL"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mbg-qv-GC2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jMa-7f-PzZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gbu-re-T80">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="5QR-IU-hSn" id="sAO-PK-hFX"/>
+                                    <outlet property="delegate" destination="5QR-IU-hSn" id="D5x-PO-QIW"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Gbu-re-T80" secondAttribute="trailing" id="D0N-Wi-2tx"/>
+                            <constraint firstItem="Gbu-re-T80" firstAttribute="top" secondItem="96Y-kl-jQL" secondAttribute="bottom" id="bOZ-ek-FW8"/>
+                            <constraint firstItem="Mbg-qv-GC2" firstAttribute="top" secondItem="Gbu-re-T80" secondAttribute="bottom" id="dhX-IG-eo6"/>
+                            <constraint firstItem="Gbu-re-T80" firstAttribute="leading" secondItem="jMa-7f-PzZ" secondAttribute="leading" id="hGe-ye-UZF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addConsumption" destination="Gbu-re-T80" id="Xtu-Km-vCr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VMx-fm-O5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2055" y="-115"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DaD-3Q-ox5">
@@ -112,12 +187,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sq1-iy-4oI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-263" y="638"/>
+            <point key="canvasLocation" x="676" y="637.33133433283365"/>
         </scene>
-        <!--Store Oil Consume View Controller-->
+        <!--Code Scanner View Controller-->
         <scene sceneID="ItR-YC-dX8">
             <objects>
-                <viewController id="pK5-fa-30c" customClass="StoreOilConsumeViewController" customModule="MotorHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pK5-fa-30c" customClass="QRCodeScannerViewController" customModule="MotorHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n1W-Fk-xL0"/>
                         <viewControllerLayoutGuide type="bottom" id="hnY-2U-Mw7"/>
@@ -152,5 +227,26 @@
             </objects>
             <point key="canvasLocation" x="-271.19999999999999" y="1381.2593703148427"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ise-xM-3tn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mz9-ZJ-dtO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cWA-kY-ZjM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Yaj-oT-6tw" kind="relationship" relationship="rootViewController" id="ds4-qB-AKX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IVS-Ao-dRD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="617" y="-114"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Add-icon" width="25" height="25"/>
+    </resources>
 </document>

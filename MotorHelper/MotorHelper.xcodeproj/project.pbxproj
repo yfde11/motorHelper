@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B000F211E84F280002BB4EC /* OilConsumptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B000F201E84F280002BB4EC /* OilConsumptionViewController.swift */; };
+		9B000F231E84F961002BB4EC /* AddOilRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B000F221E84F961002BB4EC /* AddOilRecordViewController.swift */; };
+		9B000F4E1E850F21002BB4EC /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B000F4C1E850F21002BB4EC /* TextTableViewCell.swift */; };
+		9B000F4F1E850F21002BB4EC /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B000F4D1E850F21002BB4EC /* TextTableViewCell.xib */; };
 		9B124A621E7FC77400393658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B124A611E7FC77400393658 /* AppDelegate.swift */; };
 		9B124A641E7FC77400393658 /* OilPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B124A631E7FC77400393658 /* OilPriceViewController.swift */; };
 		9B124A671E7FC77400393658 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B124A651E7FC77400393658 /* Main.storyboard */; };
@@ -15,12 +19,16 @@
 		9B124A6F1E7FC77400393658 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B124A6D1E7FC77400393658 /* LaunchScreen.storyboard */; };
 		9B124A791E7FD56500393658 /* GetSOAPInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B124A781E7FD56500393658 /* GetSOAPInfo.swift */; };
 		9BB08BCA1E8228E000982CF1 /* Petroleum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB08BC91E8228E000982CF1 /* Petroleum.swift */; };
-		9BB08BF11E83A60C00982CF1 /* StoreOilConsumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB08BF01E83A60C00982CF1 /* StoreOilConsumeViewController.swift */; };
+		9BB08BF11E83A60C00982CF1 /* QRCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB08BF01E83A60C00982CF1 /* QRCodeScannerViewController.swift */; };
 		FE70F77D31623EB70743087F /* Pods_MotorHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C1DF6B770BCA77B601A0A53 /* Pods_MotorHelper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0C1DF6B770BCA77B601A0A53 /* Pods_MotorHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MotorHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B000F201E84F280002BB4EC /* OilConsumptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OilConsumptionViewController.swift; sourceTree = "<group>"; };
+		9B000F221E84F961002BB4EC /* AddOilRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOilRecordViewController.swift; sourceTree = "<group>"; };
+		9B000F4C1E850F21002BB4EC /* TextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
+		9B000F4D1E850F21002BB4EC /* TextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextTableViewCell.xib; sourceTree = "<group>"; };
 		9B124A5E1E7FC77400393658 /* MotorHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotorHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B124A611E7FC77400393658 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B124A631E7FC77400393658 /* OilPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OilPriceViewController.swift; sourceTree = "<group>"; };
@@ -31,7 +39,7 @@
 		9B124A701E7FC77400393658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B124A781E7FD56500393658 /* GetSOAPInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetSOAPInfo.swift; sourceTree = "<group>"; };
 		9BB08BC91E8228E000982CF1 /* Petroleum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Petroleum.swift; sourceTree = "<group>"; };
-		9BB08BF01E83A60C00982CF1 /* StoreOilConsumeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreOilConsumeViewController.swift; sourceTree = "<group>"; };
+		9BB08BF01E83A60C00982CF1 /* QRCodeScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeScannerViewController.swift; sourceTree = "<group>"; };
 		D9E65A01FE51FBA9DFDADAE8 /* Pods-MotorHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotorHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MotorHelper/Pods-MotorHelper.debug.xcconfig"; sourceTree = "<group>"; };
 		F2BBA2F1A8E887AED888DCD5 /* Pods-MotorHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotorHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-MotorHelper/Pods-MotorHelper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,6 +73,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9B000F241E84FE92002BB4EC /* AddOilRecord */ = {
+			isa = PBXGroup;
+			children = (
+				9BB08BF01E83A60C00982CF1 /* QRCodeScannerViewController.swift */,
+				9B000F221E84F961002BB4EC /* AddOilRecordViewController.swift */,
+				9B000F4C1E850F21002BB4EC /* TextTableViewCell.swift */,
+				9B000F4D1E850F21002BB4EC /* TextTableViewCell.xib */,
+			);
+			name = AddOilRecord;
+			sourceTree = "<group>";
+		};
+		9B000F251E84FF10002BB4EC /* OilPrcie */ = {
+			isa = PBXGroup;
+			children = (
+				9BB08BC91E8228E000982CF1 /* Petroleum.swift */,
+				9B124A781E7FD56500393658 /* GetSOAPInfo.swift */,
+				9B124A631E7FC77400393658 /* OilPriceViewController.swift */,
+			);
+			name = OilPrcie;
+			sourceTree = "<group>";
+		};
 		9B124A551E7FC77300393658 = {
 			isa = PBXGroup;
 			children = (
@@ -86,16 +115,15 @@
 		9B124A601E7FC77400393658 /* MotorHelper */ = {
 			isa = PBXGroup;
 			children = (
+				9B000F251E84FF10002BB4EC /* OilPrcie */,
+				9B000F241E84FE92002BB4EC /* AddOilRecord */,
+				9B000F201E84F280002BB4EC /* OilConsumptionViewController.swift */,
 				9B124A611E7FC77400393658 /* AppDelegate.swift */,
-				9B124A631E7FC77400393658 /* OilPriceViewController.swift */,
 				9B124A651E7FC77400393658 /* Main.storyboard */,
 				9B124A6B1E7FC77400393658 /* Assets.xcassets */,
 				9B124A6D1E7FC77400393658 /* LaunchScreen.storyboard */,
 				9B124A701E7FC77400393658 /* Info.plist */,
 				9B124A681E7FC77400393658 /* MotorHelper.xcdatamodeld */,
-				9B124A781E7FD56500393658 /* GetSOAPInfo.swift */,
-				9BB08BC91E8228E000982CF1 /* Petroleum.swift */,
-				9BB08BF01E83A60C00982CF1 /* StoreOilConsumeViewController.swift */,
 			);
 			path = MotorHelper;
 			sourceTree = "<group>";
@@ -166,6 +194,7 @@
 			files = (
 				9B124A6F1E7FC77400393658 /* LaunchScreen.storyboard in Resources */,
 				9B124A6C1E7FC77400393658 /* Assets.xcassets in Resources */,
+				9B000F4F1E850F21002BB4EC /* TextTableViewCell.xib in Resources */,
 				9B124A671E7FC77400393658 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,11 +267,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B000F4E1E850F21002BB4EC /* TextTableViewCell.swift in Sources */,
 				9B124A6A1E7FC77400393658 /* MotorHelper.xcdatamodeld in Sources */,
+				9B000F211E84F280002BB4EC /* OilConsumptionViewController.swift in Sources */,
 				9B124A641E7FC77400393658 /* OilPriceViewController.swift in Sources */,
 				9BB08BCA1E8228E000982CF1 /* Petroleum.swift in Sources */,
+				9B000F231E84F961002BB4EC /* AddOilRecordViewController.swift in Sources */,
 				9B124A621E7FC77400393658 /* AppDelegate.swift in Sources */,
-				9BB08BF11E83A60C00982CF1 /* StoreOilConsumeViewController.swift in Sources */,
+				9BB08BF11E83A60C00982CF1 /* QRCodeScannerViewController.swift in Sources */,
 				9B124A791E7FD56500393658 /* GetSOAPInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

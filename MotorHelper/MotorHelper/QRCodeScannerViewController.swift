@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class StoreOilConsumeViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class QRCodeScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
