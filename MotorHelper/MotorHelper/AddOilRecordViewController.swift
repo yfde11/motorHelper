@@ -13,13 +13,15 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var addConsumption: UITableView!
     // MARK: enum for cell type
     enum Component {
+        case date //日期
         case oilprice //油價
         case numOfOil //加油量
         case totalPrice //總價
         case totalKM //里程數
+        case addBtn //新增紀錄
     }
     // MARK: Property
-    var components: [Component] = [ Component.oilprice, Component.numOfOil, Component.totalPrice, Component.totalKM ] // index表示位置
+    var components: [Component] = [ Component.date, Component.oilprice, Component.numOfOil, Component.totalPrice, Component.totalKM, Component.addBtn ] // index表示位置
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +34,15 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
 
     // MARK: Set up
     func setUp() {
-        let nib = UINib(nibName: TextTableViewCell.identifier, bundle: nil)
-        addConsumption.register(nib, forCellReuseIdentifier: TextTableViewCell.identifier)
+        let textNib = UINib(nibName: TextTableViewCell.identifier, bundle: nil)
+        addConsumption.register(textNib, forCellReuseIdentifier: TextTableViewCell.identifier)
+
+        let btnNib = UINib(nibName: AddRecordBtnTableViewCell.identifier, bundle: nil)
+        addConsumption.register(btnNib, forCellReuseIdentifier: AddRecordBtnTableViewCell.identifier)
+
+        let dateNib = UINib(nibName: DateTableViewCell.identifier, bundle: nil)
+        addConsumption.register(dateNib, forCellReuseIdentifier: DateTableViewCell.identifier)
+
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return components.count
@@ -46,7 +55,7 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
         print("component:\(component) in section:\(section)")
 
         switch component {
-        case .numOfOil, .oilprice, .totalKM, .totalPrice:
+        case .numOfOil, .oilprice, .totalKM, .totalPrice, .addBtn, .date:
             return 1
         }
     }
@@ -86,6 +95,22 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TextTableViewCell.identifier, for: indexPath) as? TextTableViewCell else { return UITableViewCell() }
             cell.contentTextName.text = "里程"
             cell.contentTextField.backgroundColor = UIColor.brown
+            return cell
+
+        case Component.addBtn:
+
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: AddRecordBtnTableViewCell.identifier, for: indexPath) as? AddRecordBtnTableViewCell else { return UITableViewCell() }
+
+            cell.addRecord.setTitle("新增紀錄", for: .normal)
+
+            return cell
+
+        case Component.date:
+
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: DateTableViewCell.identifier, for: indexPath) as? DateTableViewCell else { return UITableViewCell() }
+
+            cell.data.text = "2017年3月20日"
+
             return cell
 
         }
