@@ -134,7 +134,7 @@
 				9B9582E41E88E1F9003F699C /* LogIn */,
 				9B000F251E84FF10002BB4EC /* OilPrcie */,
 				9B000F241E84FE92002BB4EC /* AddOilRecord */,
-				9B000F201E84F280002BB4EC /* OilConsumptionViewController.swift */,
+				9B9582E71E88F09D003F699C /* OilConsumptionList */,
 				9B124A611E7FC77400393658 /* AppDelegate.swift */,
 				9B124A651E7FC77400393658 /* Main.storyboard */,
 				9B124A6B1E7FC77400393658 /* Assets.xcassets */,
@@ -152,6 +152,14 @@
 				9B9582E21E88E1ED003F699C /* LogInViewController.swift */,
 			);
 			name = LogIn;
+			sourceTree = "<group>";
+		};
+		9B9582E71E88F09D003F699C /* OilConsumptionList */ = {
+			isa = PBXGroup;
+			children = (
+				9B000F201E84F280002BB4EC /* OilConsumptionViewController.swift */,
+			);
+			name = OilConsumptionList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
