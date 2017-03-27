@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Mz9-ZJ-dtO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9nZ-ZX-bb7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -182,6 +182,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VMx-fm-O5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2055" y="-115"/>
+        </scene>
+        <!--Log In View Controller-->
+        <scene sceneID="nGN-sW-6Gz">
+            <objects>
+                <viewController id="9nZ-ZX-bb7" customClass="LogInViewController" customModule="MotorHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x6h-6m-kAm"/>
+                        <viewControllerLayoutGuide type="bottom" id="lkr-e7-0ni"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="O3A-c6-0NT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvC-z2-icB">
+                                <rect key="frame" x="137.5" y="318.5" width="100" height="30"/>
+                                <color key="backgroundColor" red="0.20781612399999999" green="0.2078586519" blue="0.2078134418" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="ecC-4I-Qt8"/>
+                                </constraints>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logIn:" destination="9nZ-ZX-bb7" eventType="touchUpInside" id="vhG-gE-OJc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nvC-z2-icB" firstAttribute="centerX" secondItem="O3A-c6-0NT" secondAttribute="centerX" id="BDx-WQ-Zjb"/>
+                            <constraint firstItem="nvC-z2-icB" firstAttribute="centerY" secondItem="O3A-c6-0NT" secondAttribute="centerY" id="LIu-tJ-wYI"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vf5-80-xek" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-177" y="456"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DaD-3Q-ox5">
