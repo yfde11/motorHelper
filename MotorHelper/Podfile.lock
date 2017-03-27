@@ -1,21 +1,65 @@
 PODS:
   - AEXML (4.0.2)
   - Alamofire (4.3.0)
+  - Firebase/Auth (3.13.0):
+    - Firebase/Core
+    - FirebaseAuth (= 3.1.1)
+  - Firebase/Core (3.13.0):
+    - FirebaseAnalytics (= 3.7.0)
+    - FirebaseCore (= 3.5.0)
+  - Firebase/Database (3.13.0):
+    - Firebase/Core
+    - FirebaseDatabase (= 3.1.2)
+  - FirebaseAnalytics (3.7.0):
+    - FirebaseCore (~> 3.5)
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseAuth (3.1.1):
+    - FirebaseAnalytics (~> 3.7)
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseCore (3.5.0):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseDatabase (3.1.2):
+    - FirebaseAnalytics (~> 3.7)
+  - FirebaseInstanceID (1.0.9)
+  - GoogleToolboxForMac/DebugUtils (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+  - GoogleToolboxForMac/Defines (2.1.1)
+  - GoogleToolboxForMac/NSData+zlib (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.1):
+    - GoogleToolboxForMac/DebugUtils (= 2.1.1)
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
+  - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
+  - GTMSessionFetcher/Core (1.1.8)
   - StringExtensionHTML (0.2.0)
   - SWXMLHash (3.0.4)
 
 DEPENDENCIES:
   - AEXML
   - Alamofire
+  - Firebase/Auth
+  - Firebase/Core
+  - Firebase/Database
   - StringExtensionHTML
   - SWXMLHash
 
 SPEC CHECKSUMS:
   AEXML: 7de81f28c6c876a210f31924acc2e326cd01e162
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  Firebase: 5bc34d7b5ff5792e3386c8b28dc6265deeab0da4
+  FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
+  FirebaseAuth: cc8a1824170adbd351edb7f994490a3fb5c18be6
+  FirebaseCore: 1c0a13bf59bb95cdd19577252499f0ec6a03e999
+  FirebaseDatabase: 05c96d7b43a7368dc91c07791adb49683e1738d1
+  FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
+  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
   StringExtensionHTML: 80fdb1b3a83669e371d27bfe2f208f067e2db328
   SWXMLHash: 29d20b84692fc319ea8ed933058fe7d8d005139b
 
-PODFILE CHECKSUM: 56680c705e6e777e36a8660f4745fce1e9f668df
+PODFILE CHECKSUM: f010140fc6a9a98f713b43e2844c56da2700d6f6
 
 COCOAPODS: 1.2.0
