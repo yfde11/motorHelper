@@ -157,10 +157,10 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
             toolbar.sizeToFit()
             //bar button item
             let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(dismissKeyboard))
-            
             toolbar.setItems([doneButton], animated: false)
             cell.contentTextField.inputAccessoryView = toolbar
             cell.contentTextField.inputView = datePicker
+            cell.contentTextField.text = DateFormatter.localizedString(from: datePicker.date, dateStyle: .long, timeStyle: .none)
             cell.index = TextFieldType.date
             return cell
 
@@ -171,13 +171,11 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
 
         }
     }
-    func sendData() {
-        print("send Data success")
-    }
+    // close keyboard
     func dismissKeyboard() {
         view.endEditing(true)
     }
-
+    //get date
     func didSelectedDate(_ sender: Any) {
 
         if
@@ -186,8 +184,8 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
             let dateSection = components.index(of: Component.date) {
 
                 let indexPath = IndexPath(row: 0, section: dateSection)
-                dateFormatter.dateStyle = .long
-                dateFormatter.timeStyle = .none
+                dateFormatter.dateStyle = .long //formatter樣式
+                dateFormatter.timeStyle = .none //不要時間
 
                 let cell = addConsumption.cellForRow(at: indexPath) as? TextTableViewCell
 
@@ -204,5 +202,13 @@ extension AddOilRecordViewController: UITextFieldDelegate {
         print("\(cell.index)")
         print("\(cell.contentTextName.text!)")
         print("\(cell.contentTextField.text!)")
+    }
+}
+
+extension AddOilRecordViewController {
+    // button
+    func sendData() {
+        
+        print("send Data success")
     }
 }

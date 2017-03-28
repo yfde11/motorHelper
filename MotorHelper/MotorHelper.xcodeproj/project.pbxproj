@@ -28,6 +28,7 @@
 		9B9582EB1E890D90003F699C /* SegmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9582E91E890D90003F699C /* SegmentTableViewCell.xib */; };
 		9BB08BCA1E8228E000982CF1 /* Petroleum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB08BC91E8228E000982CF1 /* Petroleum.swift */; };
 		9BB08BF11E83A60C00982CF1 /* QRCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB08BF01E83A60C00982CF1 /* QRCodeScannerViewController.swift */; };
+		9BFA1FF11E8A634B0045CA0F /* ConsumptionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA1FF01E8A634B0045CA0F /* ConsumptionRecord.swift */; };
 		FE70F77D31623EB70743087F /* Pods_MotorHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C1DF6B770BCA77B601A0A53 /* Pods_MotorHelper.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		9B9582E91E890D90003F699C /* SegmentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegmentTableViewCell.xib; sourceTree = "<group>"; };
 		9BB08BC91E8228E000982CF1 /* Petroleum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Petroleum.swift; sourceTree = "<group>"; };
 		9BB08BF01E83A60C00982CF1 /* QRCodeScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeScannerViewController.swift; sourceTree = "<group>"; };
+		9BFA1FF01E8A634B0045CA0F /* ConsumptionRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumptionRecord.swift; sourceTree = "<group>"; };
 		D9E65A01FE51FBA9DFDADAE8 /* Pods-MotorHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotorHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MotorHelper/Pods-MotorHelper.debug.xcconfig"; sourceTree = "<group>"; };
 		F2BBA2F1A8E887AED888DCD5 /* Pods-MotorHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotorHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-MotorHelper/Pods-MotorHelper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +104,7 @@
 				9B000F531E852988002BB4EC /* AddRecordBtnTableViewCell.xib */,
 				9B000F571E853478002BB4EC /* DateTableViewCell.xib */,
 				9B9582E91E890D90003F699C /* SegmentTableViewCell.xib */,
+				9BFA1FF01E8A634B0045CA0F /* ConsumptionRecord.swift */,
 			);
 			name = AddOilRecord;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			files = (
 				9B000F4E1E850F21002BB4EC /* TextTableViewCell.swift in Sources */,
 				9B124A6A1E7FC77400393658 /* MotorHelper.xcdatamodeld in Sources */,
+				9BFA1FF11E8A634B0045CA0F /* ConsumptionRecord.swift in Sources */,
 				9B9582EA1E890D90003F699C /* SegmentTableViewCell.swift in Sources */,
 				9B000F211E84F280002BB4EC /* OilConsumptionViewController.swift in Sources */,
 				9B124A641E7FC77400393658 /* OilPriceViewController.swift in Sources */,
