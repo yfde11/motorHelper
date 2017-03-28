@@ -7,10 +7,14 @@
 //
 
 import UIKit
+//import IQKeyboardManagerSwift
 
 class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var addConsumption: UITableView!
+    let datePicker = UIDatePicker()
+    let dateFormatter = DateFormatter()
+
     // MARK: enum for cell type
     enum Component {
         case date //日期
@@ -19,15 +23,19 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
         case totalPrice //總價
         case totalKM //里程數
         case addBtn //新增紀錄
+        case oilType //油品種類
     }
     // MARK: Property
-    var components: [Component] = [ Component.date, Component.oilprice, Component.numOfOil, Component.totalPrice, Component.totalKM, Component.addBtn ] // index表示位置
+    var components: [Component] = [ Component.date, Component.oilType, Component.oilprice, Component.numOfOil, Component.totalPrice, Component.totalKM, Component.addBtn ] // index表示位置
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         addConsumption.delegate = self
         addConsumption.dataSource = self
+
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
 
         setUp()
     }
@@ -43,6 +51,9 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
         let dateNib = UINib(nibName: DateTableViewCell.identifier, bundle: nil)
         addConsumption.register(dateNib, forCellReuseIdentifier: DateTableViewCell.identifier)
 
+        let oilTypeNib = UINib(nibName: SegmentTableViewCell.identifier, bundle: nil)
+        addConsumption.register(oilTypeNib, forCellReuseIdentifier: SegmentTableViewCell.identifier)
+
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return components.count
@@ -55,7 +66,7 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
         print("component:\(component) in section:\(section)")
 
         switch component {
-        case .numOfOil, .oilprice, .totalKM, .totalPrice, .addBtn, .date:
+        case .numOfOil, .oilprice, .totalKM, .totalPrice, .addBtn, .date, .oilType:
             return 1
         }
     }
@@ -64,6 +75,8 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
         return TextTableViewCell.height
     }
     //內容
+    //swiftlint:disable cyclomatic_complexity
+    //swiftlint:disable function_body_length
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let component = components[indexPath.section]
@@ -79,6 +92,8 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
             cell.contentTextField.textColor = UIColor.white
             cell.contentTextField.backgroundColor = UIColor.darkGray
             cell.contentTextField.returnKeyType = .done
+            cell.contentTextField.delegate = self
+            cell.index = TextFieldType.oilPrice
             return cell
 
         case Component.numOfOil:
@@ -90,6 +105,8 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
             cell.contentTextField.keyboardType = .numbersAndPunctuation
             cell.contentTextField.textColor = UIColor.white
             cell.contentTextField.returnKeyType = .done
+            cell.contentTextField.delegate = self
+            cell.index = TextFieldType.numOfOil
             return cell
 
         case Component.totalPrice:
@@ -101,7 +118,8 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
             cell.contentTextField.keyboardType = .numbersAndPunctuation
             cell.contentTextField.textColor = UIColor.white
             cell.contentTextField.returnKeyType = .done
-            
+            cell.contentTextField.delegate = self
+            cell.index = TextFieldType.totalPrice
             return cell
 
         case Component.totalKM:
@@ -113,6 +131,8 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
             cell.contentTextField.keyboardType = .numbersAndPunctuation
             cell.contentTextField.textColor = UIColor.white
             cell.contentTextField.returnKeyType = .done
+            cell.contentTextField.delegate = self
+            cell.index = TextFieldType.totalKM
             return cell
 
         case Component.addBtn:
@@ -126,15 +146,63 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
 
         case Component.date:
 
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: DateTableViewCell.identifier, for: indexPath) as? DateTableViewCell else { return UITableViewCell() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TextTableViewCell.identifier, for: indexPath) as? TextTableViewCell else { return UITableViewCell() }
 
-            cell.data.text = "2017年3月20日"
+            cell.contentTextName.text = "日期"
+            //datepicker
+            datePicker.datePickerMode = .date
+            datePicker.addTarget(self, action: #selector(AddOilRecordViewController.didSelectedDate), for: .valueChanged)
+            //toolbar
+            let toolbar = UIToolbar()
+            toolbar.sizeToFit()
+            //bar button item
+            let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(dismissKeyboard))
+            
+            toolbar.setItems([doneButton], animated: false)
+            cell.contentTextField.inputAccessoryView = toolbar
+            cell.contentTextField.inputView = datePicker
+            cell.index = TextFieldType.date
+            return cell
 
+        case Component.oilType:
+
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SegmentTableViewCell.identifier, for: indexPath) as? SegmentTableViewCell else { return UITableViewCell() }
             return cell
 
         }
     }
     func sendData() {
         print("send Data success")
+    }
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
+    func didSelectedDate(_ sender: Any) {
+
+        if
+            let picker = sender as? UIDatePicker,
+            picker === datePicker,
+            let dateSection = components.index(of: Component.date) {
+
+                let indexPath = IndexPath(row: 0, section: dateSection)
+                dateFormatter.dateStyle = .long
+                dateFormatter.timeStyle = .none
+
+                let cell = addConsumption.cellForRow(at: indexPath) as? TextTableViewCell
+
+                cell?.contentTextField.text = dateFormatter.string(from: picker.date)
+
+        }
+    }
+
+}
+
+extension AddOilRecordViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let cell = textField.superview?.superview as? TextTableViewCell else {return }
+        print("\(cell.index)")
+        print("\(cell.contentTextName.text!)")
+        print("\(cell.contentTextField.text!)")
     }
 }

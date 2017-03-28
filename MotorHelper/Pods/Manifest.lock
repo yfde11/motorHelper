@@ -34,6 +34,7 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.8)
+  - IQKeyboardManagerSwift (4.0.8)
   - StringExtensionHTML (0.2.0)
   - SWXMLHash (3.0.4)
 
@@ -43,6 +44,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - IQKeyboardManagerSwift
   - StringExtensionHTML
   - SWXMLHash
 
@@ -57,9 +59,10 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
+  IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
   StringExtensionHTML: 80fdb1b3a83669e371d27bfe2f208f067e2db328
   SWXMLHash: 29d20b84692fc319ea8ed933058fe7d8d005139b
 
-PODFILE CHECKSUM: f010140fc6a9a98f713b43e2844c56da2700d6f6
+PODFILE CHECKSUM: 61222217b13a70a655922830ff6ac1900fae5fa3
 
 COCOAPODS: 1.2.0

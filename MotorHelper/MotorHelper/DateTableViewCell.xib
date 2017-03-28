@@ -18,8 +18,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Jc-uO-vgM">
-                        <rect key="frame" x="20" y="29.5" width="560" height="21"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zYC-dm-Eey">
+                        <rect key="frame" x="170" y="20" width="410" height="39.5"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i42-b9-cXE">
+                        <rect key="frame" x="20" y="20" width="100" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="CDw-HU-frz"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -27,14 +36,18 @@
                 </subviews>
                 <color key="backgroundColor" red="0.74501591920852661" green="0.74514538049697876" blue="0.74500775337219238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstItem="5Jc-uO-vgM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="8Xt-q5-tMH"/>
-                    <constraint firstAttribute="trailing" secondItem="5Jc-uO-vgM" secondAttribute="trailing" constant="20" id="Ptw-Uy-4YK"/>
-                    <constraint firstItem="5Jc-uO-vgM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="29.5" id="hht-oM-FSH"/>
-                    <constraint firstAttribute="bottom" secondItem="5Jc-uO-vgM" secondAttribute="bottom" constant="28.5" id="z7g-rB-o0y"/>
+                    <constraint firstItem="zYC-dm-Eey" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="Iht-LU-bRu"/>
+                    <constraint firstAttribute="bottom" secondItem="i42-b9-cXE" secondAttribute="bottom" constant="20" id="J0e-Lb-2si"/>
+                    <constraint firstItem="zYC-dm-Eey" firstAttribute="leading" secondItem="i42-b9-cXE" secondAttribute="trailing" constant="50" id="Jaa-JA-nNM"/>
+                    <constraint firstAttribute="bottom" secondItem="zYC-dm-Eey" secondAttribute="bottom" constant="20" id="UpR-0X-DC2"/>
+                    <constraint firstItem="i42-b9-cXE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="ad8-5C-jTa"/>
+                    <constraint firstAttribute="trailing" secondItem="zYC-dm-Eey" secondAttribute="trailing" constant="20" id="bLy-5h-E1A"/>
+                    <constraint firstItem="i42-b9-cXE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="fqk-tk-jOA"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="data" destination="5Jc-uO-vgM" id="sSn-xP-IpZ"/>
+                <outlet property="date" destination="zYC-dm-Eey" id="dYC-QT-Oz2"/>
+                <outlet property="dateName" destination="i42-b9-cXE" id="KvC-5a-nMK"/>
             </connections>
             <point key="canvasLocation" x="34" y="39.5"/>
         </tableViewCell>

@@ -14,6 +14,16 @@ class TextTableViewCell: UITableViewCell {
     @IBOutlet weak var contentTextField: UITextField!
 
     static let identifier = "TextTableViewCell"
-    static let height: CGFloat = 121.0
+    static let height: CGFloat = 80.0
 
+    var index: TextFieldType?
+
+}
+
+enum TextFieldType {
+    case oilPrice
+    case numOfOil
+    case totalPrice
+    case totalKM
+    case date
 }
