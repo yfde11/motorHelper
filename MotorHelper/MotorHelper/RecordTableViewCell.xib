@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="RecordTableViewCell" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="RecordTableViewCell" customModule="MotorHelper" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="92無鉛汽油" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRK-cm-U4o">
+                        <rect key="frame" x="10" y="10" width="90" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="Y8d-ty-WcA"/>
+                            <constraint firstAttribute="height" constant="20" id="lLV-AE-g50"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100公升" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUP-0W-bMG">
+                        <rect key="frame" x="120" y="10" width="70" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="3dt-66-Wnr"/>
+                            <constraint firstAttribute="height" constant="20" id="5TS-Ua-gpL"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1500元" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5d1-oQ-zvm">
+                        <rect key="frame" x="210" y="10" width="60" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="1G0-ro-Ll9"/>
+                            <constraint firstAttribute="height" constant="20" id="C1F-Eh-3pJ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017年3月29日" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cit-aX-iP9">
+                        <rect key="frame" x="10" y="40" width="120" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="EGp-Nb-MZZ"/>
+                            <constraint firstAttribute="height" constant="20" id="EPv-1S-oXa"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="總里程100000KM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Kx-7e-JUZ">
+                        <rect key="frame" x="150" y="40" width="140" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="I8N-og-bul"/>
+                            <constraint firstAttribute="width" constant="140" id="fgW-Yy-pAH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="5Kx-7e-JUZ" firstAttribute="top" secondItem="5d1-oQ-zvm" secondAttribute="bottom" constant="10" id="5Lr-zl-Bbf"/>
+                    <constraint firstItem="GUP-0W-bMG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="6gz-JH-cpg"/>
+                    <constraint firstItem="NRK-cm-U4o" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="FAC-ZT-R1B"/>
+                    <constraint firstItem="5d1-oQ-zvm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="GO8-2K-1p0"/>
+                    <constraint firstItem="5d1-oQ-zvm" firstAttribute="leading" secondItem="GUP-0W-bMG" secondAttribute="trailing" constant="20" id="RDk-V8-Vlm"/>
+                    <constraint firstItem="cit-aX-iP9" firstAttribute="top" secondItem="GUP-0W-bMG" secondAttribute="bottom" constant="10" id="ZJt-WK-bAB"/>
+                    <constraint firstItem="cit-aX-iP9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="aSz-0X-YLT"/>
+                    <constraint firstItem="NRK-cm-U4o" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="gLD-Q3-Aoq"/>
+                    <constraint firstItem="5Kx-7e-JUZ" firstAttribute="leading" secondItem="cit-aX-iP9" secondAttribute="trailing" constant="20" id="lpj-Un-bb1"/>
+                    <constraint firstItem="GUP-0W-bMG" firstAttribute="leading" secondItem="NRK-cm-U4o" secondAttribute="trailing" constant="20" id="ukm-Ph-sQ2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateOfAddRecord" destination="cit-aX-iP9" id="WLa-gq-gt4"/>
+                <outlet property="numOfOil" destination="GUP-0W-bMG" id="4Z7-Ve-PvW"/>
+                <outlet property="oilType" destination="NRK-cm-U4o" id="7Cg-et-mR7"/>
+                <outlet property="totalKM" destination="5Kx-7e-JUZ" id="Mqj-52-at2"/>
+                <outlet property="totalPrice" destination="5d1-oQ-zvm" id="nq0-1k-mNS"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

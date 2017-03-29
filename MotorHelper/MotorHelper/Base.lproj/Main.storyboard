@@ -122,6 +122,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jbc-Nz-tZN">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Yaj-oT-6tw" id="vac-42-Xq3"/>
+                                    <outlet property="delegate" destination="Yaj-oT-6tw" id="pcR-yi-gSN"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -140,6 +144,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="jbc-Nz-tZN" id="3v3-ix-I70"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oqj-pJ-79e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -281,7 +288,7 @@
             <objects>
                 <navigationController storyboardIdentifier="oilConsumeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Mz9-ZJ-dtO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="cWA-kY-ZjM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cWA-kY-ZjM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.34134361149999998" green="0.31368163230000001" blue="0.36068689819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
