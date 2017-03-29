@@ -6,13 +6,13 @@
 //  Copyright © 2017 MichaelXiao. All rights reserved.
 //
 
-class ComsumptionRecodr {
-    let date: String
-    let oilType: String
-    let oilPrice: String
-    let numOfOil: String
-    let totalPrice: String
-    let totalKM: String
+class ComsumptionRecord {
+    var date: String
+    var oilType: String
+    var oilPrice: String
+    var numOfOil: String
+    var totalPrice: String
+    var totalKM: String
 
     init(date: String, oilType: String, oilPrice: String, numOfOil: String, totalPrice: String, totalKM: String) {
         self.date = date

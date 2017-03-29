@@ -7,13 +7,16 @@
 //
 
 import UIKit
-//import IQKeyboardManagerSwift
+import FirebaseAuth
+import FirebaseDatabase
 
 class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var addConsumption: UITableView!
     let datePicker = UIDatePicker()
     let dateFormatter = DateFormatter()
+    var record = ComsumptionRecord(date: "", oilType: "92", oilPrice: "", numOfOil: "", totalPrice: "", totalKM: "")
+    var ref: FIRDatabaseReference?
 
     // MARK: enum for cell type
     enum Component {
@@ -26,7 +29,7 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
         case oilType //油品種類
     }
     // MARK: Property
-    var components: [Component] = [ Component.date, Component.oilType, Component.oilprice, Component.numOfOil, Component.totalPrice, Component.totalKM, Component.addBtn ] // index表示位置
+    let components: [Component] = [ Component.date, Component.oilType, Component.oilprice, Component.numOfOil, Component.totalPrice, Component.totalKM, Component.addBtn ] // index表示位置
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -160,13 +163,17 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
             toolbar.setItems([doneButton], animated: false)
             cell.contentTextField.inputAccessoryView = toolbar
             cell.contentTextField.inputView = datePicker
+            record.date = DateFormatter.localizedString(from: datePicker.date, dateStyle: .long, timeStyle: .none)
             cell.contentTextField.text = DateFormatter.localizedString(from: datePicker.date, dateStyle: .long, timeStyle: .none)
             cell.index = TextFieldType.date
+            cell.contentTextField.textAlignment = .center
+            cell.contentTextField.delegate = self
             return cell
 
         case Component.oilType:
 
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SegmentTableViewCell.identifier, for: indexPath) as? SegmentTableViewCell else { return UITableViewCell() }
+            cell.oilTypeSegment.addTarget(self, action: #selector(AddOilRecordViewController.onChange), for: .valueChanged)
             return cell
 
         }
@@ -193,22 +200,75 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
 
         }
     }
+    //segment
+    func onChange(sender: UISegmentedControl) {
+        print(sender.selectedSegmentIndex)
+        print(sender.titleForSegment(at: sender.selectedSegmentIndex) as Any)
+    }
 
 }
 
 extension AddOilRecordViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let cell = textField.superview?.superview as? TextTableViewCell else {return }
-        print("\(cell.index)")
-        print("\(cell.contentTextName.text!)")
-        print("\(cell.contentTextField.text!)")
+        switch cell.index! {
+            case .oilPrice:
+                print("\(cell.index)")
+                record.oilPrice = cell.contentTextField.text!
+                print("\(cell.contentTextName.text!)")
+                print("\(record.oilPrice)")
+            case .numOfOil:
+                print("\(cell.index)")
+                record.numOfOil = cell.contentTextField.text!
+                print("\(cell.contentTextName.text!)")
+                print("\(record.numOfOil)")
+            case .totalPrice:
+                print("\(cell.index)")
+                record.totalPrice = cell.contentTextField.text!
+                print("\(cell.contentTextName.text!)")
+                print("\(record.totalPrice)")
+            case .totalKM:
+                print("\(cell.index)")
+                record.totalKM = cell.contentTextField.text!
+                print("\(cell.contentTextName.text!)")
+                print("\(record.totalKM)")
+            case .date:
+                print("\(cell.index)")
+                record.date = cell.contentTextField.text!
+                print("\(cell.contentTextName.text!)")
+                print("\(record.date)")
+        }
     }
 }
 
 extension AddOilRecordViewController {
+
     // button
     func sendData() {
-        
+        //oilType section
+        guard
+            let oilTypeSection = components.index(of: .oilType)
+            else { return }
+
+        //該section的indexPath
+        let indexPath = IndexPath(row: 0, section: oilTypeSection)
+        //取到indexPath就可以拿cell的內容
+        guard
+            let cell = addConsumption.cellForRow(at: indexPath) as? SegmentTableViewCell
+            else { return }
+        record.oilType = cell.oilTypeSegment.titleForSegment(at: (cell.oilTypeSegment.selectedSegmentIndex))!
+        print("要送出的是\(record.oilType)")
+
+        print("\(record.oilPrice)")
+
+        let sendData = ["date": "\(record.date)",
+                        "oilType": "\(record.oilType)",
+                        "oilPrice": "\(record.oilPrice)",
+                        "numOfOil": "\(record.numOfOil)",
+                        "totalPrice": "\(record.totalPrice)",
+                        "totalKM": "\(record.totalKM)"]
+        ref = FIRDatabase.database().reference()
+        ref?.child((FIRAuth.auth()?.currentUser?.uid)!).childByAutoId().setValue(sendData)
         print("send Data success")
     }
 }
