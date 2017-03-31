@@ -15,7 +15,7 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var addConsumption: UITableView!
     let datePicker = UIDatePicker()
     let dateFormatter = DateFormatter()
-    var record = ComsumptionRecord(date: "", oilType: "92", oilPrice: "0", numOfOil: "0", totalPrice: "0", totalKM: "0")
+    var record = ConsumptionRecord(date: "", oilType: "92", oilPrice: "0", numOfOil: "0", totalPrice: "0", totalKM: "0")
     var ref: FIRDatabaseReference?
 
     // MARK: enum for cell type
@@ -235,7 +235,11 @@ extension AddOilRecordViewController {
         guard
             let cell = addConsumption.cellForRow(at: indexPath) as? SegmentTableViewCell
             else { return }
-        record.oilType = cell.oilTypeSegment.titleForSegment(at: (cell.oilTypeSegment.selectedSegmentIndex))!
+        if cell.oilTypeSegment.selectedSegmentIndex == 3 {
+            record.oilType = "超級柴油"
+        } else {
+            record.oilType = "\(cell.oilTypeSegment.titleForSegment(at: (cell.oilTypeSegment.selectedSegmentIndex))!)無鉛汽油"
+        }
         let sendData = ["date": "\(record.date)",
                         "oilType": "\(record.oilType)",
                         "oilPrice": "\(record.oilPrice)",

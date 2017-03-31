@@ -19,9 +19,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="92無鉛汽油" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRK-cm-U4o">
-                        <rect key="frame" x="10" y="10" width="90" height="20"/>
+                        <rect key="frame" x="10" y="10" width="95" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="90" id="Y8d-ty-WcA"/>
+                            <constraint firstAttribute="width" constant="95" id="Y8d-ty-WcA"/>
                             <constraint firstAttribute="height" constant="20" id="lLV-AE-g50"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -29,9 +29,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100公升" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUP-0W-bMG">
-                        <rect key="frame" x="120" y="10" width="70" height="20"/>
+                        <rect key="frame" x="125" y="10" width="90" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="70" id="3dt-66-Wnr"/>
+                            <constraint firstAttribute="width" constant="90" id="3dt-66-Wnr"/>
                             <constraint firstAttribute="height" constant="20" id="5TS-Ua-gpL"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -39,7 +39,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1500元" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5d1-oQ-zvm">
-                        <rect key="frame" x="210" y="10" width="60" height="20"/>
+                        <rect key="frame" x="235" y="10" width="60" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="1G0-ro-Ll9"/>
                             <constraint firstAttribute="height" constant="20" id="C1F-Eh-3pJ"/>

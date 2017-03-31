@@ -6,7 +6,7 @@
 //  Copyright © 2017 MichaelXiao. All rights reserved.
 //
 
-class ComsumptionRecord {
+class ConsumptionRecord {
     var date: String
     var oilType: String
     var oilPrice: String

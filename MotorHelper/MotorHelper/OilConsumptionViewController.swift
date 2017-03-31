@@ -10,13 +10,23 @@ import UIKit
 import FirebaseDatabase
 import FirebaseAuth
 
-class OilConsumptionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class OilConsumptionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, OilConsumptionManagerDelegate {
     @IBOutlet weak var tableView: UITableView!
+    var ref: FIRDatabaseReference?
+    var records: [ConsumptionRecord] = []
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        OilConsumptionManager.shared.delegate = self
+        OilConsumptionManager.shared.getRecords()
+
         setUp()
     }
     func setUp() {
@@ -29,17 +39,33 @@ class OilConsumptionViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return records.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: RecordTableViewCell.identifier, for: indexPath) as? RecordTableViewCell else {
-            return UITableViewCell()
-        }
+        guard
+            let cell = tableView.dequeueReusableCell(withIdentifier: RecordTableViewCell.identifier, for: indexPath) as? RecordTableViewCell
+            else { return UITableViewCell() }
+        cell.dateOfAddRecord.text = "\(records[indexPath.row].date)"
+        cell.numOfOil.text = "\(records[indexPath.row].numOfOil) 公升"
+        cell.oilType.text = "\(records[indexPath.row].oilType)"
+        cell.totalKM.text = "\(records[indexPath.row].totalKM) 公里"
+        cell.totalPrice.text = "\(records[indexPath.row].totalPrice)元"
         return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return RecordTableViewCell.height
+    }
+
+    func manager(_ manager: OilConsumptionManager, didFailWith error: Error) {
+        print("error")
+    }
+    func manager(_ manager: OilConsumptionManager, didGet records: [ConsumptionRecord]) {
+        self.records = records.reversed()
+        DispatchQueue.main.async {
+                self.tableView.reloadData()
+        }
+        print("QQQQQQQQ:::::::::\(records.count)")
     }
 }
