@@ -33,6 +33,7 @@ class OilConsumptionManager {
                 guard
                     let snap = childSnap as? FIRDataSnapshot
                     else { return }
+                print(snap)
                 if let snapshotValue = snapshot.value as? NSDictionary,
                     let snapVal = snapshotValue[snap.key] as? [String:String] {
                         let date = snapVal["date"]
@@ -41,7 +42,7 @@ class OilConsumptionManager {
                         let totalKM = snapVal["totalKM"]
                         let totalPrice = snapVal["totalPrice"]
                         let oilPrice = snapVal["oilPrice"]
-                    let record = ConsumptionRecord(date: date!, oilType: oilType!, oilPrice: oilPrice!, numOfOil: numOfOil!, totalPrice: totalPrice!, totalKM: totalKM!)
+                        let record = ConsumptionRecord(date: date!, oilType: oilType!, oilPrice: oilPrice!, numOfOil: numOfOil!, totalPrice: totalPrice!, totalKM: totalKM!)
                     self.records.append(record)
                     self.delegate?.manager(self, didGet: self.records)
                 }
