@@ -15,6 +15,8 @@ target 'MotorHelper' do
   pod 'Firebase/Database'
   #for keyboard
   pod 'IQKeyboardManagerSwift'
+  #for rating
+  pod 'Cosmos', '~> 8.0'
   # Pods for MotorHelper
 
 end

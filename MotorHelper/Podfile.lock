@@ -1,6 +1,7 @@
 PODS:
   - AEXML (4.0.2)
   - Alamofire (4.3.0)
+  - Cosmos (8.0.2)
   - Firebase/Auth (3.13.0):
     - Firebase/Core
     - FirebaseAuth (= 3.1.1)
@@ -41,6 +42,7 @@ PODS:
 DEPENDENCIES:
   - AEXML
   - Alamofire
+  - Cosmos (~> 8.0)
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -51,6 +53,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AEXML: 7de81f28c6c876a210f31924acc2e326cd01e162
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  Cosmos: 007c0b8e33a85e5363911bdd933571bbe221f7ef
   Firebase: 5bc34d7b5ff5792e3386c8b28dc6265deeab0da4
   FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
   FirebaseAuth: cc8a1824170adbd351edb7f994490a3fb5c18be6
@@ -63,6 +66,6 @@ SPEC CHECKSUMS:
   StringExtensionHTML: 80fdb1b3a83669e371d27bfe2f208f067e2db328
   SWXMLHash: 29d20b84692fc319ea8ed933058fe7d8d005139b
 
-PODFILE CHECKSUM: 61222217b13a70a655922830ff6ac1900fae5fa3
+PODFILE CHECKSUM: fc4b55a86233c5889cb834994f16ac3586e7a52f
 
 COCOAPODS: 1.2.0
