@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9nZ-ZX-bb7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yoD-dS-8Ce">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -105,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1336.8" y="641.82908545727139"/>
+            <point key="canvasLocation" x="3236" y="660"/>
         </scene>
         <!--油耗紀錄-->
         <scene sceneID="cmj-Af-vF5">
@@ -150,12 +150,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oqj-pJ-79e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1325.5999999999999" y="-113.79310344827587"/>
+            <point key="canvasLocation" x="3204" y="-113.79310344827587"/>
         </scene>
         <!--新增油耗紀錄-->
         <scene sceneID="xjo-un-J24">
             <objects>
-                <viewController title="新增油耗紀錄" id="5QR-IU-hSn" customClass="AddOilRecordViewController" customModule="MotorHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="新增油耗紀錄" hidesBottomBarWhenPushed="YES" id="5QR-IU-hSn" customClass="AddOilRecordViewController" customModule="MotorHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="96Y-kl-jQL"/>
                         <viewControllerLayoutGuide type="bottom" id="Mbg-qv-GC2"/>
@@ -188,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VMx-fm-O5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2055" y="-115"/>
+            <point key="canvasLocation" x="3932" y="-115.59220389805098"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="nGN-sW-6Gz">
@@ -225,12 +225,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vf5-80-xek" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-286" y="324"/>
+            <point key="canvasLocation" x="418" y="335"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="DaD-3Q-ox5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yoD-dS-8Ce" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="euJ-Se-Qt5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aLl-Qn-GyC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -243,7 +244,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sq1-iy-4oI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="676" y="637.33133433283365"/>
+            <point key="canvasLocation" x="2503" y="653"/>
         </scene>
         <!--Code Scanner View Controller-->
         <scene sceneID="ItR-YC-dX8">
@@ -281,12 +282,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rja-A7-lJL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="674" y="1329"/>
+            <point key="canvasLocation" x="1394" y="1067"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="Ise-xM-3tn">
             <objects>
                 <navigationController storyboardIdentifier="oilConsumeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Mz9-ZJ-dtO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="wJ4-va-HA1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cWA-kY-ZjM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -300,7 +302,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IVS-Ao-dRD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="617" y="-114"/>
+            <point key="canvasLocation" x="2495.1999999999998" y="-114.69265367316342"/>
         </scene>
     </scenes>
     <resources>

@@ -243,6 +243,7 @@ extension AddOilRecordViewController {
         guard
             let cell = addConsumption.cellForRow(at: indexPath) as? SegmentTableViewCell
             else { return }
+        //判斷選擇的油品
         if cell.oilTypeSegment.selectedSegmentIndex == 3 {
             record.oilType = "超級柴油"
         } else {
