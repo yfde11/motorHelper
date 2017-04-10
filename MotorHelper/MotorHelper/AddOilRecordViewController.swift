@@ -133,7 +133,7 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
             cell.contentTextField.clearButtonMode = .whileEditing
             cell.contentTextField.keyboardType = .numbersAndPunctuation
             cell.contentTextField.textColor = UIColor.white
-            cell.contentTextField.returnKeyType = .done
+            cell.contentTextField.returnKeyType = .google
             cell.contentTextField.delegate = self
             cell.index = TextFieldType.totalKM
             return cell
@@ -257,6 +257,7 @@ extension AddOilRecordViewController {
                         "totalKM": "\(record.totalKM)"]
         ref = FIRDatabase.database().reference()
         ref?.child((FIRAuth.auth()?.currentUser?.uid)!).childByAutoId().setValue(sendData)
+
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "oilConsumeNavigationController")
         self.present(vc!, animated: true, completion: nil)
     }
