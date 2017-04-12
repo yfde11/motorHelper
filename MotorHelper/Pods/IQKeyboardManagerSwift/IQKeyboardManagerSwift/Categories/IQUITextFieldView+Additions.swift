@@ -41,7 +41,7 @@ public extension UIView {
     */
     public var keyboardDistanceFromTextField: CGFloat {
         get {
-
+            
             if let aValue = objc_getAssociatedObject(self, &kIQKeyboardDistanceFromTextField) as? CGFloat {
                 return aValue
             } else {
@@ -53,3 +53,4 @@ public extension UIView {
         }
     }
 }
+

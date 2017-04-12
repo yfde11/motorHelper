@@ -1,14 +1,14 @@
 PODS:
-  - AEXML (4.0.2)
-  - Alamofire (4.3.0)
+  - AEXML (4.1.0)
+  - Alamofire (4.4.0)
   - Cosmos (8.0.2)
-  - Firebase/Auth (3.13.0):
+  - Firebase/Auth (3.15.0):
     - Firebase/Core
     - FirebaseAuth (= 3.1.1)
-  - Firebase/Core (3.13.0):
+  - Firebase/Core (3.15.0):
     - FirebaseAnalytics (= 3.7.0)
-    - FirebaseCore (= 3.5.0)
-  - Firebase/Database (3.13.0):
+    - FirebaseCore (= 3.5.2)
+  - Firebase/Database (3.15.0):
     - Firebase/Core
     - FirebaseDatabase (= 3.1.2)
   - FirebaseAnalytics (3.7.0):
@@ -19,7 +19,7 @@ PODS:
     - FirebaseAnalytics (~> 3.7)
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (3.5.0):
+  - FirebaseCore (3.5.2):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseDatabase (3.1.2):
     - FirebaseAnalytics (~> 3.7)
@@ -34,8 +34,9 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.1)
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
-  - GTMSessionFetcher/Core (1.1.8)
-  - IQKeyboardManagerSwift (4.0.8)
+  - GTMSessionFetcher/Core (1.1.9)
+  - IQKeyboardManagerSwift (4.0.9)
+  - ReverseExtension (0.4.6)
   - StringExtensionHTML (0.2.0)
   - SWXMLHash (3.0.4)
 
@@ -47,25 +48,27 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - IQKeyboardManagerSwift
+  - ReverseExtension
   - StringExtensionHTML
   - SWXMLHash
 
 SPEC CHECKSUMS:
-  AEXML: 7de81f28c6c876a210f31924acc2e326cd01e162
-  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  AEXML: 647fbb051280f3fb38a1a7caa62b0344055a851c
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   Cosmos: 007c0b8e33a85e5363911bdd933571bbe221f7ef
-  Firebase: 5bc34d7b5ff5792e3386c8b28dc6265deeab0da4
+  Firebase: 2b1cdfba1cda8589f32904a697cc753322bff9d8
   FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
   FirebaseAuth: cc8a1824170adbd351edb7f994490a3fb5c18be6
-  FirebaseCore: 1c0a13bf59bb95cdd19577252499f0ec6a03e999
+  FirebaseCore: a024587e43778508700af8c6b1209f7c4516ba02
   FirebaseDatabase: 05c96d7b43a7368dc91c07791adb49683e1738d1
   FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
-  GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
-  IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
+  GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
+  IQKeyboardManagerSwift: 2eefe6c429b86aa08bfbc1b5c891164d754adf91
+  ReverseExtension: 8af8d6ff4577b46b6c5a9af34ee544a7509c4ab9
   StringExtensionHTML: 80fdb1b3a83669e371d27bfe2f208f067e2db328
   SWXMLHash: 29d20b84692fc319ea8ed933058fe7d8d005139b
 
-PODFILE CHECKSUM: fc4b55a86233c5889cb834994f16ac3586e7a52f
+PODFILE CHECKSUM: 4b5827ca1d6ae8889e64f0fb3266c23852064198
 
 COCOAPODS: 1.2.0

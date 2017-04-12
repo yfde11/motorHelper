@@ -10,6 +10,7 @@ import UIKit
 import Cosmos
 import FirebaseAuth
 import FirebaseDatabase
+import ReverseExtension
 
 class CommentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var ref: FIRDatabaseReference?
@@ -34,11 +35,14 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         storeName.text = sendName ?? "no value"
         phone.text = sendPhone ?? "NO"
         address.text = sendAddress ?? "QQ 沒傳進來"
-        commentsList.delegate = self
-        commentsList.dataSource = self
+//        commentsList.delegate = self
+//        commentsList.dataSource = self
+        commentsList.re.delegate = self
+        commentsList.re.dataSource = self
         setUp()
         getComments()
     }
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -79,5 +83,15 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         })
     }
     @IBAction func submitBtn(_ sender: Any) {
+        let comment = Comment(userID: userID ?? "Guest", commentContent: commentsTextfield.text!)
+        
+        if commentsTextfield.text?.characters.count == 0 {
+            print("nil")
+        } else {
+            self.comments.append(comment)
+            commentsList.beginUpdates()
+            commentsList.re.insertRows(at: [IndexPath(row: comments.count - 1, section: 0)], with: .automatic)
+            commentsList.endUpdates()
+        }
     }
 }

@@ -17,6 +17,8 @@ target 'MotorHelper' do
   pod 'IQKeyboardManagerSwift'
   #for rating
   pod 'Cosmos', '~> 8.0'
+  #for comments
+  pod 'ReverseExtension'
   # Pods for MotorHelper
 
 end

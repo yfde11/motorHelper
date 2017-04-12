@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+//import ReverseExtension
 
 class MotorStoreTableViewController: UITableViewController {
 
@@ -20,6 +21,8 @@ class MotorStoreTableViewController: UITableViewController {
         super.viewDidLoad()
         getStoreData()
         setUp()
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
     // MARK: - Table view data source
