@@ -29,6 +29,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var commentsList: UITableView!
     @IBOutlet weak var commentsTextfield: UITextField!
     @IBOutlet weak var phone: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,6 +44,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         getComments()
 
         commentsList.rowHeight = UITableViewAutomaticDimension
+
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

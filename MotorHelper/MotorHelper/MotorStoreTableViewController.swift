@@ -11,11 +11,15 @@ import FirebaseAuth
 import FirebaseDatabase
 //import ReverseExtension
 
-class MotorStoreTableViewController: UITableViewController {
+class MotorStoreTableViewController: UITableViewController, UISearchBarDelegate {
 
     var stores: [Store] = []
     var ref: FIRDatabaseReference?
     let userID = FIRAuth.auth()?.currentUser?.uid
+
+    let searchController = UISearchController(searchResultsController: nil)
+    var filteredStores = [Store]()
+    var shouldShowSearchResults = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +27,31 @@ class MotorStoreTableViewController: UITableViewController {
         setUp()
         tableView.delegate = self
         tableView.dataSource = self
+
+        searchBarSetup()
+    }
+    func searchBarSetup() {
+        let searchBar = UISearchBar(frame: CGRect(x:0, y:0, width:(UIScreen.main.bounds.width), height:70))
+        searchBar.showsScopeBar = true
+        searchBar.selectedScopeButtonIndex = 0
+        searchBar.delegate = self
+        self.tableView.tableHeaderView = searchBar
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            filteredStores = stores
+            self.tableView.reloadData()
+        } else {
+            filterTableView(text: searchText)
+        }
+    }
+    func filterTableView( text: String ) {
+        //fix of not searching when backspacing
+        filteredStores = stores.filter({ (searchedStore) -> Bool in
+//            return mod.imageBy.lowercased().contains(text.lowercased())
+            return searchedStore.storeName.contains(text)
+        })
+        self.tableView.reloadData()
     }
 
     // MARK: - Table view data source
