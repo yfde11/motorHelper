@@ -31,38 +31,43 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var phone: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(storeID ?? "no value")
+
         storeName.text = sendName ?? "no value"
         phone.text = sendPhone ?? "NO"
         address.text = sendAddress ?? "QQ 沒傳進來"
-//        commentsList.delegate = self
-//        commentsList.dataSource = self
-        commentsList.re.delegate = self
+
         commentsList.re.dataSource = self
+        commentsList.re.delegate = self
+
         setUp()
         getComments()
+
+        commentsList.rowHeight = UITableViewAutomaticDimension
     }
 
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return comments.count
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CommentTableViewCell.height
-    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.identifier, for: indexPath) as? CommentTableViewCell
-            else { return UITableViewCell() }
-        cell.userComment.text = comments[indexPath.row].commentContent
+        guard
+            let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.identifier, for: indexPath) as? CommentTableViewCell
+        else { return UITableViewCell() }
+
+//        cell.userComment.text = comments[indexPath.row].commentContent
+        cell.userComment.text = "\(indexPath.row)"
         cell.userID.text = comments[indexPath.row].userID
         return cell
     }
+
     func setUp() {
         let commentDetailNib = UINib(nibName: CommentTableViewCell.identifier, bundle: nil)
         commentsList.register(commentDetailNib, forCellReuseIdentifier: CommentTableViewCell.identifier)
+
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
+
     func getComments() {
         ref = FIRDatabase.database().reference()
         ref?.child("comments").child(storeID!).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -82,6 +87,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.commentsList.reloadData()
         })
     }
+
     @IBAction func submitBtn(_ sender: Any) {
         let comment = Comment(userID: userID ?? "Guest", commentContent: commentsTextfield.text!)
 
@@ -89,13 +95,22 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
             print("nil")
         } else {
             self.comments.append(comment)
-            commentsList.beginUpdates()
-            commentsList.re.insertRows(at: [IndexPath(row: comments.count - 1, section: 0)], with: .automatic)
-            commentsList.endUpdates()
+
             let sendData = ["userID": "\(comment.userID)",
-                "userComment": "\(comment.commentContent)"]
+                            "userComment": "\(comment.commentContent)"]
             ref = FIRDatabase.database().reference()
             ref?.child("comments").child(storeID!).childByAutoId().setValue(sendData)
+            commentsTextfield.text = ""
+            commentsList.beginUpdates()
+//            commentsList.reloadData()
+            commentsList.re.insertRows(at: [IndexPath(row: comments.count - 1, section: 0)], with: .automatic)
+            commentsList.endUpdates()
+
         }
+    }
+
+    // close keyboard
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

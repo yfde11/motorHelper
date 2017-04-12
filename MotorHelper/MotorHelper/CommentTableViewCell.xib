@@ -38,6 +38,7 @@
                     <constraint firstItem="qOI-Wm-8lr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="rlJ-n7-e2s"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.82882350680000005" green="0.58960467579999998" blue="0.40937799219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="userComment" destination="7uS-Pe-gfH" id="yzV-H1-y5X"/>
                 <outlet property="userID" destination="qOI-Wm-8lr" id="BTT-vZ-NyW"/>
