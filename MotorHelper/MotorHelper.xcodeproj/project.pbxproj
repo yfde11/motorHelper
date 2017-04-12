@@ -34,6 +34,8 @@
 		9B9582EA1E890D90003F699C /* SegmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9582E81E890D90003F699C /* SegmentTableViewCell.swift */; };
 		9B9582EB1E890D90003F699C /* SegmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9582E91E890D90003F699C /* SegmentTableViewCell.xib */; };
 		9BAFAE921E9BB3B6005E68F9 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFAE911E9BB3B6005E68F9 /* Store.swift */; };
+		9BAFAEB31E9CCD82005E68F9 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFAEB11E9CCD82005E68F9 /* CommentTableViewCell.swift */; };
+		9BAFAEB41E9CCD82005E68F9 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BAFAEB21E9CCD82005E68F9 /* CommentTableViewCell.xib */; };
 		9BB08BCA1E8228E000982CF1 /* Petroleum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB08BC91E8228E000982CF1 /* Petroleum.swift */; };
 		9BB08BF11E83A60C00982CF1 /* QRCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB08BF01E83A60C00982CF1 /* QRCodeScannerViewController.swift */; };
 		9BFA1FF11E8A634B0045CA0F /* ConsumptionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA1FF01E8A634B0045CA0F /* ConsumptionRecord.swift */; };
@@ -71,6 +73,8 @@
 		9B9582E81E890D90003F699C /* SegmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentTableViewCell.swift; sourceTree = "<group>"; };
 		9B9582E91E890D90003F699C /* SegmentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegmentTableViewCell.xib; sourceTree = "<group>"; };
 		9BAFAE911E9BB3B6005E68F9 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		9BAFAEB11E9CCD82005E68F9 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		9BAFAEB21E9CCD82005E68F9 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		9BB08BC91E8228E000982CF1 /* Petroleum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Petroleum.swift; sourceTree = "<group>"; };
 		9BB08BF01E83A60C00982CF1 /* QRCodeScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeScannerViewController.swift; sourceTree = "<group>"; };
 		9BFA1FF01E8A634B0045CA0F /* ConsumptionRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumptionRecord.swift; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				9B35DD451E94E62B0093C11E /* CommentViewController.swift */,
+				9BAFAEB11E9CCD82005E68F9 /* CommentTableViewCell.swift */,
+				9BAFAEB21E9CCD82005E68F9 /* CommentTableViewCell.xib */,
 			);
 			name = Comment;
 			sourceTree = "<group>";
@@ -284,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B124A6F1E7FC77400393658 /* LaunchScreen.storyboard in Resources */,
+				9BAFAEB41E9CCD82005E68F9 /* CommentTableViewCell.xib in Resources */,
 				9B000F591E853478002BB4EC /* DateTableViewCell.xib in Resources */,
 				9B124A6C1E7FC77400393658 /* Assets.xcassets in Resources */,
 				9B35DD4D1E96150B0093C11E /* StoreListInfoTableViewCell.xib in Resources */,
@@ -376,6 +383,7 @@
 				9B000F231E84F961002BB4EC /* AddOilRecordViewController.swift in Sources */,
 				9B35DD4C1E96150B0093C11E /* StoreListInfoTableViewCell.swift in Sources */,
 				9B35DD131E8BB2B80093C11E /* RecordTableViewCell.swift in Sources */,
+				9BAFAEB31E9CCD82005E68F9 /* CommentTableViewCell.swift in Sources */,
 				9B124A621E7FC77400393658 /* AppDelegate.swift in Sources */,
 				9B000F541E852988002BB4EC /* AddRecordBtnTableViewCell.swift in Sources */,
 				9B35DD491E96147A0093C11E /* MotorStoreTableViewController.swift in Sources */,

@@ -316,7 +316,7 @@
         <!--Detail-->
         <scene sceneID="KU2-mq-bIU">
             <objects>
-                <viewController id="86q-PP-MGJ" customClass="CommentViewController" customModule="MotorHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CommentViewController" id="86q-PP-MGJ" customClass="CommentViewController" customModule="MotorHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TAx-ZZ-wNd"/>
                         <viewControllerLayoutGuide type="bottom" id="tlK-zl-rJ9"/>
@@ -328,8 +328,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9d-bQ-BOc">
                                 <rect key="frame" x="0.0" y="20" width="375" height="120"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="loF-co-QQ9">
-                                        <rect key="frame" x="20" y="20" width="275" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="loF-co-QQ9">
+                                        <rect key="frame" x="20" y="5" width="36.5" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="40T-CF-p2J"/>
                                         </constraints>
@@ -338,25 +338,44 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zS0-pj-QIW" customClass="CosmosView" customModule="Cosmos">
-                                        <rect key="frame" x="80" y="58" width="215" height="41"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <rect key="frame" x="80" y="71" width="215" height="39"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="starSize">
                                                 <real key="value" value="39"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPR-Do-oe7">
+                                        <rect key="frame" x="313" y="5" width="42" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="zUq-fs-v04"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yaq-uq-IFt">
+                                        <rect key="frame" x="20" y="40" width="42" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="sMR-qt-wll"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.74501591919999999" green="0.74514538050000001" blue="0.74500775340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="loF-co-QQ9" secondAttribute="trailing" constant="80" id="BcE-wN-vcG"/>
-                                    <constraint firstItem="zS0-pj-QIW" firstAttribute="top" secondItem="loF-co-QQ9" secondAttribute="bottom" constant="8" id="BhD-Cm-Cp6"/>
+                                    <constraint firstAttribute="trailing" secondItem="cPR-Do-oe7" secondAttribute="trailing" constant="20" id="Ums-FD-PV5"/>
+                                    <constraint firstItem="yaq-uq-IFt" firstAttribute="leading" secondItem="n9d-bQ-BOc" secondAttribute="leading" constant="20" id="VAf-zI-bLz"/>
+                                    <constraint firstItem="yaq-uq-IFt" firstAttribute="top" secondItem="loF-co-QQ9" secondAttribute="bottom" constant="5" id="VD8-cA-SWU"/>
                                     <constraint firstAttribute="height" constant="120" id="XKh-4q-1zM"/>
-                                    <constraint firstItem="loF-co-QQ9" firstAttribute="top" secondItem="n9d-bQ-BOc" secondAttribute="top" constant="20" id="dKG-fw-UFY"/>
+                                    <constraint firstAttribute="bottom" secondItem="zS0-pj-QIW" secondAttribute="bottom" constant="10" id="YbR-hQ-dMQ"/>
+                                    <constraint firstItem="loF-co-QQ9" firstAttribute="top" secondItem="n9d-bQ-BOc" secondAttribute="top" constant="5" id="dKG-fw-UFY"/>
                                     <constraint firstItem="loF-co-QQ9" firstAttribute="leading" secondItem="n9d-bQ-BOc" secondAttribute="leading" constant="20" id="jHv-Dd-zsd"/>
                                     <constraint firstItem="zS0-pj-QIW" firstAttribute="leading" secondItem="n9d-bQ-BOc" secondAttribute="leading" constant="80" id="plQ-eo-Su7"/>
                                     <constraint firstAttribute="trailing" secondItem="zS0-pj-QIW" secondAttribute="trailing" constant="80" id="tUO-3N-6je"/>
-                                    <constraint firstAttribute="bottom" secondItem="zS0-pj-QIW" secondAttribute="bottom" constant="21" id="xiq-Sz-PvQ"/>
+                                    <constraint firstItem="cPR-Do-oe7" firstAttribute="top" secondItem="n9d-bQ-BOc" secondAttribute="top" constant="5" id="zIx-Hk-FYb"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdk-3B-9x4">
@@ -374,6 +393,9 @@
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="submitBtn:" destination="86q-PP-MGJ" eventType="touchUpInside" id="urs-RC-Lg2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -409,6 +431,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="7hL-df-xdb"/>
+                    <connections>
+                        <outlet property="address" destination="yaq-uq-IFt" id="U7C-JO-3DN"/>
+                        <outlet property="commentsList" destination="3Xz-eT-R0L" id="7z9-I1-YfU"/>
+                        <outlet property="commentsTextfield" destination="RgE-Ov-j93" id="Taw-9K-cPs"/>
+                        <outlet property="phone" destination="cPR-Do-oe7" id="oLj-Fx-Y1E"/>
+                        <outlet property="rating" destination="zS0-pj-QIW" id="MSw-ca-3OG"/>
+                        <outlet property="storeName" destination="loF-co-QQ9" id="29O-at-5Gf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ymK-PI-yJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

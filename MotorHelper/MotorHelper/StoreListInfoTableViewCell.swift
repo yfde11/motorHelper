@@ -14,6 +14,7 @@ class StoreListInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var storeName: UILabel!
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var score: CosmosView!
+    @IBOutlet weak var phone: UILabel!
 
     static let identifier = "StoreListInfoTableViewCell"
     static let height: CGFloat = 80.0
