@@ -84,7 +84,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     @IBAction func submitBtn(_ sender: Any) {
         let comment = Comment(userID: userID ?? "Guest", commentContent: commentsTextfield.text!)
-        
+
         if commentsTextfield.text?.characters.count == 0 {
             print("nil")
         } else {
@@ -92,6 +92,10 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
             commentsList.beginUpdates()
             commentsList.re.insertRows(at: [IndexPath(row: comments.count - 1, section: 0)], with: .automatic)
             commentsList.endUpdates()
+            let sendData = ["userID": "\(comment.userID)",
+                "userComment": "\(comment.commentContent)"]
+            ref = FIRDatabase.database().reference()
+            ref?.child("comments").child(storeID!).childByAutoId().setValue(sendData)
         }
     }
 }
