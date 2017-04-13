@@ -138,6 +138,7 @@ extension MotorStoreTableViewController {
             vc.sendPhone = filteredStores[indexPath.row].storePhoneNum
             vc.sendAddress = filteredStores[indexPath.row].storeAddress
             self.show(vc, sender: nil)
+            searchController.dismiss(animated: true, completion: nil)
         } else {
             print("\(stores[indexPath.row].storeID)")
             guard
