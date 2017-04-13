@@ -36,24 +36,11 @@ class MotorStoreTableViewController: UITableViewController, UISearchBarDelegate,
         searchBarSetup()
     }
     func searchBarSetup() {
-        // 將更新搜尋結果的對象設為 self
         searchController.searchResultsUpdater = self
-
-        // 搜尋時是否隱藏 NavigationBar
-        // 這個範例沒有使用 NavigationBar 所以設置什麼沒有影響
         searchController.hidesNavigationBarDuringPresentation = false
-
-        // 搜尋時是否使用燈箱效果 (會將畫面變暗以集中搜尋焦點)
         searchController.dimsBackgroundDuringPresentation = false
-
-        // 搜尋框的樣式
         searchController.searchBar.searchBarStyle = .prominent
-        // 設置搜尋框的尺寸為自適應
-        // 因為會擺在 tableView 的 header
-        // 所以尺寸會與 tableView 的 header 一樣
         searchController.searchBar.sizeToFit()
-
-        // 將搜尋框擺在 tableView 的 header
         self.tableView.tableHeaderView = searchController.searchBar
     }
 
