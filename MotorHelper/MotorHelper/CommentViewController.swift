@@ -10,7 +10,7 @@ import UIKit
 import Cosmos
 import FirebaseAuth
 import FirebaseDatabase
-import ReverseExtension
+//import ReverseExtension
 
 class CommentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var ref: FIRDatabaseReference?
@@ -37,8 +37,10 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         phone.text = sendPhone ?? "NO"
         address.text = sendAddress ?? "QQ 沒傳進來"
 
-        commentsList.re.dataSource = self
-        commentsList.re.delegate = self
+//        commentsList.re.dataSource = self
+//        commentsList.re.delegate = self
+        commentsList.delegate = self
+        commentsList.dataSource = self
 
         setUp()
         getComments()
@@ -104,8 +106,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
             ref?.child("comments").child(storeID!).childByAutoId().setValue(sendData)
             commentsTextfield.text = ""
             commentsList.beginUpdates()
-//            commentsList.reloadData()
-            commentsList.re.insertRows(at: [IndexPath(row: comments.count - 1, section: 0)], with: .automatic)
+            commentsList.insertRows(at: [IndexPath(row: comments.count - 1, section: 0)], with: .automatic)
             commentsList.endUpdates()
 
         }
