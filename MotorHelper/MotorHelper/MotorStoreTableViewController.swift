@@ -25,6 +25,11 @@ class MotorStoreTableViewController: UITableViewController, UISearchBarDelegate,
         }
     }
     var shouldShowSearchResults = false
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
+//        getStoreData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +39,7 @@ class MotorStoreTableViewController: UITableViewController, UISearchBarDelegate,
         tableView.dataSource = self
 
         searchBarSetup()
+
     }
     func searchBarSetup() {
         searchController.searchResultsUpdater = self
@@ -42,6 +48,10 @@ class MotorStoreTableViewController: UITableViewController, UISearchBarDelegate,
         searchController.searchBar.searchBarStyle = .prominent
         searchController.searchBar.sizeToFit()
         self.tableView.tableHeaderView = searchController.searchBar
+    }
+    func dismissKeyboard() {
+        view.endEditing(true)
+        searchController.dismiss(animated: true, completion: nil)
     }
 
     // MARK: - Table view data source
@@ -110,6 +120,15 @@ class MotorStoreTableViewController: UITableViewController, UISearchBarDelegate,
             self.tableView.reloadData()
         })
     }
+
+    @IBAction func addStore(_ sender: Any) {
+        searchController.dismiss(animated: true, completion: nil)
+        guard
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddStoreViewController") as? AddStoreViewController
+            else { return }
+        vc.delegate = self
+        self.show(vc, sender: nil)
+    }
 }
 
 extension MotorStoreTableViewController {
@@ -149,5 +168,14 @@ extension MotorStoreTableViewController {
         filteredStores = stores.filter({ (store) -> Bool in
             return store.storeName.contains(searchText)
         })
+    }
+}
+
+extension MotorStoreTableViewController: buttonIsClick {
+    func detectIsClick() {
+        self.stores.removeAll()
+        self.tableView.reloadData()
+        self.getStoreData()
+        print("Click")
     }
 }

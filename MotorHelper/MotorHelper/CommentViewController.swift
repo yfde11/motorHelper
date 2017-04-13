@@ -58,8 +58,8 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
             let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.identifier, for: indexPath) as? CommentTableViewCell
         else { return UITableViewCell() }
 
-//        cell.userComment.text = comments[indexPath.row].commentContent
-        cell.userComment.text = "\(indexPath.row)"
+        cell.userComment.text = comments[indexPath.row].commentContent
+//        cell.userComment.text = "\(indexPath.row)"
         cell.userID.text = comments[indexPath.row].userID
         return cell
     }
@@ -89,6 +89,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
             }
             self.commentsList.reloadData()
+            self.moveToLastComment()
         })
     }
 
@@ -108,12 +109,28 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
             commentsList.beginUpdates()
             commentsList.insertRows(at: [IndexPath(row: comments.count - 1, section: 0)], with: .automatic)
             commentsList.endUpdates()
-
+            moveToLastComment()
         }
     }
 
     // close keyboard
     func dismissKeyboard() {
         view.endEditing(true)
+    }
+    // move to last cell
+    func moveToLastComment() {
+        if commentsList.contentSize.height > commentsList.frame.height {
+            // First figure out how many sections there are
+            let lastSectionIndex = commentsList.numberOfSections - 1
+            
+            // Then grab the number of rows in the last section
+            let lastRowIndex = commentsList.numberOfRows(inSection: lastSectionIndex) - 1
+            
+            // Now just construct the index path
+            let pathToLastRow = NSIndexPath(row: lastRowIndex, section: lastSectionIndex)
+            
+            // Make the last row visible
+            commentsList.scrollToRow(at: pathToLastRow as IndexPath, at: UITableViewScrollPosition.bottom, animated: true)
+        }
     }
 }

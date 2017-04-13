@@ -11,7 +11,13 @@ import Cosmos
 import FirebaseDatabase
 import FirebaseAuth
 
+protocol buttonIsClick: class {
+    func detectIsClick()
+}
+
 class AddStoreViewController: UIViewController {
+
+    weak var delegate: buttonIsClick?
     var ref: FIRDatabaseReference?
     let userID = FIRAuth.auth()?.currentUser?.uid
 
@@ -30,23 +36,28 @@ class AddStoreViewController: UIViewController {
 
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
+
     }
     @IBAction func submitBtn(_ sender: Any) {
         ref = FIRDatabase.database().reference()
-        let key = UUID().uuidString
-        let sendStoreInfo = ["address": "\(storeAddressTextfield.text)",
-                        "phoneNumber": "\(storePhoneNumber.text)",
-                        "storeName": "\(storeNameTextfield.text)"]
-        let sendStoreComment = ["userID": "\(FIRAuth.auth()?.currentUser?.uid)",
-                                "userComment": "\(storeComments.text)"]
-        if storeNameTextfield.text?.characters.count == 0 && storeAddressTextfield.text?.characters.count == 0 {
-            print("nil")
-        } else {
-            ref?.child("stores").child(key).setValue(sendStoreInfo)
-            ref?.child("comments").child(key).setValue(sendStoreComment)
 
-            cleanTextField()
+        let sendStoreInfo = ["address": "\(storeAddressTextfield.text!)",
+                        "phoneNumber": "\(storePhoneNumber.text!)",
+                        "storeName": "\(storeNameTextfield.text!)"]
+        let sendStoreComment = ["userID": "\(userID!)",
+                                "userComment": "\(storeComments.text!)"]
+        ref?.child("stores").childByAutoId().setValue(sendStoreInfo, withCompletionBlock: { ( _, snap) in
+            print(snap)
+            snap.observeSingleEvent(of: .value, with: { (_) in
+                print(snap.key)
+                self.ref?.child("comments").child(snap.key).childByAutoId().setValue(sendStoreComment)
+            })
+        })
+        cleanTextField()
+        DispatchQueue.main.async {
+            self.delegate?.detectIsClick()
         }
+        self.navigationController?.popViewController(animated: true)
     }
     func cleanTextField() {
         storePhoneNumber.text = ""

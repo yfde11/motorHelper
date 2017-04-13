@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Iu0-QJ-lAa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9nZ-ZX-bb7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -287,7 +287,7 @@
         <!--新增車行-->
         <scene sceneID="5Qj-G2-3MH">
             <objects>
-                <viewController title="新增車行" id="tgh-R1-e16" customClass="AddStoreViewController" customModule="MotorHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddStoreViewController" title="新增車行" id="tgh-R1-e16" customClass="AddStoreViewController" customModule="MotorHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0WI-vs-LXb"/>
                         <viewControllerLayoutGuide type="bottom" id="UwK-VC-01B"/>
@@ -297,26 +297,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="車行名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXC-79-WcX">
-                                <rect key="frame" x="20" y="84" width="70" height="21"/>
+                                <rect key="frame" x="20" y="40" width="70" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="車行地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xb0-2T-KKp">
-                                <rect key="frame" x="20" y="120" width="70" height="21"/>
+                                <rect key="frame" x="20" y="76" width="70" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="車行電話" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0g-1D-Qsu">
-                                <rect key="frame" x="20" y="161" width="70" height="21"/>
+                                <rect key="frame" x="20" y="117" width="70" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CTb-av-hYM">
-                                <rect key="frame" x="100" y="80.5" width="265" height="28"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="100" y="36.5" width="265" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="0h0-yU-RQc"/>
                                 </constraints>
@@ -325,21 +324,19 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v2w-IT-jmf">
-                                <rect key="frame" x="100" y="116" width="265" height="30"/>
-                                <color key="backgroundColor" red="0.35843949358779292" green="0.49813827139934541" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="100" y="72" width="265" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7wE-KI-pAA">
-                                <rect key="frame" x="100" y="157" width="265" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.10608969257966439" blue="0.070204234414255939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="100" y="113" width="265" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7Gx-Uw-nhF">
-                                <rect key="frame" x="10" y="318" width="355" height="299"/>
+                                <rect key="frame" x="10" y="274" width="355" height="343"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -356,14 +353,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="評論" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9o-bU-wbV">
-                                <rect key="frame" x="20" y="277" width="335" height="21"/>
+                                <rect key="frame" x="20" y="233" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tp5-xU-1lH" customClass="CosmosView" customModule="Cosmos">
-                                <rect key="frame" x="50" y="207" width="275" height="50"/>
-                                <color key="backgroundColor" red="0.23988333340000001" green="0.20260009170000001" blue="0.26042404769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="50" y="163" width="275" height="50"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="starSize">
                                         <real key="value" value="50"/>
@@ -428,7 +424,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MQB-ol-fRW" id="ffT-BA-ytY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -441,7 +437,7 @@
                     <navigationItem key="navigationItem" title="車行列表" id="eAI-Wt-NAd">
                         <barButtonItem key="rightBarButtonItem" image="Add-icon" style="plain" id="guV-ao-iQK">
                             <connections>
-                                <segue destination="tgh-R1-e16" kind="show" id="xn5-v8-htP"/>
+                                <action selector="addStore:" destination="zRr-ET-LwX" id="cv7-fd-7GL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -605,7 +601,7 @@
         <!--Navigation Controller-->
         <scene sceneID="vhO-YM-4kX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Iu0-QJ-lAa" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MotorStoreNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Iu0-QJ-lAa" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jB2-F5-qlC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

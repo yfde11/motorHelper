@@ -18,7 +18,7 @@ class LogInViewController: UIViewController {
             if error == nil {
                 print("登入成功")
                 //go to next controller
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "oilConsumeNavigationController")
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "MotorStoreNavigationController")
                 self.present(vc!, animated: true, completion: nil)
             } else {
                 // 提示用戶從 firebase 返回了一個錯誤。
