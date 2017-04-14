@@ -58,11 +58,11 @@ class AddStoreViewController: UIViewController {
                     self.ref = FIRDatabase.database().reference()
                     self.ref?.child("rateing").child(snap.key).setValue(sendScore)
                 })
+                DispatchQueue.main.async {
+                    self.delegate?.detectIsClick()
+                }
             })
             cleanTextField()
-            DispatchQueue.main.async {
-                self.delegate?.detectIsClick()
-            }
             _ = self.navigationController?.popViewController(animated: true)
         } else {
             let alertController = UIAlertController(title: "請完成必填欄位", message: "請按確認繼續", preferredStyle: .alert)
