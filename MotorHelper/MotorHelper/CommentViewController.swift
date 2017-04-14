@@ -13,6 +13,7 @@ import FirebaseDatabase
 //import ReverseExtension
 
 class CommentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    weak var delegate: buttonIsClick?
     var ref: FIRDatabaseReference?
     let userID = FIRAuth.auth()?.currentUser?.uid
 
@@ -151,6 +152,9 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         let sendScore = ["\(userID!)": "\(self.rating.rating)"]
         ref = FIRDatabase.database().reference()
         ref?.child("rateing").child(storeID!).setValue(sendScore)
+        DispatchQueue.main.async {
+            self.delegate?.detectIsClick()
+        }
     }
 
     private func didFinishTouchingCosmos(_ rating: Double) {

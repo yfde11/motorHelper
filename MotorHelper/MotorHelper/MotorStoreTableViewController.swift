@@ -39,22 +39,7 @@ class MotorStoreTableViewController: UITableViewController, UISearchBarDelegate,
         tableView.dataSource = self
 
         searchBarSetup()
-
-        getRating()
     }
-    func searchBarSetup() {
-        searchController.searchResultsUpdater = self
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.searchBarStyle = .prominent
-        searchController.searchBar.sizeToFit()
-        self.tableView.tableHeaderView = searchController.searchBar
-    }
-    func dismissKeyboard() {
-        view.endEditing(true)
-        searchController.dismiss(animated: true, completion: nil)
-    }
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -172,6 +157,7 @@ extension MotorStoreTableViewController {
             vc.sendName = filteredStores[indexPath.row].storeName
             vc.sendPhone = filteredStores[indexPath.row].storePhoneNum
             vc.sendAddress = filteredStores[indexPath.row].storeAddress
+            vc.delegate = self
             self.show(vc, sender: nil)
             searchController.dismiss(animated: true, completion: nil)
         } else {
@@ -183,6 +169,7 @@ extension MotorStoreTableViewController {
             vc.sendName = stores[indexPath.row].storeName
             vc.sendPhone = stores[indexPath.row].storePhoneNum
             vc.sendAddress = stores[indexPath.row].storeAddress
+            vc.delegate = self
             self.show(vc, sender: nil)
         }
     }
@@ -198,6 +185,18 @@ extension MotorStoreTableViewController {
             return store.storeName.contains(searchText)
         })
     }
+    func searchBarSetup() {
+        searchController.searchResultsUpdater = self
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.searchBarStyle = .prominent
+        searchController.searchBar.sizeToFit()
+        self.tableView.tableHeaderView = searchController.searchBar
+    }
+    func dismissKeyboard() {
+        view.endEditing(true)
+        searchController.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension MotorStoreTableViewController: buttonIsClick {
@@ -206,11 +205,5 @@ extension MotorStoreTableViewController: buttonIsClick {
         self.scores.removeAll()
         self.getStoreData()
         print("Click")
-    }
-}
-// for rating
-extension MotorStoreTableViewController {
-    func getRating() {
-
     }
 }
