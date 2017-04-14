@@ -16,6 +16,7 @@ class MotorStoreTableViewController: UITableViewController, UISearchBarDelegate,
     var stores: [Store] = []
     var ref: FIRDatabaseReference?
     let userID = FIRAuth.auth()?.currentUser?.uid
+    var scores = [String: Double]()
 
     let searchController = UISearchController(searchResultsController: nil)
     var searchTableView: UITableView!
@@ -28,7 +29,6 @@ class MotorStoreTableViewController: UITableViewController, UISearchBarDelegate,
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         tableView.reloadData()
-//        getStoreData()
     }
 
     override func viewDidLoad() {
@@ -40,6 +40,7 @@ class MotorStoreTableViewController: UITableViewController, UISearchBarDelegate,
 
         searchBarSetup()
 
+        getRating()
     }
     func searchBarSetup() {
         searchController.searchResultsUpdater = self
@@ -76,7 +77,12 @@ class MotorStoreTableViewController: UITableViewController, UISearchBarDelegate,
             cell.storeName.text = "\(filteredStores[indexPath.row].storeName)"
             cell.address.text = "\(filteredStores[indexPath.row].storeAddress)"
             cell.phone.text = "\(filteredStores[indexPath.row].storePhoneNum)"
-            cell.score.rating = 5
+            let id  = filteredStores[indexPath.row].storeID
+            if scores[id] == nil {
+                cell.score.rating = 0
+            } else {
+                cell.score.rating = scores[id]!
+            }
             cell.score.settings.updateOnTouch = false
             return cell
         } else {
@@ -86,7 +92,12 @@ class MotorStoreTableViewController: UITableViewController, UISearchBarDelegate,
             cell.storeName.text = "\(stores[indexPath.row].storeName)"
             cell.address.text = "\(stores[indexPath.row].storeAddress)"
             cell.phone.text = "\(stores[indexPath.row].storePhoneNum)"
-            cell.score.rating = 5
+            let id  = stores[indexPath.row].storeID
+            if scores[id] == nil {
+                cell.score.rating = 0
+            } else {
+                cell.score.rating = scores[id]!
+            }
             cell.score.settings.updateOnTouch = false
             return cell
         }
@@ -115,6 +126,23 @@ class MotorStoreTableViewController: UITableViewController, UISearchBarDelegate,
                     let storeID = snap.key
                     let store = Store(storeName: storeName!, storeAddress: address!, storePhoneNum: phoneNumber!, storeID: storeID)
                     self.stores.append(store)
+                }
+            }
+            self.tableView.reloadData()
+        })
+        ref?.child("rateing").observeSingleEvent(of: .value, with: { (snapshot) in
+            for childSnap in snapshot.children.allObjects {
+                guard let snap = childSnap as? FIRDataSnapshot else { return }
+                if let snapshotValue = snapshot.value as? NSDictionary,
+                    let snapVal = snapshotValue[snap.key] as? [String:String] {
+                    var sum = 0.0
+                    var count = 0.0
+                    for scoreValue in snapVal.values {
+                        sum += Double(scoreValue)!
+                        count += 1.0
+                    }
+                    print("\(snap.key)  sum: \(sum)  AVG: \(sum/count)")
+                    self.scores["\(snap.key)"] = sum/count
                 }
             }
             self.tableView.reloadData()
@@ -177,5 +205,30 @@ extension MotorStoreTableViewController: buttonIsClick {
         self.tableView.reloadData()
         self.getStoreData()
         print("Click")
+    }
+}
+// for rating
+extension MotorStoreTableViewController {
+    func getRating() {
+//        ref = FIRDatabase.database().reference()
+//        ref?.child("rateing").observeSingleEvent(of: .value, with: { (snapshot) in
+//            for childSnap in snapshot.children.allObjects {
+//                guard let snap = childSnap as? FIRDataSnapshot else { return }
+//                if let snapshotValue = snapshot.value as? NSDictionary,
+//                    let snapVal = snapshotValue[snap.key] as? [String:String] {
+//                    var sum = 0.0
+//                    var count = 0.0
+//                    for scoreValue in snapVal.values {
+//                        sum += Double(scoreValue)!
+//                        count += 1.0
+//                    }
+//                    print("\(snap.key)  sum: \(sum)  AVG: \(sum/count)")
+//                    self.scores["\(snap.key)"] = sum/count
+//                }
+//            }
+//        })
+//        DispatchQueue.main.async {
+//            self.tableView.reloadData()
+//        }
     }
 }

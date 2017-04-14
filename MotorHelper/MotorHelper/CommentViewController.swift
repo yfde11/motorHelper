@@ -36,14 +36,15 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         storeName.text = sendName ?? "no value"
         phone.text = sendPhone ?? "NO"
         address.text = sendAddress ?? "QQ 沒傳進來"
+        rating.didTouchCosmos = didTouchCosmos
+        rating.didFinishTouchingCosmos = didFinishTouchingCosmos
 
-//        commentsList.re.dataSource = self
-//        commentsList.re.delegate = self
         commentsList.delegate = self
         commentsList.dataSource = self
 
         setUp()
         getComments()
+        getRating()
 
         commentsList.rowHeight = UITableViewAutomaticDimension
 
@@ -59,7 +60,6 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         else { return UITableViewCell() }
 
         cell.userComment.text = comments[indexPath.row].commentContent
-//        cell.userComment.text = "\(indexPath.row)"
         cell.userID.text = comments[indexPath.row].userID
         return cell
     }
@@ -122,15 +122,34 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         if commentsList.contentSize.height > commentsList.frame.height {
             // First figure out how many sections there are
             let lastSectionIndex = commentsList.numberOfSections - 1
-            
             // Then grab the number of rows in the last section
             let lastRowIndex = commentsList.numberOfRows(inSection: lastSectionIndex) - 1
-            
             // Now just construct the index path
             let pathToLastRow = NSIndexPath(row: lastRowIndex, section: lastSectionIndex)
-            
             // Make the last row visible
             commentsList.scrollToRow(at: pathToLastRow as IndexPath, at: UITableViewScrollPosition.bottom, animated: true)
         }
+    }
+    func getRating() {
+        ref = FIRDatabase.database().reference()
+        ref?.child("rateing").child(storeID!).observeSingleEvent(of: .value, with: { (snapShot) in
+            print("==========hello==========")
+            print(snapShot)
+            guard let dictScore = snapShot.value as? [String: String] else { return }
+            print(dictScore["\(self.userID!)"]!)
+            let score = dictScore["\(self.userID!)"]!
+            self.rating.rating = Double(score)!
+            self.rating.reloadInputViews()
+        })
+    }
+    private func didTouchCosmos(_ rating: Double) {
+        print("touch star is : \(self.rating.rating)")
+        let sendScore = ["\(userID!)": "\(self.rating.rating)"]
+        ref = FIRDatabase.database().reference()
+        ref?.child("rateing").child(storeID!).setValue(sendScore)
+    }
+
+    private func didFinishTouchingCosmos(_ rating: Double) {
+        print("finish touch")
     }
 }

@@ -51,6 +51,10 @@ class AddStoreViewController: UIViewController {
             snap.observeSingleEvent(of: .value, with: { (_) in
                 print(snap.key)
                 self.ref?.child("comments").child(snap.key).childByAutoId().setValue(sendStoreComment)
+                print("touch star is : \(self.storeRate.rating)")
+                let sendScore = ["\(self.userID!)": "\(self.storeRate.rating)"]
+                self.ref = FIRDatabase.database().reference()
+                self.ref?.child("rateing").child(snap.key).setValue(sendScore)
             })
         })
         cleanTextField()
@@ -68,4 +72,10 @@ class AddStoreViewController: UIViewController {
     func dismissKeyboard() {
         view.endEditing(true)
     }
+//    private func didTouchCosmos(_ rating: Double) {
+//        print("touch star is : \(self.storeRate.rating)")
+//        let sendScore = ["\(userID!)": "\(self.storeRate.rating)"]
+//        ref = FIRDatabase.database().reference()
+//        ref?.child("rateing").child(storeID!).setValue(sendScore)
+//    }
 }
