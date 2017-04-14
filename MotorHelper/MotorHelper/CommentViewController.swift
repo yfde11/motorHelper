@@ -36,6 +36,8 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         storeName.text = sendName ?? "no value"
         phone.text = sendPhone ?? "NO"
         address.text = sendAddress ?? "QQ 沒傳進來"
+        commentsTextfield.placeholder = "請留下您的評論"
+
         rating.didTouchCosmos = didTouchCosmos
         rating.didFinishTouchingCosmos = didFinishTouchingCosmos
 
@@ -133,13 +135,15 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     func getRating() {
         ref = FIRDatabase.database().reference()
         ref?.child("rateing").child(storeID!).observeSingleEvent(of: .value, with: { (snapShot) in
-            print("==========hello==========")
-            print(snapShot)
             guard let dictScore = snapShot.value as? [String: String] else { return }
-            print(dictScore["\(self.userID!)"]!)
-            let score = dictScore["\(self.userID!)"]!
-            self.rating.rating = Double(score)!
-            self.rating.reloadInputViews()
+
+            if let scroe = dictScore["\(self.userID!)"] {
+                self.rating.rating = Double(scroe)!
+                self.rating.reloadInputViews()
+            } else {
+                self.rating.rating = 0.0
+                self.rating.reloadInputViews()
+            }
         })
     }
     private func didTouchCosmos(_ rating: Double) {

@@ -33,6 +33,7 @@ class AddStoreViewController: UIViewController {
         storePhoneNumber.keyboardType = .numberPad
         storePhoneNumber.clearButtonMode = .whileEditing
         storePhoneNumber.placeholder = "請輸入車行電話"
+        storeComments.placeholderText = "請留下您的評論"
 
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -41,27 +42,34 @@ class AddStoreViewController: UIViewController {
     @IBAction func submitBtn(_ sender: Any) {
         ref = FIRDatabase.database().reference()
 
-        let sendStoreInfo = ["address": "\(storeAddressTextfield.text!)",
-                        "phoneNumber": "\(storePhoneNumber.text!)",
-                        "storeName": "\(storeNameTextfield.text!)"]
-        let sendStoreComment = ["userID": "\(userID!)",
-                                "userComment": "\(storeComments.text!)"]
-        ref?.child("stores").childByAutoId().setValue(sendStoreInfo, withCompletionBlock: { ( _, snap) in
-            print(snap)
-            snap.observeSingleEvent(of: .value, with: { (_) in
-                print(snap.key)
-                self.ref?.child("comments").child(snap.key).childByAutoId().setValue(sendStoreComment)
-                print("touch star is : \(self.storeRate.rating)")
-                let sendScore = ["\(self.userID!)": "\(self.storeRate.rating)"]
-                self.ref = FIRDatabase.database().reference()
-                self.ref?.child("rateing").child(snap.key).setValue(sendScore)
+        if storeNameTextfield.text?.characters.count != 0 && storeAddressTextfield.text?.characters.count != 0 {
+            let sendStoreInfo = ["address": "\(storeAddressTextfield.text!)",
+                "phoneNumber": "\(storePhoneNumber.text!)",
+                "storeName": "\(storeNameTextfield.text!)"]
+            let sendStoreComment = ["userID": "\(userID!)",
+                "userComment": "\(storeComments.text!)"]
+            ref?.child("stores").childByAutoId().setValue(sendStoreInfo, withCompletionBlock: { ( _, snap) in
+                print(snap)
+                snap.observeSingleEvent(of: .value, with: { (_) in
+                    print(snap.key)
+                    self.ref?.child("comments").child(snap.key).childByAutoId().setValue(sendStoreComment)
+                    print("touch star is : \(self.storeRate.rating)")
+                    let sendScore = ["\(self.userID!)": "\(self.storeRate.rating)"]
+                    self.ref = FIRDatabase.database().reference()
+                    self.ref?.child("rateing").child(snap.key).setValue(sendScore)
+                })
             })
-        })
-        cleanTextField()
-        DispatchQueue.main.async {
-            self.delegate?.detectIsClick()
+            cleanTextField()
+            DispatchQueue.main.async {
+                self.delegate?.detectIsClick()
+            }
+            _ = self.navigationController?.popViewController(animated: true)
+        } else {
+            let alertController = UIAlertController(title: "請完成必填欄位", message: "請按確認繼續", preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: "確認", style: .cancel, handler: nil)
+            alertController.addAction(confirmAction)
+            self.present(alertController, animated: true, completion: nil)
         }
-        self.navigationController?.popViewController(animated: true)
     }
     func cleanTextField() {
         storePhoneNumber.text = ""
@@ -72,10 +80,4 @@ class AddStoreViewController: UIViewController {
     func dismissKeyboard() {
         view.endEditing(true)
     }
-//    private func didTouchCosmos(_ rating: Double) {
-//        print("touch star is : \(self.storeRate.rating)")
-//        let sendScore = ["\(userID!)": "\(self.storeRate.rating)"]
-//        ref = FIRDatabase.database().reference()
-//        ref?.child("rateing").child(storeID!).setValue(sendScore)
-//    }
 }
