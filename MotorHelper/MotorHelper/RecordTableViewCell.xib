@@ -68,6 +68,13 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SPX-W5-mxM">
+                        <rect key="frame" x="0.0" y="77.5" width="600" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="6fZ-7D-RN5"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="5Kx-7e-JUZ" firstAttribute="top" secondItem="5d1-oQ-zvm" secondAttribute="bottom" constant="10" id="5Lr-zl-Bbf"/>
@@ -77,8 +84,11 @@
                     <constraint firstItem="5d1-oQ-zvm" firstAttribute="leading" secondItem="GUP-0W-bMG" secondAttribute="trailing" constant="20" id="RDk-V8-Vlm"/>
                     <constraint firstItem="cit-aX-iP9" firstAttribute="top" secondItem="GUP-0W-bMG" secondAttribute="bottom" constant="10" id="ZJt-WK-bAB"/>
                     <constraint firstItem="cit-aX-iP9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="aSz-0X-YLT"/>
+                    <constraint firstAttribute="bottom" secondItem="SPX-W5-mxM" secondAttribute="bottom" constant="1" id="bBS-ax-JUM"/>
                     <constraint firstItem="NRK-cm-U4o" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="gLD-Q3-Aoq"/>
                     <constraint firstItem="5Kx-7e-JUZ" firstAttribute="leading" secondItem="cit-aX-iP9" secondAttribute="trailing" constant="20" id="lpj-Un-bb1"/>
+                    <constraint firstAttribute="trailing" secondItem="SPX-W5-mxM" secondAttribute="trailing" id="lsI-Mi-SST"/>
+                    <constraint firstItem="SPX-W5-mxM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ugJ-HX-tSt"/>
                     <constraint firstItem="GUP-0W-bMG" firstAttribute="leading" secondItem="NRK-cm-U4o" secondAttribute="trailing" constant="20" id="ukm-Ph-sQ2"/>
                 </constraints>
             </tableViewCellContentView>

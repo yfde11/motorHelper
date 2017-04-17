@@ -10,9 +10,14 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
+protocol submitIsClick: class {
+    func detectSubmit()
+}
+
 class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var addConsumption: UITableView!
+    weak var delegate: submitIsClick?
     let datePicker = UIDatePicker()
     let dateFormatter = DateFormatter()
     var record = ConsumptionRecord(date: "", oilType: "92", oilPrice: "0", numOfOil: "0", totalPrice: "0", totalKM: "0")
@@ -258,7 +263,7 @@ extension AddOilRecordViewController {
         ref = FIRDatabase.database().reference()
         ref?.child((FIRAuth.auth()?.currentUser?.uid)!).childByAutoId().setValue(sendData)
 
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "oilConsumeNavigationController")
-        self.present(vc!, animated: true, completion: nil)
+        self.delegate?.detectSubmit()
+        _ = self.navigationController?.popViewController(animated: true)
     }
 }

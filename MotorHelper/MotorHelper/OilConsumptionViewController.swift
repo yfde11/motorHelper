@@ -32,6 +32,7 @@ class OilConsumptionViewController: UIViewController, UITableViewDelegate, UITab
     func setUp() {
         let detailNib = UINib(nibName: RecordTableViewCell.identifier, bundle: nil)
         tableView.register(detailNib, forCellReuseIdentifier: RecordTableViewCell.identifier)
+        self.tableView.allowsSelection = false
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -66,6 +67,23 @@ class OilConsumptionViewController: UIViewController, UITableViewDelegate, UITab
         DispatchQueue.main.async {
                 self.tableView.reloadData()
         }
-        print("QQQQQQQQ:::::::::\(records.count)")
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+        }
+    }
+
+    @IBAction func addRecord(_ sender: Any) {
+        guard
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddOilRecordViewController") as? AddOilRecordViewController
+            else { return }
+        vc.delegate = self
+        self.show(vc, sender: nil)
+    }
+}
+extension OilConsumptionViewController: submitIsClick {
+    func detectSubmit() {
+        OilConsumptionManager.shared.getRecords()
+        self.tableView.reloadData()
     }
 }

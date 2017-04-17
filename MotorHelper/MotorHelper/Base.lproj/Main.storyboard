@@ -19,53 +19,53 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECJ-WK-M9F">
-                                <rect key="frame" x="110" y="139" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請稍候" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECJ-WK-M9F">
+                                <rect key="frame" x="110" y="75" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smm-U6-fpi">
-                                <rect key="frame" x="239" y="139" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在跑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smm-U6-fpi">
+                                <rect key="frame" x="229" y="75" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wj-eg-CXw">
-                                <rect key="frame" x="110" y="235" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請稍候" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wj-eg-CXw">
+                                <rect key="frame" x="110" y="171" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkQ-5G-o5e">
-                                <rect key="frame" x="239" y="235" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在跑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkQ-5G-o5e">
+                                <rect key="frame" x="229" y="171" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1G-9b-2Xh">
-                                <rect key="frame" x="110" y="331" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請稍候" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1G-9b-2Xh">
+                                <rect key="frame" x="110" y="267" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irq-DS-UdM">
-                                <rect key="frame" x="239" y="331" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在跑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irq-DS-UdM">
+                                <rect key="frame" x="229" y="267" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PuI-QV-IRd">
-                                <rect key="frame" x="239" y="427" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在跑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PuI-QV-IRd">
+                                <rect key="frame" x="229" y="363" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghx-1w-VAb">
-                                <rect key="frame" x="110" y="427" width="42" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請稍候" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghx-1w-VAb">
+                                <rect key="frame" x="110" y="363" width="52" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -116,11 +116,11 @@
                         <viewControllerLayoutGuide type="bottom" id="vti-R3-a9o"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NBX-p7-ciW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jbc-Nz-tZN">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Yaj-oT-6tw" id="vac-42-Xq3"/>
@@ -139,8 +139,9 @@
                     <navigationItem key="navigationItem" title="油耗紀錄" id="tWO-KS-dQe">
                         <barButtonItem key="backBarButtonItem" title="取消" id="HoK-Gp-ccX"/>
                         <barButtonItem key="rightBarButtonItem" image="Add-icon" style="plain" id="oe4-SS-TWd">
+                            <color key="tintColor" red="0.98564296959999997" green="0.77198106050000004" blue="0.43364000320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="5QR-IU-hSn" kind="show" id="6Gm-fx-w3Q"/>
+                                <action selector="addRecord:" destination="Yaj-oT-6tw" id="gZ0-OB-19b"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -155,7 +156,7 @@
         <!--新增油耗紀錄-->
         <scene sceneID="xjo-un-J24">
             <objects>
-                <viewController title="新增油耗紀錄" hidesBottomBarWhenPushed="YES" id="5QR-IU-hSn" customClass="AddOilRecordViewController" customModule="MotorHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddOilRecordViewController" title="新增油耗紀錄" hidesBottomBarWhenPushed="YES" id="5QR-IU-hSn" customClass="AddOilRecordViewController" customModule="MotorHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="96Y-kl-jQL"/>
                         <viewControllerLayoutGuide type="bottom" id="Mbg-qv-GC2"/>
@@ -213,6 +214,7 @@
                                 </state>
                                 <connections>
                                     <action selector="logIn:" destination="9nZ-ZX-bb7" eventType="touchUpInside" id="vhG-gE-OJc"/>
+                                    <segue destination="ua3-Da-niP" kind="show" id="aE7-z7-Y4p"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -225,15 +227,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vf5-80-xek" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="418" y="335"/>
+            <point key="canvasLocation" x="-2670" y="253"/>
         </scene>
-        <!--Item-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="JBF-Of-4tc">
+            <objects>
+                <tabBarController id="ua3-Da-niP" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="UzL-an-HJe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.98564296959999997" green="0.77198106050000004" blue="0.43364000320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.98564296959999997" green="0.77198106050000004" blue="0.43364000320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Iu0-QJ-lAa" kind="relationship" relationship="viewControllers" id="kdD-QM-UOy"/>
+                        <segue destination="Mz9-ZJ-dtO" kind="relationship" relationship="viewControllers" id="1yQ-D4-IxH"/>
+                        <segue destination="yoD-dS-8Ce" kind="relationship" relationship="viewControllers" id="dXW-ba-egV"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WxC-Qt-UKa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1825" y="263"/>
+        </scene>
+        <!--本週油價-->
         <scene sceneID="DaD-3Q-ox5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yoD-dS-8Ce" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="euJ-Se-Qt5"/>
+                    <tabBarItem key="tabBarItem" title="本週油價" image="GasStation" id="euJ-Se-Qt5"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aLl-Qn-GyC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="aLl-Qn-GyC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -244,7 +266,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sq1-iy-4oI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2503" y="653"/>
+            <point key="canvasLocation" x="2462" y="661"/>
         </scene>
         <!--Code Scanner View Controller-->
         <scene sceneID="ItR-YC-dX8">
@@ -282,12 +304,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rja-A7-lJL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1394" y="1067"/>
+            <point key="canvasLocation" x="4722" y="602"/>
         </scene>
         <!--新增車行-->
         <scene sceneID="5Qj-G2-3MH">
             <objects>
-                <viewController storyboardIdentifier="AddStoreViewController" title="新增車行" id="tgh-R1-e16" customClass="AddStoreViewController" customModule="MotorHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddStoreViewController" title="新增車行" hidesBottomBarWhenPushed="YES" id="tgh-R1-e16" customClass="AddStoreViewController" customModule="MotorHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0WI-vs-LXb"/>
                         <viewControllerLayoutGuide type="bottom" id="UwK-VC-01B"/>
@@ -418,7 +440,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="MotorStoreTableViewController" id="zRr-ET-LwX" customClass="MotorStoreTableViewController" customModule="MotorHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Evq-q1-xFN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -438,6 +460,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="車行列表" id="eAI-Wt-NAd">
                         <barButtonItem key="rightBarButtonItem" image="Add-icon" style="plain" id="guV-ao-iQK">
+                            <color key="tintColor" red="0.98564296959999997" green="0.77198106050000004" blue="0.43364000320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="addStore:" destination="zRr-ET-LwX" id="cv7-fd-7GL"/>
                             </connections>
@@ -451,7 +474,7 @@
         <!--Detail-->
         <scene sceneID="KU2-mq-bIU">
             <objects>
-                <viewController storyboardIdentifier="CommentViewController" id="86q-PP-MGJ" customClass="CommentViewController" customModule="MotorHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CommentViewController" hidesBottomBarWhenPushed="YES" id="86q-PP-MGJ" customClass="CommentViewController" customModule="MotorHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TAx-ZZ-wNd"/>
                         <viewControllerLayoutGuide type="bottom" id="tlK-zl-rJ9"/>
@@ -583,16 +606,16 @@
             </objects>
             <point key="canvasLocation" x="3855.1999999999998" y="-958.4707646176912"/>
         </scene>
-        <!--Item-->
+        <!--油耗紀錄-->
         <scene sceneID="Ise-xM-3tn">
             <objects>
                 <navigationController storyboardIdentifier="oilConsumeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Mz9-ZJ-dtO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="wJ4-va-HA1"/>
+                    <tabBarItem key="tabBarItem" title="油耗紀錄" image="Pencil" id="wJ4-va-HA1"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cWA-kY-ZjM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="cWA-kY-ZjM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.34134361149999998" green="0.31368163230000001" blue="0.36068689819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.98564296959999997" green="0.77198106050000004" blue="0.43364000320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -603,14 +626,16 @@
             </objects>
             <point key="canvasLocation" x="2495.1999999999998" y="-114.69265367316342"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--車行列表-->
         <scene sceneID="vhO-YM-4kX">
             <objects>
                 <navigationController storyboardIdentifier="MotorStoreNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Iu0-QJ-lAa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="車行列表" image="maintenance" id="B8q-qd-hpk"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jB2-F5-qlC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="jB2-F5-qlC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.98564296959999997" green="0.77198106050000004" blue="0.43364000320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -624,5 +649,8 @@
     </scenes>
     <resources>
         <image name="Add-icon" width="25" height="25"/>
+        <image name="GasStation" width="24" height="24"/>
+        <image name="Pencil" width="25" height="25"/>
+        <image name="maintenance" width="25" height="25"/>
     </resources>
 </document>
