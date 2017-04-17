@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class OilPriceViewController: UIViewController {
 
@@ -24,22 +25,28 @@ class OilPriceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        let activityData = ActivityData()
+        NVActivityIndicatorView.DEFAULT_TYPE = .pacman
+        NVActivityIndicatorView.DEFAULT_COLOR = .yellow
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
+
         oilInfo.getOilData(oiltype: "1") { (name, price) in
             self.productName92.text = name
             self.productPrice92.text = price
-        }
-        oilInfo.getOilData(oiltype: "2") { (name, price) in
-            self.productName95.text = name
-            self.productPrice95.text = price
-        }
-        oilInfo.getOilData(oiltype: "3") { (name, price) in
-            self.productName98.text = name
-            self.productPrice98.text = price
-        }
-        oilInfo.getOilData(oiltype: "4") { (name, price) in
-            self.productNameSuper.text = name
-            self.productPriceSuper.text = price
+            self.oilInfo.getOilData(oiltype: "2") { (name, price) in
+                self.productName95.text = name
+                self.productPrice95.text = price
+                self.oilInfo.getOilData(oiltype: "3") { (name, price) in
+                    self.productName98.text = name
+                    self.productPrice98.text = price
+                    self.oilInfo.getOilData(oiltype: "4") { (name, price) in
+                        self.productNameSuper.text = name
+                        self.productPriceSuper.text = price
+                        NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                    }
+                }
+            }
         }
     }
 

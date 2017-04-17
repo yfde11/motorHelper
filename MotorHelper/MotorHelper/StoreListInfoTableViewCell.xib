@@ -28,12 +28,12 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjv-BV-ufI">
-                        <rect key="frame" x="20" y="28" width="42" height="20.5"/>
+                        <rect key="frame" x="20" y="28" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vG0-bQ-BKl" customClass="CosmosView" customModule="Cosmos">
+                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vG0-bQ-BKl" customClass="CosmosView" customModule="Cosmos">
                         <rect key="frame" x="20" y="49.5" width="145" height="25"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <userDefinedRuntimeAttributes>
@@ -49,7 +49,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GX2-Yh-Q8U">
-                        <rect key="frame" x="0.0" y="77.5" width="600" height="1"/>
+                        <rect key="frame" x="0.0" y="78" width="600" height="1"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="qwA-mm-uEO"/>

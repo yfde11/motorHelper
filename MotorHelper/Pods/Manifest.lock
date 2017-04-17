@@ -36,7 +36,7 @@ PODS:
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.9)
   - IQKeyboardManagerSwift (4.0.9)
-  - ReverseExtension (0.4.6)
+  - NVActivityIndicatorView (3.6.0)
   - StringExtensionHTML (0.2.0)
   - SWXMLHash (3.0.4)
 
@@ -48,7 +48,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - IQKeyboardManagerSwift
-  - ReverseExtension
+  - NVActivityIndicatorView
   - StringExtensionHTML
   - SWXMLHash
 
@@ -65,10 +65,10 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   IQKeyboardManagerSwift: 2eefe6c429b86aa08bfbc1b5c891164d754adf91
-  ReverseExtension: 8af8d6ff4577b46b6c5a9af34ee544a7509c4ab9
+  NVActivityIndicatorView: c7c1c4300b418bd9ed06459e78d4df859ddbe31f
   StringExtensionHTML: 80fdb1b3a83669e371d27bfe2f208f067e2db328
   SWXMLHash: 29d20b84692fc319ea8ed933058fe7d8d005139b
 
-PODFILE CHECKSUM: 4b5827ca1d6ae8889e64f0fb3266c23852064198
+PODFILE CHECKSUM: f22f98c14e75df3f5b486736fa35f30a2c8579a4
 
 COCOAPODS: 1.2.0
