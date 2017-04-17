@@ -24,6 +24,7 @@ class OilPriceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         oilInfo.getOilData(oiltype: "1") { (name, price) in
             self.productName92.text = name
             self.productPrice92.text = price

@@ -178,11 +178,11 @@ extension MotorStoreTableViewController {
 extension MotorStoreTableViewController {
     func updateSearchResults(for searchController: UISearchController) {
         // 取得搜尋文字
-        guard let searchText = searchController.searchBar.text else {
-            return
-        }
+        guard
+            let searchText = searchController.searchBar.text
+            else { return }
         filteredStores = stores.filter({ (store) -> Bool in
-            return store.storeName.contains(searchText)
+            return store.storeName.contains(searchText) || store.storeAddress.contains(searchText)
         })
     }
     func searchBarSetup() {

@@ -45,12 +45,9 @@ class GetSOAPInfo {
                         product.append(prod!)
                         completion(productName, productPrice)
                     }
-//                    completion(product)
                 } else {
                     print("error fetching XML")
                 }
-//                completion(product)
             }
-//            completion(product)
         }
 }

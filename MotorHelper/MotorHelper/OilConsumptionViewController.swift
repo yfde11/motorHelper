@@ -63,9 +63,11 @@ class OilConsumptionViewController: UIViewController, UITableViewDelegate, UITab
         print("error")
     }
     func manager(_ manager: OilConsumptionManager, didGet records: [ConsumptionRecord]) {
-        self.records = records.reversed()
+//        self.records = records.reversed()
+        self.records = records
         DispatchQueue.main.async {
-                self.tableView.reloadData()
+            self.tableView.reloadData()
+            self.moveToLastRecord()
         }
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -79,6 +81,19 @@ class OilConsumptionViewController: UIViewController, UITableViewDelegate, UITab
             else { return }
         vc.delegate = self
         self.show(vc, sender: nil)
+    }
+    // move to last cell
+    func moveToLastRecord() {
+        if tableView.contentSize.height > tableView.frame.height {
+            // First figure out how many sections there are
+            let lastSectionIndex = tableView.numberOfSections - 1
+            // Then grab the number of rows in the last section
+            let lastRowIndex = tableView.numberOfRows(inSection: lastSectionIndex) - 1
+            // Now just construct the index path
+            let pathToLastRow = NSIndexPath(row: lastRowIndex, section: lastSectionIndex)
+            // Make the last row visible
+            tableView.scrollToRow(at: pathToLastRow as IndexPath, at: UITableViewScrollPosition.bottom, animated: true)
+        }
     }
 }
 extension OilConsumptionViewController: submitIsClick {

@@ -18,7 +18,9 @@ target 'MotorHelper' do
   #for rating
   pod 'Cosmos', '~> 8.0'
   #for comments
-  pod 'ReverseExtension'
+  #pod 'ReverseExtension'
+  #for loading
+  pod 'NVActivityIndicatorView'
   # Pods for MotorHelper
 
 end
