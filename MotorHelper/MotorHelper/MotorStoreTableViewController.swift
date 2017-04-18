@@ -140,11 +140,18 @@ class MotorStoreTableViewController: UITableViewController, UISearchBarDelegate,
 
     @IBAction func addStore(_ sender: Any) {
         searchController.dismiss(animated: true, completion: nil)
-        guard
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddStoreViewController") as? AddStoreViewController
-            else { return }
-        vc.delegate = self
-        self.show(vc, sender: nil)
+        if userID != nil {
+            guard
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddStoreViewController") as? AddStoreViewController
+                else { return }
+            vc.delegate = self
+            self.show(vc, sender: nil)
+        } else {
+            let alertController = UIAlertController(title: "Error", message: "您尚未註冊無法使用此功能", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 }
 

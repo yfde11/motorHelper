@@ -36,13 +36,13 @@ class OilConsumptionManager {
                 print(snap)
                 if let snapshotValue = snapshot.value as? NSDictionary,
                     let snapVal = snapshotValue[snap.key] as? [String:String] {
-                        let date = snapVal["date"]
-                        let oilType = snapVal["oilType"]
-                        let numOfOil = snapVal["numOfOil"]
-                        let totalKM = snapVal["totalKM"]
-                        let totalPrice = snapVal["totalPrice"]
-                        let oilPrice = snapVal["oilPrice"]
-                        let autoID = snapVal["autoID"]
+                    let date = snapVal["date"]
+                    let oilType = snapVal["oilType"]
+                    let numOfOil = snapVal["numOfOil"]
+                    let totalKM = snapVal["totalKM"]
+                    let totalPrice = snapVal["totalPrice"]
+                    let oilPrice = snapVal["oilPrice"]
+                    let autoID = snapVal["autoID"]
                     let record = ConsumptionRecord(date: date!, oilType: oilType!, oilPrice: oilPrice!, numOfOil: numOfOil!, totalPrice: totalPrice!, totalKM: totalKM!, autoID: autoID!)
                     self.records.append(record)
                     self.delegate?.manager(self, didGet: self.records)

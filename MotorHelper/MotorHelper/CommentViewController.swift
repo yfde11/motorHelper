@@ -44,10 +44,19 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         commentsList.delegate = self
         commentsList.dataSource = self
+        if userID != nil {
+            getRating()
+        } else {
+            let alertController = UIAlertController(title: "Error", message: "註冊後方可留言及評分", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+            rating.settings.updateOnTouch = false
+            rating.didTouchCosmos = nil
+        }
 
         setUp()
         getComments()
-        getRating()
 
         commentsList.rowHeight = UITableViewAutomaticDimension
 
@@ -99,23 +108,28 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func submitBtn(_ sender: Any) {
         let comment = Comment(userID: userID ?? "Guest", commentContent: commentsTextfield.text!)
 
-        if commentsTextfield.text?.characters.count == 0 {
-            print("nil")
+        if userID != nil {
+            if commentsTextfield.text?.characters.count == 0 {
+                print("nil")
+            } else {
+                self.comments.append(comment)
+                let sendData = ["userID": "\(comment.userID)",
+                    "userComment": "\(comment.commentContent)"]
+                ref = FIRDatabase.database().reference()
+                ref?.child("comments").child(storeID!).childByAutoId().setValue(sendData)
+                commentsTextfield.text = ""
+                commentsList.beginUpdates()
+                commentsList.insertRows(at: [IndexPath(row: comments.count - 1, section: 0)], with: .automatic)
+                commentsList.endUpdates()
+                moveToLastComment()
+            }
         } else {
-            self.comments.append(comment)
-
-            let sendData = ["userID": "\(comment.userID)",
-                            "userComment": "\(comment.commentContent)"]
-            ref = FIRDatabase.database().reference()
-            ref?.child("comments").child(storeID!).childByAutoId().setValue(sendData)
-            commentsTextfield.text = ""
-            commentsList.beginUpdates()
-            commentsList.insertRows(at: [IndexPath(row: comments.count - 1, section: 0)], with: .automatic)
-            commentsList.endUpdates()
-            moveToLastComment()
+            let alertController = UIAlertController(title: "Error", message: "註冊後方可留言及評分", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
         }
     }
-
     // close keyboard
     func dismissKeyboard() {
         view.endEditing(true)

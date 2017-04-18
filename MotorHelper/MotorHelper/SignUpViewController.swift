@@ -14,6 +14,7 @@ class SignUpViewController: UIViewController {
 
     @IBOutlet weak var mail: UITextField!
     @IBOutlet weak var pwd: UITextField!
+    @IBOutlet weak var pwdAuth: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
@@ -22,11 +23,14 @@ class SignUpViewController: UIViewController {
         mail.placeholder = "E-mail"
         mail.keyboardType = .emailAddress
         mail.clearButtonMode = .whileEditing
-        
+
         pwd.placeholder = "Password"
         pwd.isSecureTextEntry = true
         pwd.clearButtonMode = .whileEditing
-        
+        pwdAuth.placeholder = "Enter password again"
+        pwdAuth.isSecureTextEntry = true
+        pwdAuth.clearButtonMode = .whileEditing
+
     }
     @IBAction func signUp(_ sender: Any) {
         if mail.text == "" {
@@ -38,7 +42,14 @@ class SignUpViewController: UIViewController {
             let providedEmailAddress = mail.text
             let isEmailAddressValid = isValidEmailAddress(emailAddressString: providedEmailAddress!)
             if isEmailAddressValid {
-                createUser()
+                if pwd.text == pwdAuth.text {
+                    createUser()
+                } else {
+                    let alertController = UIAlertController(title: "Error", message: "Please check your password right", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
             } else {
                 let alertController = UIAlertController(title: "Error", message: "Please enter a correct mail", preferredStyle: .alert)
                 let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)

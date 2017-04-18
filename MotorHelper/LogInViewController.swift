@@ -92,4 +92,8 @@ class LogInViewController: UIViewController {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ResetPWDViewController")
         self.present(vc!, animated: true, completion: nil)
     }
+    @IBAction func anonymous(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBar")
+        self.present(vc!, animated: true, completion: nil)
+    }
 }

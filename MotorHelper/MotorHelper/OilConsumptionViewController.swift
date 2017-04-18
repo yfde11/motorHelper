@@ -27,7 +27,14 @@ class OilConsumptionViewController: UIViewController, UITableViewDelegate, UITab
         tableView.delegate = self
         tableView.dataSource = self
         OilConsumptionManager.shared.delegate = self
-        OilConsumptionManager.shared.getRecords()
+        if userID != nil {
+            OilConsumptionManager.shared.getRecords()
+        } else {
+            let alertController = UIAlertController(title: "Error", message: "您尚未註冊無法使用此功能", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
 
         setUp()
     }
@@ -90,11 +97,18 @@ class OilConsumptionViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     @IBAction func addRecord(_ sender: Any) {
-        guard
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddOilRecordViewController") as? AddOilRecordViewController
-            else { return }
-        vc.delegate = self
-        self.show(vc, sender: nil)
+        if userID != nil {
+            guard
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddOilRecordViewController") as? AddOilRecordViewController
+                else { return }
+            vc.delegate = self
+            self.show(vc, sender: nil)
+        } else {
+            let alertController = UIAlertController(title: "Error", message: "您尚未註冊無法使用此功能", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     // move to last cell
     func moveToLastRecord() {
