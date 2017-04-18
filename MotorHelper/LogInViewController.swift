@@ -83,6 +83,9 @@ class LogInViewController: UIViewController {
         return  returnValue
     }
     @IBAction func toSignUpPage(_ sender: Any) {
+        //SignUpViewController
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController")
+        self.present(vc!, animated: true, completion: nil)
     }
     @IBAction func toResetPwdPage(_ sender: Any) {
     }
