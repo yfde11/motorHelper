@@ -16,8 +16,18 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var pwd: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUp()
     }
-
+    func setUp() {
+        mail.placeholder = "E-mail"
+        mail.keyboardType = .emailAddress
+        mail.clearButtonMode = .whileEditing
+        
+        pwd.placeholder = "Password"
+        pwd.isSecureTextEntry = true
+        pwd.clearButtonMode = .whileEditing
+        
+    }
     @IBAction func signUp(_ sender: Any) {
         if mail.text == "" {
             let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
@@ -76,5 +86,8 @@ class SignUpViewController: UIViewController {
         self.present(vc!, animated: true, completion: nil)
     }
     @IBAction func toResetPwd(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ResetPWDViewController")
+        self.present(vc!, animated: true, completion: nil)
+
     }
 }

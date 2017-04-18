@@ -88,5 +88,8 @@ class LogInViewController: UIViewController {
         self.present(vc!, animated: true, completion: nil)
     }
     @IBAction func toResetPwdPage(_ sender: Any) {
+        //ResetPWDViewController
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ResetPWDViewController")
+        self.present(vc!, animated: true, completion: nil)
     }
 }
