@@ -13,6 +13,7 @@ target 'MotorHelper' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Firebase/Crash'
   #for keyboard
   pod 'IQKeyboardManagerSwift'
   #for rating

@@ -15,12 +15,18 @@ import IQKeyboardManagerSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var storyboard = UIStoryboard(name: "Main", bundle: nil)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FIRApp.configure()
-
+        FIRDatabase.database().persistenceEnabled = true
         IQKeyboardManager.sharedManager().enable = true
+        if FIRAuth.auth()?.currentUser == nil {
+            window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "LogInViewController")
+        } else {
+            window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "MainTabBar")
+        }
         return true
     }
 

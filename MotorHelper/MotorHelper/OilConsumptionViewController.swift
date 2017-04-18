@@ -32,8 +32,14 @@ class OilConsumptionViewController: UIViewController, UITableViewDelegate, UITab
         } else {
             let alertController = UIAlertController(title: "Error", message: "您尚未註冊無法使用此功能", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            let jumpAction = UIAlertAction(title: "去註冊", style: .default, handler: { ( _ ) -> Void in
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController")
+                self.present(vc!, animated: true, completion: nil)
+            })
             alertController.addAction(defaultAction)
+            alertController.addAction(jumpAction)
             self.present(alertController, animated: true, completion: nil)
+
         }
 
         setUp()
@@ -106,7 +112,12 @@ class OilConsumptionViewController: UIViewController, UITableViewDelegate, UITab
         } else {
             let alertController = UIAlertController(title: "Error", message: "您尚未註冊無法使用此功能", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            let jumpAction = UIAlertAction(title: "去註冊", style: .default, handler: { ( _ ) -> Void in
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController")
+                self.present(vc!, animated: true, completion: nil)
+            })
             alertController.addAction(defaultAction)
+            alertController.addAction(jumpAction)
             self.present(alertController, animated: true, completion: nil)
         }
     }

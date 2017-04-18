@@ -245,9 +245,10 @@
 				9B124A5A1E7FC77300393658 /* Sources */,
 				9B124A5B1E7FC77300393658 /* Frameworks */,
 				9B124A5C1E7FC77300393658 /* Resources */,
-				9B124A771E7FCBBA00393658 /* ShellScript */,
+				9B124A771E7FCBBA00393658 /* Swiftlint */,
 				3FBB5E471B012D6A8C83245E /* [CP] Embed Pods Frameworks */,
 				CDB90A2F55DC9F876F8C40D0 /* [CP] Copy Pods Resources */,
+				9B2239671EA644830050ABA9 /* Crash */,
 			);
 			buildRules = (
 			);
@@ -345,18 +346,33 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		9B124A771E7FCBBA00393658 /* ShellScript */ = {
+		9B124A771E7FCBBA00393658 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = Swiftlint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		9B2239671EA644830050ABA9 /* Crash */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Crash;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Replace this with the GOOGLE_APP_ID from your GoogleService-Info.plist file\nGOOGLE_APP_ID=1:37941707534:ios:95ce537fff29ed05\n\n# Replace the /Path/To/ServiceAccount.json with the path to the key you just downloaded\n\"${PODS_ROOT}\"/FirebaseCrash/upload-sym \"${PROJECT_DIR}/Keys/motorhelper-65ff6-firebase-crashreporting-g4h31-8d2f6b484b.json\"";
 		};
 		CDB90A2F55DC9F876F8C40D0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
