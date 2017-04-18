@@ -10,35 +10,80 @@ import UIKit
 import Firebase
 
 class LogInViewController: UIViewController {
-    let mail = "y19938222@gmail.com"
-    let pwd = "22871230"
+
+    @IBOutlet weak var mail: UITextField!
+    @IBOutlet weak var pwd: UITextField!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUp()
+    }
+    func setUp() {
+        mail.placeholder = "E-mail"
+        mail.keyboardType = .emailAddress
+        mail.clearButtonMode = .whileEditing
+
+        pwd.placeholder = "Password"
+        pwd.isSecureTextEntry = true
+        pwd.clearButtonMode = .whileEditing
+
+    }
 
     @IBAction func logIn(_ sender: Any) {
-        FIRAuth.auth()?.signIn(withEmail: mail, password: pwd, completion: { (_, error) in
+        if mail.text == "" || self.pwd.text == "" {
+            let alertController = UIAlertController(title: "Error", message: "Please enter an email and password.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        } else {
+            let providedEmailAddress = mail.text
+            let isEmailAddressValid = isValidEmailAddress(emailAddressString: providedEmailAddress!)
+            if isEmailAddressValid {
+                sendToFirebase()
+            } else {
+                let alertController = UIAlertController(title: "Error", message: "Please enter a correct mail", preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
+    }
+
+    func sendToFirebase() {
+        FIRAuth.auth()?.signIn(withEmail: mail.text!, password: pwd.text!, completion: { (_, error) in
             if error == nil {
                 print("登入成功")
-                //go to next controller
-//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "MotorStoreNavigationController")
-//                self.present(vc!, animated: true, completion: nil)
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBar")
+                self.present(vc!, animated: true, completion: nil)
             } else {
                 // 提示用戶從 firebase 返回了一個錯誤。
                 let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-
                 let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alertController.addAction(defaultAction)
-
                 self.present(alertController, animated: true, completion: nil)
             }
         })
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    func isValidEmailAddress(emailAddressString: String) -> Bool {
+        var returnValue = true
+        let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
+        do {
+            let regex = try NSRegularExpression(pattern: emailRegEx)
+            let nsString = emailAddressString as NSString
+            let results = regex.matches(in: emailAddressString, range: NSRange(location: 0, length: nsString.length))
+
+            if results.count == 0 {
+                returnValue = false
+            }
+        } catch let error as NSError {
+            print("invalid regex: \(error.localizedDescription)")
+            returnValue = false
+        }
+        return  returnValue
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func toSignUpPage(_ sender: Any) {
+    }
+    @IBAction func toResetPwdPage(_ sender: Any) {
     }
 }

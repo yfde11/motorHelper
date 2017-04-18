@@ -12,7 +12,9 @@ import FirebaseAuth
 
 class OilConsumptionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, OilConsumptionManagerDelegate {
     @IBOutlet weak var tableView: UITableView!
+    let userID = FIRAuth.auth()?.currentUser?.uid
     var ref: FIRDatabaseReference?
+
     var records: [ConsumptionRecord] = []
 
     override func viewWillAppear(_ animated: Bool) {
@@ -64,7 +66,13 @@ class OilConsumptionViewController: UIViewController, UITableViewDelegate, UITab
     }
     func manager(_ manager: OilConsumptionManager, didGet records: [ConsumptionRecord]) {
 //        self.records = records.reversed()
-        self.records = records
+        self.records = records.sorted(by: { (obj1, obj2) -> Bool in
+            if obj1.date == obj2.date {
+                return obj1.totalKM < obj2.totalKM
+            } else {
+                return obj1.date < obj2.date
+            }
+        })
         DispatchQueue.main.async {
             self.tableView.reloadData()
             self.moveToLastRecord()
@@ -72,6 +80,12 @@ class OilConsumptionViewController: UIViewController, UITableViewDelegate, UITab
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            print("\(userID!) --- \(records[indexPath.row].autoID)")
+            FIRDatabase.database().reference().child("\(userID!)").child("\(records[indexPath.row].autoID)").removeValue(completionBlock: { (error, _) in
+                self.records.remove(at: indexPath.row)
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
+            })
+            self.tableView.reloadData()
         }
     }
 

@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
-//import ReverseExtension
+import NVActivityIndicatorView
 
 class MotorStoreTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
 
@@ -99,6 +99,8 @@ class MotorStoreTableViewController: UITableViewController, UISearchBarDelegate,
     }
 
     func getStoreData() {
+        let activityData = ActivityData()
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
         ref = FIRDatabase.database().reference()
         ref?.child("stores").observeSingleEvent(of: .value, with: { (snapshot) in
             for childSnap in snapshot.children.allObjects {
@@ -116,6 +118,7 @@ class MotorStoreTableViewController: UITableViewController, UISearchBarDelegate,
                 }
             }
             self.tableView.reloadData()
+            NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
         })
         ref?.child("rateing").observeSingleEvent(of: .value, with: { (snapshot) in
             for childSnap in snapshot.children.allObjects {

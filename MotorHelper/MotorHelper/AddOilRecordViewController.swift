@@ -20,7 +20,7 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
     weak var delegate: submitIsClick?
     let datePicker = UIDatePicker()
     let dateFormatter = DateFormatter()
-    var record = ConsumptionRecord(date: "", oilType: "92", oilPrice: "0", numOfOil: "0", totalPrice: "0", totalKM: "0")
+    var record = ConsumptionRecord(date: "", oilType: "92", oilPrice: "0", numOfOil: "0", totalPrice: "0", totalKM: "0", autoID: "")
     var ref: FIRDatabaseReference?
 
     // MARK: enum for cell type
@@ -254,16 +254,19 @@ extension AddOilRecordViewController {
         } else {
             record.oilType = "\(cell.oilTypeSegment.titleForSegment(at: (cell.oilTypeSegment.selectedSegmentIndex))!)無鉛汽油"
         }
-        let sendData = ["date": "\(record.date)",
+        var sendData = ["date": "\(record.date)",
                         "oilType": "\(record.oilType)",
                         "oilPrice": "\(record.oilPrice)",
                         "numOfOil": "\(record.numOfOil)",
                         "totalPrice": "\(record.totalPrice)",
                         "totalKM": "\(record.totalKM)"]
         ref = FIRDatabase.database().reference()
-        ref?.child((FIRAuth.auth()?.currentUser?.uid)!).childByAutoId().setValue(sendData)
-
-        self.delegate?.detectSubmit()
-        _ = self.navigationController?.popViewController(animated: true)
+//        ref?.child((FIRAuth.auth()?.currentUser?.uid)!).childByAutoId().setValue(sendData)
+        ref?.child((FIRAuth.auth()?.currentUser?.uid)!).childByAutoId().setValue(sendData, withCompletionBlock: { (_, getbackdata) in
+            sendData["autoID"] = "\(getbackdata.key)"
+            self.ref?.child((FIRAuth.auth()?.currentUser?.uid)!).child("\(getbackdata.key)").setValue(sendData)
+            self.delegate?.detectSubmit()
+            _ = self.navigationController?.popViewController(animated: true)
+        })
     }
 }

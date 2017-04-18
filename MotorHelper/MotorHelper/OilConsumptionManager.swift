@@ -42,7 +42,8 @@ class OilConsumptionManager {
                         let totalKM = snapVal["totalKM"]
                         let totalPrice = snapVal["totalPrice"]
                         let oilPrice = snapVal["oilPrice"]
-                        let record = ConsumptionRecord(date: date!, oilType: oilType!, oilPrice: oilPrice!, numOfOil: numOfOil!, totalPrice: totalPrice!, totalKM: totalKM!)
+                        let autoID = snapVal["autoID"]
+                    let record = ConsumptionRecord(date: date!, oilType: oilType!, oilPrice: oilPrice!, numOfOil: numOfOil!, totalPrice: totalPrice!, totalKM: totalKM!, autoID: autoID!)
                     self.records.append(record)
                     self.delegate?.manager(self, didGet: self.records)
                 }

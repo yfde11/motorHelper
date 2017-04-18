@@ -27,8 +27,6 @@ class OilPriceViewController: UIViewController {
         super.viewDidLoad()
 
         let activityData = ActivityData()
-        NVActivityIndicatorView.DEFAULT_TYPE = .pacman
-        NVActivityIndicatorView.DEFAULT_COLOR = .yellow
         NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
 
         oilInfo.getOilData(oiltype: "1") { (name, price) in

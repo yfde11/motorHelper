@@ -22,6 +22,7 @@
 		9B124A6C1E7FC77400393658 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B124A6B1E7FC77400393658 /* Assets.xcassets */; };
 		9B124A6F1E7FC77400393658 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B124A6D1E7FC77400393658 /* LaunchScreen.storyboard */; };
 		9B124A791E7FD56500393658 /* GetSOAPInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B124A781E7FD56500393658 /* GetSOAPInfo.swift */; };
+		9B2239641EA5B95C0050ABA9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2239631EA5B95C0050ABA9 /* SignUpViewController.swift */; };
 		9B35DD131E8BB2B80093C11E /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B35DD111E8BB2B80093C11E /* RecordTableViewCell.swift */; };
 		9B35DD141E8BB2B80093C11E /* RecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B35DD121E8BB2B80093C11E /* RecordTableViewCell.xib */; };
 		9B35DD161E8BC8C60093C11E /* OilConsumptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B35DD151E8BC8C60093C11E /* OilConsumptionManager.swift */; };
@@ -62,6 +63,7 @@
 		9B124A6E1E7FC77400393658 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B124A701E7FC77400393658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B124A781E7FD56500393658 /* GetSOAPInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetSOAPInfo.swift; sourceTree = "<group>"; };
+		9B2239631EA5B95C0050ABA9 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9B35DD111E8BB2B80093C11E /* RecordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
 		9B35DD121E8BB2B80093C11E /* RecordTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordTableViewCell.xib; sourceTree = "<group>"; };
 		9B35DD151E8BC8C60093C11E /* OilConsumptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OilConsumptionManager.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				9B9582E21E88E1ED003F699C /* LogInViewController.swift */,
+				9B2239631EA5B95C0050ABA9 /* SignUpViewController.swift */,
 			);
 			name = LogIn;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				9B9582EA1E890D90003F699C /* SegmentTableViewCell.swift in Sources */,
 				9BAFAEB61E9F2AD0005E68F9 /* AddStoreViewController.swift in Sources */,
 				9B35DD161E8BC8C60093C11E /* OilConsumptionManager.swift in Sources */,
+				9B2239641EA5B95C0050ABA9 /* SignUpViewController.swift in Sources */,
 				9B35DD461E94E62B0093C11E /* CommentViewController.swift in Sources */,
 				9B000F211E84F280002BB4EC /* OilConsumptionViewController.swift in Sources */,
 				9B124A641E7FC77400393658 /* OilPriceViewController.swift in Sources */,

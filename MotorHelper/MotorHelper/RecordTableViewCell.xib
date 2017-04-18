@@ -92,6 +92,7 @@
                     <constraint firstItem="GUP-0W-bMG" firstAttribute="leading" secondItem="NRK-cm-U4o" secondAttribute="trailing" constant="20" id="ukm-Ph-sQ2"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.92537151039999999" green="0.98564296959999997" blue="0.89340932100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="dateOfAddRecord" destination="cit-aX-iP9" id="WLa-gq-gt4"/>
                 <outlet property="numOfOil" destination="GUP-0W-bMG" id="4Z7-Ve-PvW"/>

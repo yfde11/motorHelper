@@ -33,12 +33,15 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vG0-bQ-BKl" customClass="CosmosView" customModule="Cosmos">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vG0-bQ-BKl" customClass="CosmosView" customModule="Cosmos">
                         <rect key="frame" x="20" y="49.5" width="145" height="25"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92537151039999999" green="0.98564296959999997" blue="0.89340932100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="starSize">
                                 <real key="value" value="25"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="emptyBorderWidth">
+                                <real key="value" value="1.25"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
@@ -56,6 +59,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" red="0.92537151039999999" green="0.98564296959999997" blue="0.89340932100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="GX2-Yh-Q8U" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="6NK-xg-CWA"/>
                     <constraint firstItem="Jgt-Ln-D2k" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="K5m-dB-FrX"/>

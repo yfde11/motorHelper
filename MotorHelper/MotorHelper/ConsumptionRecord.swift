@@ -13,13 +13,15 @@ class ConsumptionRecord {
     var numOfOil: String
     var totalPrice: String
     var totalKM: String
+    var autoID: String
 
-    init(date: String, oilType: String, oilPrice: String, numOfOil: String, totalPrice: String, totalKM: String) {
+    init(date: String, oilType: String, oilPrice: String, numOfOil: String, totalPrice: String, totalKM: String, autoID: String) {
         self.date = date
         self.oilType = oilType
         self.oilPrice = oilPrice
         self.numOfOil = numOfOil
         self.totalPrice = totalPrice
         self.totalKM = totalKM
+        self.autoID = autoID
     }
 }
