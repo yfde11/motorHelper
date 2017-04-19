@@ -10,6 +10,7 @@ import UIKit
 import Cosmos
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseAnalytics
 //import ReverseExtension
 
 class CommentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -123,6 +124,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
                     "userComment": "\(comment.commentContent)"]
                 ref = FIRDatabase.database().reference()
                 ref?.child("comments").child(storeID!).childByAutoId().setValue(sendData)
+                FIRAnalytics.logEvent(withName: "WriteComment", parameters: nil)
                 commentsTextfield.text = ""
                 commentsList.beginUpdates()
                 commentsList.insertRows(at: [IndexPath(row: comments.count - 1, section: 0)], with: .automatic)
@@ -172,6 +174,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         let sendScore = ["\(userID!)": "\(self.rating.rating)"]
         ref = FIRDatabase.database().reference()
         ref?.child("rateing").child(storeID!).setValue(sendScore)
+        FIRAnalytics.logEvent(withName: "Rating", parameters: nil)
         DispatchQueue.main.async {
             self.delegate?.detectIsClick()
         }

@@ -58,8 +58,7 @@ class AddStoreViewController: UIViewController {
                     let sendScore = ["\(self.userID!)": "\(self.storeRate.rating)"]
                     self.ref = FIRDatabase.database().reference()
                     self.ref?.child("rateing").child(snap.key).setValue(sendScore)
-                    FIRAnalytics.logEvent(withName: "press_addStoreBtn", parameters: ["New_Store": self.storeNameTextfield])
-                    FIRAnalytics.logEvent(withName: "press_addStoreBTN", parameters: nil)
+                    FIRAnalytics.logEvent(withName: "press_addStoreBtn", parameters: ["New_Store": (self.storeNameTextfield)!])
                 })
                 DispatchQueue.main.async {
                     self.delegate?.detectIsClick()

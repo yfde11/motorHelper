@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseAnalytics
 
 class ResetPWDViewController: UIViewController {
 
@@ -38,6 +39,7 @@ class ResetPWDViewController: UIViewController {
                 let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alertController.addAction(defaultAction)
                 self.present(alertController, animated: true, completion: nil)
+                FIRAnalytics.logEvent(withName: "ResetPWD", parameters: nil)
             })
         }
     }

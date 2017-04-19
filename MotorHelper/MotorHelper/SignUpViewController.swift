@@ -60,9 +60,10 @@ class SignUpViewController: UIViewController {
     }
 
     func createUser() {
-        FIRAuth.auth()?.createUser(withEmail: mail.text!, password: pwd.text!) { (user, error) in
+        FIRAuth.auth()?.createUser(withEmail: mail.text!, password: pwd.text!) { ( _, error) in
             if error == nil {
                 print("You have successfully signed up")
+                FIRAnalytics.logEvent(withName: kFIREventSignUp, parameters: nil)
                 //Goes to the Setup page which lets the user take a photo for their profile picture and also chose a username
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "LogInViewController")
                 self.present(vc!, animated: true, completion: nil)

@@ -53,6 +53,7 @@ class LogInViewController: UIViewController {
         FIRAuth.auth()?.signIn(withEmail: mail.text!, password: pwd.text!, completion: { (_, error) in
             if error == nil {
                 print("登入成功")
+                FIRAnalytics.logEvent(withName: kFIREventLogin, parameters: nil)
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBar")
                 self.present(vc!, animated: true, completion: nil)
             } else {

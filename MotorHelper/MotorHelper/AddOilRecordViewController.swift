@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseAnalytics
 
 protocol submitIsClick: class {
     func detectSubmit()
@@ -267,6 +268,7 @@ extension AddOilRecordViewController {
             self.ref?.child((FIRAuth.auth()?.currentUser?.uid)!).child("\(getbackdata.key)").setValue(sendData)
             self.delegate?.detectSubmit()
             _ = self.navigationController?.popViewController(animated: true)
+            FIRAnalytics.logEvent(withName: "add oil record", parameters: nil)
         })
     }
 }
