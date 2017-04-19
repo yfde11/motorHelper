@@ -194,7 +194,6 @@
         <!--Log In View Controller-->
         <scene sceneID="nGN-sW-6Gz">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vf5-80-xek" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="LogInViewController" id="9nZ-ZX-bb7" customClass="LogInViewController" customModule="MotorHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="x6h-6m-kAm"/>
@@ -284,6 +283,7 @@
                         <outlet property="pwd" destination="SkT-gS-6HQ" id="LMM-th-GtB"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vf5-80-xek" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-970.39999999999998" y="-55.322338830584712"/>
         </scene>
@@ -481,7 +481,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yoD-dS-8Ce" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="本週油價" image="GasStation" id="euJ-Se-Qt5"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="aLl-Qn-GyC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="aLl-Qn-GyC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -677,7 +677,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MQB-ol-fRW" id="ffT-BA-ytY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -844,7 +844,7 @@
                 <navigationController storyboardIdentifier="oilConsumeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Mz9-ZJ-dtO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="油耗紀錄" image="Pencil" id="wJ4-va-HA1"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="cWA-kY-ZjM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="cWA-kY-ZjM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.98564296959999997" green="0.77198106050000004" blue="0.43364000320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -864,7 +864,7 @@
                 <navigationController storyboardIdentifier="MotorStoreNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Iu0-QJ-lAa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="車行列表" image="maintenance" id="B8q-qd-hpk"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="jB2-F5-qlC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="jB2-F5-qlC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.98564296959999997" green="0.77198106050000004" blue="0.43364000320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
