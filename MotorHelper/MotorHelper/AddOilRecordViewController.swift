@@ -81,7 +81,9 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
     }
     //行高
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return TextTableViewCell.height
+        let screenHeight = self.view.frame.height
+        let cellHeight: CGFloat = 7.0
+        return screenHeight/cellHeight
     }
     //內容
     //swiftlint:disable cyclomatic_complexity
