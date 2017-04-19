@@ -59,7 +59,6 @@ class OilPriceViewController: UIViewController {
                 self.productPrice98.text = ""
                 self.productNameSuper.text = ""
                 self.productPriceSuper.text = ""
-                
             })
             alertController.addAction(jumpAction)
             self.present(alertController, animated: true, completion: nil)

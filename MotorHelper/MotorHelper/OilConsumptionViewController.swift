@@ -94,7 +94,7 @@ class OilConsumptionViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             print("\(userID!) --- \(records[indexPath.row].autoID)")
-            FIRDatabase.database().reference().child("\(userID!)").child("\(records[indexPath.row].autoID)").removeValue(completionBlock: { (error, _) in
+            FIRDatabase.database().reference().child("\(userID!)").child("\(records[indexPath.row].autoID)").removeValue(completionBlock: { ( _, _) in
                 self.records.remove(at: indexPath.row)
                 self.tableView.deleteRows(at: [indexPath], with: .fade)
             })

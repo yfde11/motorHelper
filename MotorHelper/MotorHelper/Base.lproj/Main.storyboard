@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9nZ-ZX-bb7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9nZ-ZX-bb7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -138,7 +138,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="油耗紀錄" id="tWO-KS-dQe">
                         <barButtonItem key="backBarButtonItem" title="取消" id="HoK-Gp-ccX"/>
-                        <barButtonItem key="rightBarButtonItem" image="Add-icon" style="plain" id="oe4-SS-TWd">
+                        <barButtonItem key="rightBarButtonItem" image="Add-icon" id="oe4-SS-TWd">
                             <color key="tintColor" red="0.98564296959999997" green="0.77198106050000004" blue="0.43364000320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="addRecord:" destination="Yaj-oT-6tw" id="gZ0-OB-19b"/>
@@ -672,23 +672,13 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MQB-ol-fRW">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MQB-ol-fRW" id="ffT-BA-ytY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="zRr-ET-LwX" id="Yad-7H-LRI"/>
                             <outlet property="delegate" destination="zRr-ET-LwX" id="4Oa-8W-Do3"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="車行列表" id="eAI-Wt-NAd">
-                        <barButtonItem key="rightBarButtonItem" image="Add-icon" style="plain" id="guV-ao-iQK">
+                        <barButtonItem key="rightBarButtonItem" image="Add-icon" id="guV-ao-iQK">
                             <color key="tintColor" red="0.98564296959999997" green="0.77198106050000004" blue="0.43364000320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="addStore:" destination="zRr-ET-LwX" id="cv7-fd-7GL"/>
