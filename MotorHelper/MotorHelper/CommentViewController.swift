@@ -45,6 +45,8 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         commentsList.delegate = self
         commentsList.dataSource = self
+        commentsList.separatorStyle = .none
+
         if userID != nil {
             getRating()
         } else {
@@ -64,14 +66,16 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         setUp()
         getComments()
-
         commentsList.rowHeight = UITableViewAutomaticDimension
-
+        commentsList.estimatedRowHeight = 77
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return comments.count
     }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableViewAutomaticDimension
+//    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
