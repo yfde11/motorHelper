@@ -100,8 +100,6 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
             //輸入框內顯示清除的符號－－＞編輯時顯示
             cell.contentTextField.clearButtonMode = .whileEditing
             cell.contentTextField.keyboardType = .numbersAndPunctuation
-            cell.contentTextField.textColor = UIColor.white
-            cell.contentTextField.backgroundColor = UIColor.darkGray
             cell.contentTextField.returnKeyType = .done
             cell.contentTextField.delegate = self
             cell.index = TextFieldType.oilPrice
@@ -111,10 +109,8 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
 
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TextTableViewCell.identifier, for: indexPath) as? TextTableViewCell else { return UITableViewCell() }
             cell.contentTextName.text = "油量"
-            cell.contentTextField.backgroundColor = UIColor.blue
             cell.contentTextField.clearButtonMode = .whileEditing
             cell.contentTextField.keyboardType = .numbersAndPunctuation
-            cell.contentTextField.textColor = UIColor.white
             cell.contentTextField.returnKeyType = .done
             cell.contentTextField.delegate = self
             cell.index = TextFieldType.numOfOil
@@ -124,10 +120,8 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
 
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TextTableViewCell.identifier, for: indexPath) as? TextTableViewCell else { return UITableViewCell() }
             cell.contentTextName.text = "總價"
-            cell.contentTextField.backgroundColor = UIColor.black
             cell.contentTextField.clearButtonMode = .whileEditing
             cell.contentTextField.keyboardType = .numbersAndPunctuation
-            cell.contentTextField.textColor = UIColor.white
             cell.contentTextField.returnKeyType = .done
             cell.contentTextField.delegate = self
             cell.index = TextFieldType.totalPrice
@@ -137,10 +131,8 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
 
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TextTableViewCell.identifier, for: indexPath) as? TextTableViewCell else { return UITableViewCell() }
             cell.contentTextName.text = "里程"
-            cell.contentTextField.backgroundColor = UIColor.brown
             cell.contentTextField.clearButtonMode = .whileEditing
             cell.contentTextField.keyboardType = .numbersAndPunctuation
-            cell.contentTextField.textColor = UIColor.white
             cell.contentTextField.returnKeyType = .google
             cell.contentTextField.delegate = self
             cell.index = TextFieldType.totalKM

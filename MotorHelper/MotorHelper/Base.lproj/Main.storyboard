@@ -71,7 +71,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.92537151039999999" green="0.98564296959999997" blue="0.89340932100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ECJ-WK-M9F" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="5AM-kA-gZ2"/>
                             <constraint firstItem="4wj-eg-CXw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="6k9-sP-C0R"/>
@@ -139,7 +139,7 @@
                     <navigationItem key="navigationItem" title="油耗紀錄" id="tWO-KS-dQe">
                         <barButtonItem key="backBarButtonItem" title="取消" id="HoK-Gp-ccX"/>
                         <barButtonItem key="rightBarButtonItem" image="Add-icon" id="oe4-SS-TWd">
-                            <color key="tintColor" red="0.98564296959999997" green="0.77198106050000004" blue="0.43364000320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="1" green="0.80392156859999997" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="addRecord:" destination="Yaj-oT-6tw" id="gZ0-OB-19b"/>
                             </connections>
@@ -205,9 +205,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvC-z2-icB">
                                 <rect key="frame" x="116" y="341" width="143" height="30"/>
-                                <color key="backgroundColor" red="0.20781612399999999" green="0.2078586519" blue="0.2078134418" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Login">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="0.80392156862745101" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="logIn:" destination="9nZ-ZX-bb7" eventType="touchUpInside" id="vhG-gE-OJc"/>
@@ -228,32 +228,38 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LogIn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLk-8v-8wb">
                                 <rect key="frame" x="100" y="60" width="175" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vp-Zn-Rte">
                                 <rect key="frame" x="116" y="557" width="143" height="30"/>
-                                <state key="normal" title="SignUp"/>
+                                <state key="normal" title="SignUp">
+                                    <color key="titleColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="toSignUpPage:" destination="9nZ-ZX-bb7" eventType="touchUpInside" id="LS8-3g-tkb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5C-E4-DlV">
                                 <rect key="frame" x="100" y="617" width="175" height="30"/>
-                                <state key="normal" title="Reset Password"/>
+                                <state key="normal" title="Reset Password">
+                                    <color key="titleColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="toResetPwdPage:" destination="9nZ-ZX-bb7" eventType="touchUpInside" id="0DI-Qe-NnO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTm-IP-MAF">
                                 <rect key="frame" x="100" y="497" width="175" height="30"/>
-                                <state key="normal" title="Anonymous"/>
+                                <state key="normal" title="Anonymous">
+                                    <color key="titleColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="anonymous:" destination="9nZ-ZX-bb7" eventType="touchUpInside" id="Of9-X4-VFi"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.92537151039999999" green="0.98564296959999997" blue="0.89340932100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Q5C-E4-DlV" firstAttribute="top" secondItem="2vp-Zn-Rte" secondAttribute="bottom" constant="30" id="8TL-Xh-CqV"/>
                             <constraint firstItem="nvC-z2-icB" firstAttribute="leading" secondItem="O3A-c6-0NT" secondAttribute="leadingMargin" constant="100" id="8Xn-a0-n94"/>
@@ -308,32 +314,39 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEO-FE-yPx">
                                 <rect key="frame" x="100" y="120" width="175" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ib-hc-kya">
                                 <rect key="frame" x="100" y="271" width="175" height="30"/>
-                                <state key="normal" title="Reset"/>
+                                <color key="backgroundColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" red="1" green="0.80392156859999997" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="reset:" destination="x99-bj-jk1" eventType="touchUpInside" id="eHw-Hc-Bon"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mn4-Ks-UpH">
                                 <rect key="frame" x="100" y="567" width="175" height="30"/>
-                                <state key="normal" title="Login"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="toLogin:" destination="x99-bj-jk1" eventType="touchUpInside" id="wGG-hM-cqe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afm-e5-IWv">
                                 <rect key="frame" x="100" y="617" width="175" height="30"/>
-                                <state key="normal" title="SignUp"/>
+                                <state key="normal" title="SignUp">
+                                    <color key="titleColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="toSignUp:" destination="x99-bj-jk1" eventType="touchUpInside" id="YSO-ox-5XH"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.92537151039999999" green="0.98564296959999997" blue="0.89340932100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Mn4-Ks-UpH" secondAttribute="trailing" constant="100" id="4ML-QF-uxJ"/>
                             <constraint firstAttribute="trailing" secondItem="7ib-hc-kya" secondAttribute="trailing" constant="100" id="7Rc-un-vgx"/>
@@ -375,7 +388,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGy-vC-XkJ">
                                 <rect key="frame" x="100" y="120" width="175" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r6k-DY-MB3">
@@ -394,21 +407,27 @@
                                 <rect key="frame" x="100" y="361" width="175" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Sign Up"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="1" green="0.80392156862745101" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="signUp:" destination="kQ6-m0-pgr" eventType="touchUpInside" id="5Oj-p4-krt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FM4-tm-L8c">
                                 <rect key="frame" x="100" y="557" width="175" height="30"/>
-                                <state key="normal" title="LogIn"/>
+                                <state key="normal" title="LogIn">
+                                    <color key="titleColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="toLogin:" destination="kQ6-m0-pgr" eventType="touchUpInside" id="aAs-UA-Mgg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ifh-pb-wsq">
                                 <rect key="frame" x="100" y="617" width="175" height="30"/>
-                                <state key="normal" title="Reset Password"/>
+                                <state key="normal" title="Reset Password">
+                                    <color key="titleColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="toResetPwd:" destination="kQ6-m0-pgr" eventType="touchUpInside" id="H2f-Rq-7nf"/>
                                 </connections>
@@ -420,7 +439,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.92537151039999999" green="0.98564296959999997" blue="0.89340932100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Ifh-pb-wsq" firstAttribute="leading" secondItem="QpE-ef-VcU" secondAttribute="leading" constant="100" id="00h-0t-irF"/>
                             <constraint firstItem="FM4-tm-L8c" firstAttribute="leading" secondItem="QpE-ef-VcU" secondAttribute="leading" constant="100" id="2QG-Eo-6qz"/>
@@ -459,11 +478,12 @@
         <scene sceneID="JBF-Of-4tc">
             <objects>
                 <tabBarController storyboardIdentifier="MainTabBar" id="ua3-Da-niP" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="UzL-an-HJe">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="UzL-an-HJe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.98564296959999997" green="0.77198106050000004" blue="0.43364000320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" red="0.98564296959999997" green="0.77198106050000004" blue="0.43364000320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="1" green="0.80392156862745101" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="1" green="0.80392156862745101" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="Iu0-QJ-lAa" kind="relationship" relationship="viewControllers" id="kdD-QM-UOy"/>
@@ -481,9 +501,13 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yoD-dS-8Ce" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="本週油價" image="GasStation" id="euJ-Se-Qt5"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="aLl-Qn-GyC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="aLl-Qn-GyC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="0.80392156859999997" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -585,15 +609,15 @@
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7Gx-Uw-nhF">
                                 <rect key="frame" x="10" y="254" width="355" height="363"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.92549019607843142" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Us-Za-wZH">
                                 <rect key="frame" x="100" y="627" width="175" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="送出">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="0.80392156859999997" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="submitBtn:" destination="tgh-R1-e16" eventType="touchUpInside" id="lbQ-2d-avo"/>
@@ -620,7 +644,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.92537151039999999" green="0.98564296959999997" blue="0.89340932100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7Gx-Uw-nhF" firstAttribute="leading" secondItem="Xjq-tz-Poc" secondAttribute="leading" constant="10" id="8bK-Vp-wtj"/>
                             <constraint firstItem="UwK-VC-01B" firstAttribute="top" secondItem="2Us-Za-wZH" secondAttribute="bottom" constant="10" id="92p-9h-lrd"/>
@@ -679,7 +703,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="車行列表" id="eAI-Wt-NAd">
                         <barButtonItem key="rightBarButtonItem" image="Add-icon" id="guV-ao-iQK">
-                            <color key="tintColor" red="0.98564296959999997" green="0.77198106050000004" blue="0.43364000320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="1" green="0.80392156859999997" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="addStore:" destination="zRr-ET-LwX" id="cv7-fd-7GL"/>
                             </connections>
@@ -747,7 +771,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="cPR-Do-oe7" secondAttribute="trailing" constant="20" id="Ums-FD-PV5"/>
                                     <constraint firstItem="yaq-uq-IFt" firstAttribute="leading" secondItem="n9d-bQ-BOc" secondAttribute="leading" constant="20" id="VAf-zI-bLz"/>
@@ -772,9 +796,9 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2es-nD-mdE">
                                         <rect key="frame" x="300" y="5" width="70" height="70"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="1" green="0.80392156859999997" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="submitBtn:" destination="86q-PP-MGJ" eventType="touchUpInside" id="urs-RC-Lg2"/>
@@ -834,10 +858,14 @@
                 <navigationController storyboardIdentifier="oilConsumeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Mz9-ZJ-dtO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="油耗紀錄" image="Pencil" id="wJ4-va-HA1"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="cWA-kY-ZjM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="cWA-kY-ZjM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.98564296959999997" green="0.77198106050000004" blue="0.43364000320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="0.80392156862745101" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -854,10 +882,14 @@
                 <navigationController storyboardIdentifier="MotorStoreNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Iu0-QJ-lAa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="車行列表" image="maintenance" id="B8q-qd-hpk"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="jB2-F5-qlC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="jB2-F5-qlC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.98564296959999997" green="0.77198106050000004" blue="0.43364000320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="1" green="0.80392156862745101" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="0.80392156862745101" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

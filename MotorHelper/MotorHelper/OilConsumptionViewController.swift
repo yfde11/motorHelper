@@ -41,7 +41,7 @@ class OilConsumptionViewController: UIViewController, UITableViewDelegate, UITab
             self.present(alertController, animated: true, completion: nil)
 
         }
-
+        self.tableView.separatorStyle = .none
         setUp()
     }
     func setUp() {
