@@ -10,6 +10,7 @@ import UIKit
 import Cosmos
 import FirebaseDatabase
 import FirebaseAuth
+import FirebaseAnalytics
 
 protocol buttonIsClick: class {
     func detectIsClick()
@@ -57,6 +58,8 @@ class AddStoreViewController: UIViewController {
                     let sendScore = ["\(self.userID!)": "\(self.storeRate.rating)"]
                     self.ref = FIRDatabase.database().reference()
                     self.ref?.child("rateing").child(snap.key).setValue(sendScore)
+                    FIRAnalytics.logEvent(withName: "press_addStoreBtn", parameters: ["New_Store": self.storeNameTextfield])
+                    FIRAnalytics.logEvent(withName: "press_addStoreBTN", parameters: nil)
                 })
                 DispatchQueue.main.async {
                     self.delegate?.detectIsClick()
