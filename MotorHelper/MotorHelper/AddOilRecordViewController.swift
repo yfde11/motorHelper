@@ -133,7 +133,7 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
             cell.contentTextName.text = "里程"
             cell.contentTextField.clearButtonMode = .whileEditing
             cell.contentTextField.keyboardType = .numbersAndPunctuation
-            cell.contentTextField.returnKeyType = .google
+            cell.contentTextField.returnKeyType = .done
             cell.contentTextField.delegate = self
             cell.index = TextFieldType.totalKM
             return cell
