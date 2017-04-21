@@ -40,7 +40,6 @@
 		9BAFAEB41E9CCD82005E68F9 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BAFAEB21E9CCD82005E68F9 /* CommentTableViewCell.xib */; };
 		9BAFAEB61E9F2AD0005E68F9 /* AddStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFAEB51E9F2AD0005E68F9 /* AddStoreViewController.swift */; };
 		9BB08BCA1E8228E000982CF1 /* Petroleum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB08BC91E8228E000982CF1 /* Petroleum.swift */; };
-		9BB08BF11E83A60C00982CF1 /* QRCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB08BF01E83A60C00982CF1 /* QRCodeScannerViewController.swift */; };
 		9BCCE50E1EA7B09900371AAD /* AddRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCCE50D1EA7B09900371AAD /* AddRecordViewController.swift */; };
 		9BFA1FF11E8A634B0045CA0F /* ConsumptionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA1FF01E8A634B0045CA0F /* ConsumptionRecord.swift */; };
 		FE70F77D31623EB70743087F /* Pods_MotorHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C1DF6B770BCA77B601A0A53 /* Pods_MotorHelper.framework */; };
@@ -83,7 +82,6 @@
 		9BAFAEB21E9CCD82005E68F9 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		9BAFAEB51E9F2AD0005E68F9 /* AddStoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStoreViewController.swift; sourceTree = "<group>"; };
 		9BB08BC91E8228E000982CF1 /* Petroleum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Petroleum.swift; sourceTree = "<group>"; };
-		9BB08BF01E83A60C00982CF1 /* QRCodeScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeScannerViewController.swift; sourceTree = "<group>"; };
 		9BCCE50D1EA7B09900371AAD /* AddRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRecordViewController.swift; sourceTree = "<group>"; };
 		9BFA1FF01E8A634B0045CA0F /* ConsumptionRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsumptionRecord.swift; sourceTree = "<group>"; };
 		D9E65A01FE51FBA9DFDADAE8 /* Pods-MotorHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotorHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MotorHelper/Pods-MotorHelper.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 		9B000F241E84FE92002BB4EC /* AddOilRecord */ = {
 			isa = PBXGroup;
 			children = (
-				9BB08BF01E83A60C00982CF1 /* QRCodeScannerViewController.swift */,
 				9B000F221E84F961002BB4EC /* AddOilRecordViewController.swift */,
 				9BCCE50D1EA7B09900371AAD /* AddRecordViewController.swift */,
 				9B000F4C1E850F21002BB4EC /* TextTableViewCell.swift */,
@@ -421,7 +418,6 @@
 				9BAFAE921E9BB3B6005E68F9 /* Store.swift in Sources */,
 				9B9582E31E88E1ED003F699C /* LogInViewController.swift in Sources */,
 				9B2239661EA5C05A0050ABA9 /* ResetPWDViewController.swift in Sources */,
-				9BB08BF11E83A60C00982CF1 /* QRCodeScannerViewController.swift in Sources */,
 				9B000F581E853478002BB4EC /* DateTableViewCell.swift in Sources */,
 				9B124A791E7FD56500393658 /* GetSOAPInfo.swift in Sources */,
 			);
