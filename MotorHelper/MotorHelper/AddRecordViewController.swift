@@ -94,19 +94,6 @@ extension AddRecordViewController: UITextFieldDelegate {
         default:
             print("enter default")
         }
-//        guard let cell = textField.superview?.superview as? TextTableViewCell else {return }
-//        switch cell.index! {
-//        case .oilPrice:
-//            record.oilPrice = cell.contentTextField.text!
-//        case .numOfOil:
-//            record.numOfOil = cell.contentTextField.text!
-//        case .totalPrice:
-//            record.totalPrice = cell.contentTextField.text!
-//        case .totalKM:
-//            record.totalKM = cell.contentTextField.text!
-//        case .date:
-//            record.date = cell.contentTextField.text!
-//        }
     }
     //限制只能輸入數字與小數點
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

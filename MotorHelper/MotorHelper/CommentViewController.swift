@@ -16,7 +16,8 @@ import FirebaseAnalytics
 class CommentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     weak var delegate: buttonIsClick?
     var ref: FIRDatabaseReference?
-    let userID = FIRAuth.auth()?.currentUser?.email
+    let userID = FIRAuth.auth()?.currentUser?.uid
+    let userEmail = FIRAuth.auth()?.currentUser?.email
 
     var storeID: String?
     var sendName: String?
@@ -117,7 +118,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     @IBAction func submitBtn(_ sender: Any) {
-        let comment = Comment(userID: userID ?? "Guest", commentContent: commentsTextfield.text!)
+        let comment = Comment(userID: userEmail ?? "Guest", commentContent: commentsTextfield.text!)
 
         if userID != nil {
             if commentsTextfield.text?.characters.count == 0 {
@@ -176,6 +177,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     private func didTouchCosmos(_ rating: Double) {
         print("touch star is : \(self.rating.rating)")
         let sendScore = ["\(userID!)": "\(self.rating.rating)"]
+        print(sendScore)
         ref = FIRDatabase.database().reference()
         ref?.child("rateing").child(storeID!).setValue(sendScore)
         FIRAnalytics.logEvent(withName: "Rating", parameters: nil)
