@@ -201,9 +201,27 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     //segment
-    func onChange(sender: UISegmentedControl) {
-        print(sender.selectedSegmentIndex)
-        print(sender.titleForSegment(at: sender.selectedSegmentIndex) as Any)
+    func onChange(_ sender: UISegmentedControl) {
+        if let oilSection = components.index(of: .oilprice) {
+            let indexPath = IndexPath(row: 0, section: oilSection)
+            let cell = addConsumption.cellForRow(at: indexPath) as? TextTableViewCell
+            switch sender.selectedSegmentIndex {
+            case 0:
+                cell?.contentTextField.text = "92"
+                print("92")
+            case 1:
+                cell?.contentTextField.text = "95"
+                print("95")
+            case 2:
+                cell?.contentTextField.text = "98"
+                print("98")
+            case 3:
+                cell?.contentTextField.text = "ddd"
+                print("ddd")
+            default:
+                print("123321")
+            }
+        }
     }
 
 }
@@ -264,5 +282,26 @@ extension AddOilRecordViewController {
             _ = self.navigationController?.popViewController(animated: true)
             FIRAnalytics.logEvent(withName: "add oil record", parameters: nil)
         })
+    }
+    func getOilInfo(date: Date) {
+        let monstr = getMonday(myDate: date)
+        ref = FIRDatabase.database().reference()
+        ref?.child("oilprice").child(monstr).observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let oil92 = value?["gasoline92"] as? String ?? "no data"
+            let oil95 = value?["gasoline95"] as? String ?? "no data"
+            let oil98 = value?["gasoline98"] as? String ?? "no data"
+            let oilSuper = value?["diesel"] as? String ?? "no data"
+        })
+    }
+    func getMonday(myDate: Date) -> String {
+        let df = DateFormatter()
+        df.dateFormat = "YYYY-MM-dd"
+        var cal = Calendar.current
+        cal.firstWeekday = 2
+        let comps = cal.dateComponents([.weekOfYear, .yearForWeekOfYear], from: myDate)
+        let beginningOfWeek = cal.date(from: comps)!
+        let monStr = df.string(from: beginningOfWeek)
+        return monStr
     }
 }
