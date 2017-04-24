@@ -9,10 +9,12 @@
 import UIKit
 import SystemConfiguration
 import NVActivityIndicatorView
+import FirebaseDatabase
 
 class OilPriceViewController: UIViewController {
 
     let oilInfo = GetSOAPInfo()
+    var ref: FIRDatabaseReference?
     var product: [Petroleum] = []
 
     @IBOutlet weak var productName92: UILabel!
@@ -26,27 +28,16 @@ class OilPriceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let today = Date()
+        productName92.text = "無鉛汽油92"
+        productName95.text = "無鉛汽油95"
+        productName98.text = "無鉛汽油98"
+        productNameSuper.text = "柴油"
         if isInternetAvailable() {
             let activityData = ActivityData()
             NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
-            oilInfo.getOilData(oiltype: "1") { (name, price) in
-                self.productName92.text = name
-                self.productPrice92.text = price
-                self.oilInfo.getOilData(oiltype: "2") { (name, price) in
-                    self.productName95.text = name
-                    self.productPrice95.text = price
-                    self.oilInfo.getOilData(oiltype: "3") { (name, price) in
-                        self.productName98.text = name
-                        self.productPrice98.text = price
-                        self.oilInfo.getOilData(oiltype: "4") { (name, price) in
-                            self.productNameSuper.text = name
-                            self.productPriceSuper.text = price
-                            NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
-                        }
-                    }
-                }
-            }
+            getOilInfo(date: today)
+            NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
         } else {
             let alertController = UIAlertController(title: "Error", message: "目前未連接網路", preferredStyle: .alert)
             let jumpAction = UIAlertAction(title: "ＯＫ", style: .default, handler: { ( _ ) -> Void in
@@ -80,5 +71,40 @@ class OilPriceViewController: UIViewController {
         let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
         let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
         return (isReachable && !needsConnection)
+    }
+    func getOilInfo(date: Date) {
+        let monstr = getMonday(myDate: date)
+        ref = FIRDatabase.database().reference()
+        ref?.child("oilprice").child(monstr).observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let oil92 = value?["gasoline92"] as? String ?? "no data"
+            let oil95 = value?["gasoline95"] as? String ?? "no data"
+            let oil98 = value?["gasoline98"] as? String ?? "no data"
+            let oilSuper = value?["diesel"] as? String ?? "no data"
+            self.productPrice92.text = "\(oil92) 元／公升"
+            self.productPrice95.text = "\(oil95) 元／公升"
+            self.productPrice98.text = "\(oil98) 元／公升"
+            self.productPriceSuper.text = "\(oilSuper) 元／公升"
+        })
+    }
+    func getMonday(myDate: Date) -> String {
+        let df = DateFormatter()
+        df.dateFormat = "YYYY-MM-dd"
+        var cal = Calendar.current
+        cal.firstWeekday = 2
+        let comps = cal.dateComponents([.weekOfYear, .yearForWeekOfYear], from: myDate)
+        let beginningOfWeek = cal.date(from: comps)!
+        let monStr = df.string(from: beginningOfWeek)
+        return monStr
+    }
+    @IBAction func reload(_ sender: Any) {
+        if productName92.text == "" {
+            getOilInfo(date: Date())
+        } else {
+            let alertController = UIAlertController(title: "幹！按三小", message: "幹賃娘不要亂按", preferredStyle: .alert)
+            let jumpAction = UIAlertAction(title: "對不起我知道錯了", style: .default)
+            alertController.addAction(jumpAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 }
