@@ -25,10 +25,12 @@ class OilPriceViewController: UIViewController {
     @IBOutlet weak var productPrice98: UILabel!
     @IBOutlet weak var productNameSuper: UILabel!
     @IBOutlet weak var productPriceSuper: UILabel!
+    @IBOutlet weak var reloadBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let today = Date()
+        reloadBtn.layer.cornerRadius = 15
         productName92.text = "無鉛汽油92"
         productName95.text = "無鉛汽油95"
         productName98.text = "無鉛汽油98"

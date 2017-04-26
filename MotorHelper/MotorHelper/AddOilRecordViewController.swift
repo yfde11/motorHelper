@@ -21,8 +21,10 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
     weak var delegate: submitIsClick?
     let datePicker = UIDatePicker()
     let dateFormatter = DateFormatter()
-    var record = ConsumptionRecord(date: "", oilType: "92", oilPrice: "0", numOfOil: "0", totalPrice: "0", totalKM: "0", autoID: "")
+    var record = ConsumptionRecord(date: "", oilType: "92", oilPrice: "", numOfOil: "0", totalPrice: "0", totalKM: "0", autoID: "")
     var ref: FIRDatabaseReference?
+    var oilPrice = [String: String]()
+    let currentdate = Date()
 
     // MARK: enum for cell type
     enum Component {
@@ -63,6 +65,7 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
         let oilTypeNib = UINib(nibName: SegmentTableViewCell.identifier, bundle: nil)
         addConsumption.register(oilTypeNib, forCellReuseIdentifier: SegmentTableViewCell.identifier)
 
+        getOilInfo(date: currentdate)
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return components.count
@@ -98,6 +101,7 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TextTableViewCell.identifier, for: indexPath) as? TextTableViewCell else { return UITableViewCell() }
             cell.contentTextName.text = "油價"
             //輸入框內顯示清除的符號－－＞編輯時顯示
+            cell.contentTextField.text = oilPrice["oil92"]
             cell.contentTextField.clearButtonMode = .whileEditing
             cell.contentTextField.keyboardType = .numbersAndPunctuation
             cell.contentTextField.returnKeyType = .done
@@ -155,6 +159,10 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
             //datepicker
             datePicker.datePickerMode = .date
             datePicker.addTarget(self, action: #selector(AddOilRecordViewController.didSelectedDate), for: .valueChanged)
+            let cal = Calendar.current
+            let minTime = cal.date(byAdding: .month, value: -1, to: Date())
+            datePicker.minimumDate = minTime
+            datePicker.maximumDate = Date()
             //toolbar
             let toolbar = UIToolbar()
             toolbar.sizeToFit()
@@ -197,6 +205,7 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
                 let cell = addConsumption.cellForRow(at: indexPath) as? TextTableViewCell
 
                 cell?.contentTextField.text = dateFormatter.string(from: picker.date)
+                record.date = dateFormatter.string(from: picker.date)
 
         }
     }
@@ -207,19 +216,19 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
             let cell = addConsumption.cellForRow(at: indexPath) as? TextTableViewCell
             switch sender.selectedSegmentIndex {
             case 0:
-                cell?.contentTextField.text = "92"
-                print("92")
+                cell?.contentTextField.text = oilPrice["oil92"]
+                record.oilPrice = oilPrice["oil92"]!
             case 1:
-                cell?.contentTextField.text = "95"
-                print("95")
+                cell?.contentTextField.text = oilPrice["oil95"]
+                record.oilPrice = oilPrice["oil95"]!
             case 2:
-                cell?.contentTextField.text = "98"
-                print("98")
+                cell?.contentTextField.text = oilPrice["oil98"]
+                record.oilPrice = oilPrice["oil98"]!
             case 3:
-                cell?.contentTextField.text = "ddd"
-                print("ddd")
+                cell?.contentTextField.text = oilPrice["oilSuper"]
+                record.oilPrice = oilPrice["oilSuper"]!
             default:
-                print("123321")
+                print("default")
             }
         }
     }
@@ -227,6 +236,9 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
 }
 
 extension AddOilRecordViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+
+    }
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let cell = textField.superview?.superview as? TextTableViewCell else {return }
         switch cell.index! {
@@ -234,6 +246,16 @@ extension AddOilRecordViewController: UITextFieldDelegate {
                 record.oilPrice = cell.contentTextField.text!
             case .numOfOil:
                 record.numOfOil = cell.contentTextField.text!
+                if let oilSection = components.index(of: .totalPrice) {
+                    let indexPath = IndexPath(row: 0, section: oilSection)
+                    let cell = addConsumption.cellForRow(at: indexPath) as? TextTableViewCell
+                    let oilPriceDouble = Double(record.oilPrice)
+                    let numOfOilDouble = Double(record.numOfOil)
+                    let calc = oilPriceDouble! * numOfOilDouble!
+                    print("\(oilPriceDouble!) * \(numOfOilDouble!)")
+                    cell?.contentTextField.text = "\(calc)"
+                    record.totalPrice = "\(calc)"
+                }
             case .totalPrice:
                 record.totalPrice = cell.contentTextField.text!
             case .totalKM:
@@ -292,6 +314,16 @@ extension AddOilRecordViewController {
             let oil95 = value?["gasoline95"] as? String ?? "no data"
             let oil98 = value?["gasoline98"] as? String ?? "no data"
             let oilSuper = value?["diesel"] as? String ?? "no data"
+            self.oilPrice["oil92"] = oil92
+            self.oilPrice["oil95"] = oil95
+            self.oilPrice["oil98"] = oil98
+            self.oilPrice["oilSuper"] = oilSuper
+            if let oilSection = self.components.index(of: .oilprice) {
+                let indexPath = IndexPath(row: 0, section: oilSection)
+                let cell = self.addConsumption.cellForRow(at: indexPath) as? TextTableViewCell
+                cell?.contentTextField.text = oil92
+                self.record.oilPrice = oil92
+            }
         })
     }
     func getMonday(myDate: Date) -> String {

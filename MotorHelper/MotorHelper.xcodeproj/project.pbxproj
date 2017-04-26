@@ -543,6 +543,7 @@
 			baseConfigurationReference = D9E65A01FE51FBA9DFDADAE8 /* Pods-MotorHelper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 45HXTPS3WE;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = MotorHelper/Info.plist;
@@ -558,6 +559,7 @@
 			baseConfigurationReference = F2BBA2F1A8E887AED888DCD5 /* Pods-MotorHelper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 45HXTPS3WE;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = MotorHelper/Info.plist;
