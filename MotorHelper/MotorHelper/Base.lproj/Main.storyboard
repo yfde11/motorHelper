@@ -631,7 +631,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Us-Za-wZH">
-                                <rect key="frame" x="100" y="627" width="175" height="30"/>
+                                <rect key="frame" x="125" y="627" width="125" height="30"/>
                                 <color key="backgroundColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="送出">
                                     <color key="titleColor" red="1" green="0.80392156859999997" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -680,9 +680,9 @@
                             <constraint firstAttribute="trailing" secondItem="Tp5-xU-1lH" secondAttribute="trailing" constant="50" id="V7j-F2-9fz"/>
                             <constraint firstItem="dXC-79-WcX" firstAttribute="leading" secondItem="Xjq-tz-Poc" secondAttribute="leading" constant="20" id="WgQ-l4-7CT"/>
                             <constraint firstItem="CTb-av-hYM" firstAttribute="centerY" secondItem="dXC-79-WcX" secondAttribute="centerY" id="XbI-0f-XpD"/>
-                            <constraint firstAttribute="trailing" secondItem="2Us-Za-wZH" secondAttribute="trailing" constant="100" id="YXF-8l-98A"/>
+                            <constraint firstAttribute="trailing" secondItem="2Us-Za-wZH" secondAttribute="trailing" constant="125" id="YXF-8l-98A"/>
                             <constraint firstItem="2Us-Za-wZH" firstAttribute="top" secondItem="7Gx-Uw-nhF" secondAttribute="bottom" constant="10" id="Zq7-ig-gvU"/>
-                            <constraint firstItem="2Us-Za-wZH" firstAttribute="leading" secondItem="Xjq-tz-Poc" secondAttribute="leading" constant="100" id="avi-Pj-MTS"/>
+                            <constraint firstItem="2Us-Za-wZH" firstAttribute="leading" secondItem="Xjq-tz-Poc" secondAttribute="leading" constant="125" id="avi-Pj-MTS"/>
                             <constraint firstItem="v2w-IT-jmf" firstAttribute="centerY" secondItem="Xb0-2T-KKp" secondAttribute="centerY" id="bFg-EH-AkP"/>
                             <constraint firstAttribute="trailing" secondItem="v2w-IT-jmf" secondAttribute="trailing" constant="10" id="i2C-09-Zuq"/>
                             <constraint firstItem="Xb0-2T-KKp" firstAttribute="top" secondItem="dXC-79-WcX" secondAttribute="bottom" constant="15" id="iHI-pU-r72"/>
@@ -699,6 +699,7 @@
                         <outlet property="storeNameTextfield" destination="CTb-av-hYM" id="ZMT-NL-PIE"/>
                         <outlet property="storePhoneNumber" destination="7wE-KI-pAA" id="vbA-Ma-FfA"/>
                         <outlet property="storeRate" destination="Tp5-xU-1lH" id="IIJ-yh-Qlh"/>
+                        <outlet property="submitStore" destination="2Us-Za-wZH" id="W1p-gE-VgZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7VV-pP-Hxf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -841,7 +842,6 @@
                                 <color key="sectionIndexBackgroundColor" red="0.92537151039999999" green="0.98564296959999997" blue="0.89340932100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.92537151039999999" green="0.98564296959999997" blue="0.89340932100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="n9d-bQ-BOc" firstAttribute="top" secondItem="TAx-ZZ-wNd" secondAttribute="bottom" id="5TX-Qm-tTE"/>
                             <constraint firstItem="zdk-3B-9x4" firstAttribute="top" secondItem="3Xz-eT-R0L" secondAttribute="bottom" id="Kwi-UH-tAZ"/>

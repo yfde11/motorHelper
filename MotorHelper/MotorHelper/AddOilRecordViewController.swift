@@ -250,9 +250,11 @@ extension AddOilRecordViewController: UITextFieldDelegate {
                     let indexPath = IndexPath(row: 0, section: oilSection)
                     let cell = addConsumption.cellForRow(at: indexPath) as? TextTableViewCell
                     let oilPriceDouble = Double(record.oilPrice)
-                    let numOfOilDouble = Double(record.numOfOil)
-                    let calc = oilPriceDouble! * numOfOilDouble!
-                    print("\(oilPriceDouble!) * \(numOfOilDouble!)")
+                    var calc = 0.0
+                    if let numOfOilDouble = Double(record.numOfOil) {
+                        calc = oilPriceDouble! * numOfOilDouble
+                        print("\(oilPriceDouble!) * \(numOfOilDouble)")
+                    }
                     cell?.contentTextField.text = "\(calc)"
                     record.totalPrice = "\(calc)"
                 }

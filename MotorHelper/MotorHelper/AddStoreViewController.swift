@@ -27,6 +27,8 @@ class AddStoreViewController: UIViewController {
     @IBOutlet weak var storeNameTextfield: UITextField!
     @IBOutlet weak var storeRate: CosmosView!
     @IBOutlet weak var storeComments: UITextView!
+    @IBOutlet weak var submitStore: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         storeNameTextfield.placeholder = "請輸入車行名稱(必填)"
@@ -35,6 +37,7 @@ class AddStoreViewController: UIViewController {
         storePhoneNumber.clearButtonMode = .whileEditing
         storePhoneNumber.placeholder = "請輸入車行電話"
         storeComments.placeholderText = "請留下您的評論"
+        submitStore.layer.cornerRadius = 15
 
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)

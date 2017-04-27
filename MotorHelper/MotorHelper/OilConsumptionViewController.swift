@@ -62,6 +62,7 @@ class OilConsumptionViewController: UIViewController, UITableViewDelegate, UITab
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: RecordTableViewCell.identifier, for: indexPath) as? RecordTableViewCell
             else { return UITableViewCell() }
+        cell.grayview.layer.cornerRadius = 15
         cell.dateOfAddRecord.text = "\(records[indexPath.row].date)"
         cell.numOfOil.text = "\(records[indexPath.row].numOfOil) 公升"
         cell.oilType.text = "\(records[indexPath.row].oilType)"

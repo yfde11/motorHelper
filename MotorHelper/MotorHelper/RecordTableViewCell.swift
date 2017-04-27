@@ -15,6 +15,7 @@ class RecordTableViewCell: UITableViewCell {
     @IBOutlet weak var totalPrice: UILabel!
     @IBOutlet weak var dateOfAddRecord: UILabel!
     @IBOutlet weak var totalKM: UILabel!
+    @IBOutlet weak var grayview: UIView!
 
     static let identifier = "RecordTableViewCell"
     static let height: CGFloat = 80.0
