@@ -103,8 +103,8 @@ class OilPriceViewController: UIViewController {
         if productName92.text == "" {
             getOilInfo(date: Date())
         } else {
-            let alertController = UIAlertController(title: "幹！按三小", message: "幹賃娘不要亂按", preferredStyle: .alert)
-            let jumpAction = UIAlertAction(title: "對不起我知道錯了", style: .default)
+            let alertController = UIAlertController(title: "已更新", message: "目前為最新油價", preferredStyle: .alert)
+            let jumpAction = UIAlertAction(title: "ＯＫ", style: .default)
             alertController.addAction(jumpAction)
             self.present(alertController, animated: true, completion: nil)
         }

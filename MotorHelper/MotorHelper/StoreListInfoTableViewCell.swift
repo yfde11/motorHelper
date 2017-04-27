@@ -18,5 +18,5 @@ class StoreListInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var phone: UILabel!
 
     static let identifier = "StoreListInfoTableViewCell"
-    static let height: CGFloat = 120.0
+    static let height: CGFloat = 110.0
 }

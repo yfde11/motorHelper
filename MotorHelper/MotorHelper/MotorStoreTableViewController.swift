@@ -61,6 +61,7 @@ class MotorStoreTableViewController: UITableViewController, UISearchBarDelegate,
                 let cell = tableView.dequeueReusableCell(withIdentifier: StoreListInfoTableViewCell.identifier, for: indexPath) as? StoreListInfoTableViewCell
                 else { return UITableViewCell()}
             cell.view.layer.cornerRadius = 15
+
             cell.storeName.text = "\(filteredStores[indexPath.row].storeName)"
             cell.address.text = "\(filteredStores[indexPath.row].storeAddress)"
             cell.phone.text = "\(filteredStores[indexPath.row].storePhoneNum)"
@@ -78,6 +79,7 @@ class MotorStoreTableViewController: UITableViewController, UISearchBarDelegate,
                 let cell = tableView.dequeueReusableCell(withIdentifier: StoreListInfoTableViewCell.identifier, for: indexPath) as? StoreListInfoTableViewCell
                 else { return UITableViewCell()}
             cell.view.layer.cornerRadius = 15
+
             cell.storeName.text = "\(stores[indexPath.row].storeName)"
             cell.address.text = "\(stores[indexPath.row].storeAddress)"
             cell.phone.text = "\(stores[indexPath.row].storePhoneNum)"
