@@ -84,6 +84,7 @@ class OilConsumptionViewController: UIViewController, UITableViewDelegate, UITab
             if obj1.date == obj2.date {
                 return obj1.totalKM < obj2.totalKM
             } else {
+                //目前比較的是String
                 return obj1.date < obj2.date
             }
         })

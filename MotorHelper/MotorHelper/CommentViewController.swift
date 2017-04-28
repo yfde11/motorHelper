@@ -85,6 +85,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         cell.userComment.text = comments[indexPath.row].commentContent
         cell.userID.text = comments[indexPath.row].userID
+        cell.commentView.layer.cornerRadius = 10
         return cell
     }
 
