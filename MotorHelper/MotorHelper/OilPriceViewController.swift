@@ -31,9 +31,9 @@ class OilPriceViewController: UIViewController {
         super.viewDidLoad()
         let today = Date()
         reloadBtn.layer.cornerRadius = 15
-        productName92.text = "無鉛汽油92"
-        productName95.text = "無鉛汽油95"
-        productName98.text = "無鉛汽油98"
+        productName92.text = "無鉛汽油 92"
+        productName95.text = "無鉛汽油 95"
+        productName98.text = "無鉛汽油 98"
         productNameSuper.text = "柴油"
         if isInternetAvailable() {
             let activityData = ActivityData()

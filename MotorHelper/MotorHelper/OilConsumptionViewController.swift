@@ -67,7 +67,7 @@ class OilConsumptionViewController: UIViewController, UITableViewDelegate, UITab
         cell.numOfOil.text = "\(records[indexPath.row].numOfOil) 公升"
         cell.oilType.text = "\(records[indexPath.row].oilType)"
         cell.totalKM.text = "\(records[indexPath.row].totalKM) 公里"
-        cell.totalPrice.text = "\(records[indexPath.row].totalPrice)元"
+        cell.totalPrice.text = "\(records[indexPath.row].totalPrice) 元"
         return cell
     }
 
@@ -85,6 +85,7 @@ class OilConsumptionViewController: UIViewController, UITableViewDelegate, UITab
                 return obj1.totalKM < obj2.totalKM
             } else {
                 //目前比較的是String
+                print("\(obj1.date) < \(obj2.date)")
                 return obj1.date < obj2.date
             }
         })

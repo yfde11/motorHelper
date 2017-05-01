@@ -171,8 +171,14 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
             toolbar.setItems([doneButton], animated: false)
             cell.contentTextField.inputAccessoryView = toolbar
             cell.contentTextField.inputView = datePicker
+
+//            dateFormatter.locale = Locale(identifier: "zh-TW")
+//            record.date = dateFormatter.string(from: datePicker.date)
+//            cell.contentTextField.text = dateFormatter.string(from: datePicker.date)
+
             record.date = DateFormatter.localizedString(from: datePicker.date, dateStyle: .long, timeStyle: .none)
             cell.contentTextField.text = DateFormatter.localizedString(from: datePicker.date, dateStyle: .long, timeStyle: .none)
+
             cell.index = TextFieldType.date
             cell.contentTextField.textAlignment = .center
             cell.contentTextField.delegate = self
@@ -289,7 +295,7 @@ extension AddOilRecordViewController {
         if cell.oilTypeSegment.selectedSegmentIndex == 3 {
             record.oilType = "超級柴油"
         } else {
-            record.oilType = "\(cell.oilTypeSegment.titleForSegment(at: (cell.oilTypeSegment.selectedSegmentIndex))!)無鉛汽油"
+            record.oilType = "無鉛汽油 \(cell.oilTypeSegment.titleForSegment(at: (cell.oilTypeSegment.selectedSegmentIndex))!)"
         }
         var sendData = ["date": "\(record.date)",
                         "oilType": "\(record.oilType)",

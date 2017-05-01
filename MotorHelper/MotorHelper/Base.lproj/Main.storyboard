@@ -862,6 +862,7 @@
                         <outlet property="phone" destination="cPR-Do-oe7" id="oLj-Fx-Y1E"/>
                         <outlet property="rating" destination="zS0-pj-QIW" id="MSw-ca-3OG"/>
                         <outlet property="storeName" destination="loF-co-QQ9" id="29O-at-5Gf"/>
+                        <outlet property="submitBtn" destination="2es-nD-mdE" id="Eya-FD-PN7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ymK-PI-yJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

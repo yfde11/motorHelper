@@ -32,14 +32,19 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var commentsList: UITableView!
     @IBOutlet weak var commentsTextfield: UITextField!
     @IBOutlet weak var phone: UILabel!
+    @IBOutlet weak var submitBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let scoresRef = FIRDatabase.database().reference()
+        scoresRef.keepSynced(true)
 
         storeName.text = sendName ?? "no value"
         phone.text = sendPhone ?? "NO"
         address.text = sendAddress ?? "QQ 沒傳進來"
         commentsTextfield.placeholder = "請留下您的評論"
+        submitBtn.layer.cornerRadius = 10
 
         rating.didTouchCosmos = didTouchCosmos
         rating.didFinishTouchingCosmos = didFinishTouchingCosmos
