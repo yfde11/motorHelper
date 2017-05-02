@@ -26,6 +26,7 @@ class OilPriceViewController: UIViewController {
     @IBOutlet weak var productNameSuper: UILabel!
     @IBOutlet weak var productPriceSuper: UILabel!
     @IBOutlet weak var reloadBtn: UIButton!
+    @IBOutlet weak var oilPriceTime: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,7 @@ class OilPriceViewController: UIViewController {
         productName95.text = "無鉛汽油 95"
         productName98.text = "無鉛汽油 98"
         productNameSuper.text = "柴油"
+        oilPriceTime.text = "有效期限"
         if isInternetAvailable() {
             let activityData = ActivityData()
             NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData)
@@ -77,16 +79,19 @@ class OilPriceViewController: UIViewController {
     func getOilInfo(date: Date) {
         let monstr = getMonday(myDate: date)
         ref = FIRDatabase.database().reference()
+        ref?.keepSynced(true)
         ref?.child("oilprice").child(monstr).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let oil92 = value?["gasoline92"] as? String ?? "no data"
             let oil95 = value?["gasoline95"] as? String ?? "no data"
             let oil98 = value?["gasoline98"] as? String ?? "no data"
             let oilSuper = value?["diesel"] as? String ?? "no data"
+            let time = value?["time"] as? String ?? "有效期限000"
             self.productPrice92.text = "\(oil92) 元／公升"
             self.productPrice95.text = "\(oil95) 元／公升"
             self.productPrice98.text = "\(oil98) 元／公升"
             self.productPriceSuper.text = "\(oilSuper) 元／公升"
+            self.oilPriceTime.text  = "\(time)"
         })
     }
     func getMonday(myDate: Date) -> String {

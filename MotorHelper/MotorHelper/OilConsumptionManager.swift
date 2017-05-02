@@ -24,6 +24,7 @@ class OilConsumptionManager {
 
     func getRecords() {
         ref = FIRDatabase.database().reference()
+        ref?.keepSynced(true)
         ref?.child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             self.records.removeAll()
             print("Snap: \(snapshot)")

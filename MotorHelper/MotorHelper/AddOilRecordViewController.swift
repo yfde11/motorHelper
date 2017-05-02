@@ -21,7 +21,7 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
     weak var delegate: submitIsClick?
     let datePicker = UIDatePicker()
     let dateFormatter = DateFormatter()
-    var record = ConsumptionRecord(date: "", oilType: "92", oilPrice: "", numOfOil: "0", totalPrice: "0", totalKM: "0", autoID: "")
+    var record = ConsumptionRecord(date: "", oilType: "92", oilPrice: "", numOfOil: "", totalPrice: "", totalKM: "", autoID: "")
     var ref: FIRDatabaseReference?
     var oilPrice = [String: String]()
     let currentdate = Date()
@@ -113,6 +113,7 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
 
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TextTableViewCell.identifier, for: indexPath) as? TextTableViewCell else { return UITableViewCell() }
             cell.contentTextName.text = "油量"
+            cell.contentTextField.placeholder = "必填"
             cell.contentTextField.clearButtonMode = .whileEditing
             cell.contentTextField.keyboardType = .numbersAndPunctuation
             cell.contentTextField.returnKeyType = .done
@@ -124,6 +125,7 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
 
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TextTableViewCell.identifier, for: indexPath) as? TextTableViewCell else { return UITableViewCell() }
             cell.contentTextName.text = "總價"
+            cell.contentTextField.placeholder = "必填"
             cell.contentTextField.clearButtonMode = .whileEditing
             cell.contentTextField.keyboardType = .numbersAndPunctuation
             cell.contentTextField.returnKeyType = .done
@@ -135,6 +137,7 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
 
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TextTableViewCell.identifier, for: indexPath) as? TextTableViewCell else { return UITableViewCell() }
             cell.contentTextName.text = "里程"
+            cell.contentTextField.placeholder = "必填"
             cell.contentTextField.clearButtonMode = .whileEditing
             cell.contentTextField.keyboardType = .numbersAndPunctuation
             cell.contentTextField.returnKeyType = .done
@@ -147,7 +150,7 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
             guard let cell = tableView.dequeueReusableCell(withIdentifier: AddRecordBtnTableViewCell.identifier, for: indexPath) as? AddRecordBtnTableViewCell else { return UITableViewCell() }
 
             cell.addRecord.setTitle("新增紀錄", for: .normal)
-            cell.addRecord.addTarget(self, action: #selector(sendData), for: .touchUpInside)
+            cell.addRecord.addTarget(self, action: #selector(submitBtn), for: .touchUpInside)
 
             return cell
 
@@ -283,6 +286,16 @@ extension AddOilRecordViewController: UITextFieldDelegate {
 }
 // MARK: submit button
 extension AddOilRecordViewController {
+    func submitBtn() {
+        if record.totalKM == "" || record.totalPrice == "" || record.numOfOil == "" {
+            let alertController = UIAlertController(title: "Error", message: "請填入所需資訊", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        } else {
+            sendData()
+        }
+    }
     func sendData() {
         guard
             let oilTypeSection = components.index(of: .oilType)
@@ -298,13 +311,12 @@ extension AddOilRecordViewController {
             record.oilType = "無鉛汽油 \(cell.oilTypeSegment.titleForSegment(at: (cell.oilTypeSegment.selectedSegmentIndex))!)"
         }
         var sendData = ["date": "\(record.date)",
-                        "oilType": "\(record.oilType)",
-                        "oilPrice": "\(record.oilPrice)",
-                        "numOfOil": "\(record.numOfOil)",
-                        "totalPrice": "\(record.totalPrice)",
-                        "totalKM": "\(record.totalKM)"]
+            "oilType": "\(record.oilType)",
+            "oilPrice": "\(record.oilPrice)",
+            "numOfOil": "\(record.numOfOil)",
+            "totalPrice": "\(record.totalPrice)",
+            "totalKM": "\(record.totalKM)"]
         ref = FIRDatabase.database().reference()
-//        ref?.child((FIRAuth.auth()?.currentUser?.uid)!).childByAutoId().setValue(sendData)
         ref?.child((FIRAuth.auth()?.currentUser?.uid)!).childByAutoId().setValue(sendData, withCompletionBlock: { (_, getbackdata) in
             sendData["autoID"] = "\(getbackdata.key)"
             self.ref?.child((FIRAuth.auth()?.currentUser?.uid)!).child("\(getbackdata.key)").setValue(sendData)
