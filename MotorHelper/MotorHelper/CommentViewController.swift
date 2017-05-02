@@ -104,6 +104,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     func getComments() {
         ref = FIRDatabase.database().reference()
+        ref?.keepSynced(true)
         ref?.child("comments").child(storeID!).observeSingleEvent(of: .value, with: { (snapshot) in
             for childSnap in snapshot.children.allObjects {
                 guard
