@@ -31,6 +31,8 @@
 		9B35DD491E96147A0093C11E /* MotorStoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B35DD481E96147A0093C11E /* MotorStoreTableViewController.swift */; };
 		9B35DD4C1E96150B0093C11E /* StoreListInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B35DD4A1E96150B0093C11E /* StoreListInfoTableViewCell.swift */; };
 		9B35DD4D1E96150B0093C11E /* StoreListInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B35DD4B1E96150B0093C11E /* StoreListInfoTableViewCell.xib */; };
+		9B8AF5FC1EB8621000AEE0A8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8AF5FB1EB8621000AEE0A8 /* SettingViewController.swift */; };
+		9B8AF5FF1EB86F8E00AEE0A8 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B8AF5FE1EB86F8E00AEE0A8 /* MessageUI.framework */; };
 		9B9582E31E88E1ED003F699C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9582E21E88E1ED003F699C /* LogInViewController.swift */; };
 		9B9582E61E88E2E5003F699C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B9582E51E88E2E5003F699C /* GoogleService-Info.plist */; };
 		9B9582EA1E890D90003F699C /* SegmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9582E81E890D90003F699C /* SegmentTableViewCell.swift */; };
@@ -73,6 +75,8 @@
 		9B35DD481E96147A0093C11E /* MotorStoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotorStoreTableViewController.swift; sourceTree = "<group>"; };
 		9B35DD4A1E96150B0093C11E /* StoreListInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreListInfoTableViewCell.swift; sourceTree = "<group>"; };
 		9B35DD4B1E96150B0093C11E /* StoreListInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreListInfoTableViewCell.xib; sourceTree = "<group>"; };
+		9B8AF5FB1EB8621000AEE0A8 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		9B8AF5FE1EB86F8E00AEE0A8 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		9B9582E21E88E1ED003F699C /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = ../LogInViewController.swift; sourceTree = "<group>"; };
 		9B9582E51E88E2E5003F699C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B9582E81E890D90003F699C /* SegmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentTableViewCell.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8AF5FF1EB86F8E00AEE0A8 /* MessageUI.framework in Frameworks */,
 				FE70F77D31623EB70743087F /* Pods_MotorHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +117,7 @@
 		630908B6E109CDA277814195 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9B8AF5FE1EB86F8E00AEE0A8 /* MessageUI.framework */,
 				0C1DF6B770BCA77B601A0A53 /* Pods_MotorHelper.framework */,
 			);
 			name = Frameworks;
@@ -169,6 +175,7 @@
 				9B000F241E84FE92002BB4EC /* AddOilRecord */,
 				9B9582E71E88F09D003F699C /* OilConsumptionList */,
 				9B35DD471E94E6300093C11E /* Comment */,
+				9B8AF5FD1EB8621600AEE0A8 /* Setting */,
 				9B124A611E7FC77400393658 /* AppDelegate.swift */,
 				9B124A651E7FC77400393658 /* Main.storyboard */,
 				9B124A6B1E7FC77400393658 /* Assets.xcassets */,
@@ -211,6 +218,14 @@
 				9BAFAEB51E9F2AD0005E68F9 /* AddStoreViewController.swift */,
 			);
 			name = Store;
+			sourceTree = "<group>";
+		};
+		9B8AF5FD1EB8621600AEE0A8 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				9B8AF5FB1EB8621000AEE0A8 /* SettingViewController.swift */,
+			);
+			name = Setting;
 			sourceTree = "<group>";
 		};
 		9B9582E41E88E1F9003F699C /* LogIn */ = {
@@ -406,6 +421,7 @@
 				9B35DD461E94E62B0093C11E /* CommentViewController.swift in Sources */,
 				9BCCE50E1EA7B09900371AAD /* AddRecordViewController.swift in Sources */,
 				9B000F211E84F280002BB4EC /* OilConsumptionViewController.swift in Sources */,
+				9B8AF5FC1EB8621000AEE0A8 /* SettingViewController.swift in Sources */,
 				9B124A641E7FC77400393658 /* OilPriceViewController.swift in Sources */,
 				9BB08BCA1E8228E000982CF1 /* Petroleum.swift in Sources */,
 				9B000F231E84F961002BB4EC /* AddOilRecordViewController.swift in Sources */,

@@ -21,7 +21,7 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
     weak var delegate: submitIsClick?
     let datePicker = UIDatePicker()
     let dateFormatter = DateFormatter()
-    var record = ConsumptionRecord(date: "", oilType: "92", oilPrice: "", numOfOil: "", totalPrice: "", totalKM: "", autoID: "")
+    var record = ConsumptionRecord(date: "", oilType: "", oilPrice: "", numOfOil: "", totalPrice: "", totalKM: "", autoID: "")
     var ref: FIRDatabaseReference?
     var oilPrice = [String: String]()
     let currentdate = Date()
@@ -174,7 +174,7 @@ class AddOilRecordViewController: UIViewController, UITableViewDelegate, UITable
             toolbar.setItems([doneButton], animated: false)
             cell.contentTextField.inputAccessoryView = toolbar
             cell.contentTextField.inputView = datePicker
-
+            //限制date picker的預設地點，但出現一個bug 就是預設不會印在上面，這個需要再嘗試
 //            dateFormatter.locale = Locale(identifier: "zh-TW")
 //            record.date = dateFormatter.string(from: datePicker.date)
 //            cell.contentTextField.text = dateFormatter.string(from: datePicker.date)

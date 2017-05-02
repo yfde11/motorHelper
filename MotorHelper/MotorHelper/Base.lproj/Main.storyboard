@@ -84,7 +84,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3F-AU-2zj">
-                                <rect key="frame" x="100" y="10" width="175" height="21"/>
+                                <rect key="frame" x="50" y="10" width="275" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -95,7 +95,7 @@
                             <constraint firstItem="ECJ-WK-M9F" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="5AM-kA-gZ2"/>
                             <constraint firstItem="4wj-eg-CXw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="6k9-sP-C0R"/>
                             <constraint firstItem="Y1G-9b-2Xh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="89Y-SJ-315"/>
-                            <constraint firstAttribute="trailing" secondItem="d3F-AU-2zj" secondAttribute="trailing" constant="100" id="AjK-2J-pdT"/>
+                            <constraint firstAttribute="trailing" secondItem="d3F-AU-2zj" secondAttribute="trailing" constant="50" id="Gq0-ur-cEP"/>
                             <constraint firstItem="Ghx-1w-VAb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Jxp-Lf-dkq"/>
                             <constraint firstItem="ECJ-WK-M9F" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="75" id="LSS-Gw-pmJ"/>
                             <constraint firstAttribute="trailing" secondItem="Smm-U6-fpi" secondAttribute="trailing" constant="30" id="StG-08-Wob"/>
@@ -108,7 +108,7 @@
                             <constraint firstItem="4wj-eg-CXw" firstAttribute="top" secondItem="ECJ-WK-M9F" secondAttribute="bottom" constant="75" id="cNl-QL-gBb"/>
                             <constraint firstItem="Smm-U6-fpi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="75" id="ea5-nv-kac"/>
                             <constraint firstItem="ZkQ-5G-o5e" firstAttribute="top" secondItem="Smm-U6-fpi" secondAttribute="bottom" constant="75" id="suG-6I-XG2"/>
-                            <constraint firstItem="d3F-AU-2zj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="u8T-4K-xoE"/>
+                            <constraint firstItem="d3F-AU-2zj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="u8T-4K-xoE"/>
                             <constraint firstItem="Ghx-1w-VAb" firstAttribute="top" secondItem="Y1G-9b-2Xh" secondAttribute="bottom" constant="75" id="vWt-Jh-87J"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hK2-xb-ggo" secondAttribute="bottom" constant="10" id="wvw-GU-PKN"/>
                             <constraint firstItem="PuI-QV-IRd" firstAttribute="top" secondItem="Irq-DS-UdM" secondAttribute="bottom" constant="75" id="xRM-Wx-PHP"/>
@@ -516,6 +516,7 @@
                         <segue destination="Iu0-QJ-lAa" kind="relationship" relationship="viewControllers" id="kdD-QM-UOy"/>
                         <segue destination="Mz9-ZJ-dtO" kind="relationship" relationship="viewControllers" id="1yQ-D4-IxH"/>
                         <segue destination="yoD-dS-8Ce" kind="relationship" relationship="viewControllers" id="dXW-ba-egV"/>
+                        <segue destination="zO3-Gb-LS7" kind="relationship" relationship="viewControllers" id="MYk-aV-G3y"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WxC-Qt-UKa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -716,6 +717,53 @@
             </objects>
             <point key="canvasLocation" x="3455" y="-975"/>
         </scene>
+        <!--設定-->
+        <scene sceneID="Z6T-gx-O7G">
+            <objects>
+                <viewController id="pAs-vu-cjz" customClass="SettingViewController" customModule="MotorHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MIc-0M-NYu"/>
+                        <viewControllerLayoutGuide type="bottom" id="2nW-C3-8Wh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8le-du-583">
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOf-cX-A0I">
+                                <rect key="frame" x="100" y="494" width="175" height="30"/>
+                                <color key="backgroundColor" red="0.29017901419999997" green="0.29020792249999999" blue="0.29015481469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="登出">
+                                    <color key="titleColor" red="1" green="0.80392156859999997" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUZ-U0-bsC">
+                                <rect key="frame" x="100" y="494" width="175" height="30"/>
+                                <color key="backgroundColor" red="0.29017901419999997" green="0.29020792249999999" blue="0.29015481469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="登入">
+                                    <color key="titleColor" red="1" green="0.80392156859999997" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.8837787399" green="0.8837787399" blue="0.8837787399" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UUZ-U0-bsC" firstAttribute="leading" secondItem="8le-du-583" secondAttribute="leading" constant="100" id="6fI-O1-6pN"/>
+                            <constraint firstAttribute="trailing" secondItem="UUZ-U0-bsC" secondAttribute="trailing" constant="100" id="JOe-ho-KpF"/>
+                            <constraint firstItem="2nW-C3-8Wh" firstAttribute="top" secondItem="yOf-cX-A0I" secondAttribute="bottom" constant="30" id="VXY-gn-89Q"/>
+                            <constraint firstItem="yOf-cX-A0I" firstAttribute="leading" secondItem="8le-du-583" secondAttribute="leading" constant="100" id="dgz-eb-uqX"/>
+                            <constraint firstAttribute="trailing" secondItem="yOf-cX-A0I" secondAttribute="trailing" constant="100" id="vQg-dZ-Oi9"/>
+                            <constraint firstItem="2nW-C3-8Wh" firstAttribute="top" secondItem="UUZ-U0-bsC" secondAttribute="bottom" constant="30" id="yO8-RZ-2QX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="設定" id="hx6-Cb-pOB"/>
+                    <connections>
+                        <outlet property="logInBtn" destination="UUZ-U0-bsC" id="azn-U7-e9i"/>
+                        <outlet property="logOutBtn" destination="yOf-cX-A0I" id="xX3-hy-5qr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m3b-Wz-Yn6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2742" y="-1630"/>
+        </scene>
         <!--車行列表-->
         <scene sceneID="9Od-KG-BRA">
             <objects>
@@ -723,7 +771,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Evq-q1-xFN">
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.8837787399" green="0.8837787399" blue="0.8837787399" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <connections>
                             <outlet property="dataSource" destination="zRr-ET-LwX" id="Yad-7H-LRI"/>
                             <outlet property="delegate" destination="zRr-ET-LwX" id="4Oa-8W-Do3"/>
@@ -927,11 +975,32 @@
             </objects>
             <point key="canvasLocation" x="1804" y="-960.2698650674663"/>
         </scene>
+        <!--設定-->
+        <scene sceneID="72c-h6-I9G">
+            <objects>
+                <navigationController title="設定" automaticallyAdjustsScrollViewInsets="NO" id="zO3-Gb-LS7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="設定" image="setting" id="V4e-4B-IlI"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="zXt-5s-PVf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.29017901420593262" green="0.29020792245864868" blue="0.29015481472015381" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pAs-vu-cjz" kind="relationship" relationship="rootViewController" id="lAf-xa-Hi8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1vP-0M-43m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1802" y="-1628"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Add-icon" width="25" height="25"/>
         <image name="GasStation" width="24" height="24"/>
         <image name="Pencil" width="25" height="25"/>
         <image name="maintenance" width="25" height="25"/>
+        <image name="setting" width="25" height="25"/>
     </resources>
 </document>
