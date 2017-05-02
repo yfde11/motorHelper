@@ -27,9 +27,7 @@ class OilConsumptionViewController: UIViewController, UITableViewDelegate, UITab
         tableView.delegate = self
         tableView.dataSource = self
         OilConsumptionManager.shared.delegate = self
-        if userID != nil {
-            OilConsumptionManager.shared.getRecords()
-        } else {
+        if userID == nil {
             let alertController = UIAlertController(title: "Error", message: "您尚未註冊無法使用此功能", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             let jumpAction = UIAlertAction(title: "去註冊", style: .default, handler: { ( _ ) -> Void in
@@ -39,7 +37,8 @@ class OilConsumptionViewController: UIViewController, UITableViewDelegate, UITab
             alertController.addAction(defaultAction)
             alertController.addAction(jumpAction)
             self.present(alertController, animated: true, completion: nil)
-
+        } else {
+            OilConsumptionManager.shared.getRecords()
         }
         self.tableView.separatorStyle = .none
         setUp()

@@ -27,14 +27,10 @@ class OilConsumptionManager {
         ref?.keepSynced(true)
         ref?.child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             self.records.removeAll()
-            print("Snap: \(snapshot)")
-            print("SnapChild: \(snapshot.children)")
-            print("Snap: \(snapshot.children.allObjects)")
             for childSnap in snapshot.children.allObjects {
                 guard
                     let snap = childSnap as? FIRDataSnapshot
                     else { return }
-                print(snap)
                 if let snapshotValue = snapshot.value as? NSDictionary,
                     let snapVal = snapshotValue[snap.key] as? [String:String] {
                     let date = snapVal["date"]
