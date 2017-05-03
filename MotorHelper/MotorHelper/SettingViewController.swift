@@ -19,6 +19,7 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var logInBtn: UIButton!
     @IBOutlet weak var newPWD: UITextField!
     @IBOutlet weak var newPWDConfirm: UITextField!
+    @IBOutlet weak var oldPWD: UITextField!
 
     let userMail = FIRAuth.auth()?.currentUser?.email
     override func viewDidLoad() {
@@ -38,6 +39,7 @@ class SettingViewController: UIViewController {
         changePWDBtn.isHidden = true
         newPWD.isHidden = true
         newPWDConfirm.isHidden = true
+        oldPWD.isHidden = true
         logInBtn.layer.cornerRadius = 10
     }
     func setUpLogOut() {
@@ -47,6 +49,7 @@ class SettingViewController: UIViewController {
         changePWDBtn.isHidden = false
         newPWD.isHidden = true
         newPWDConfirm.isHidden = true
+        oldPWD.isHidden = true
         changePWDBtn.layer.cornerRadius = 10
         logInBtn.layer.cornerRadius = 10
         logOutBtn.layer.cornerRadius = 10
@@ -65,12 +68,20 @@ class SettingViewController: UIViewController {
     @IBAction func changePWD(_ sender: Any) {
         if changePWDBtn.titleLabel?.text == "更改密碼" {
             newPWD.isHidden = false
+            newPWD.isSecureTextEntry = true
             newPWDConfirm.isHidden = false
+            oldPWD.isHidden = false
+            oldPWD.isSecureTextEntry = true
+            newPWDConfirm.isSecureTextEntry = true
             changePWDBtn.setTitle("送出", for: .normal)
         } else {
-            newPWD.isHidden = true
-            newPWDConfirm.isHidden = true
-            changePWDBtn.setTitle("更改密碼", for: .normal)
+            if newPWD.text == "" || newPWDConfirm.text == "" {
+                let sendMailErrorAlert = UIAlertController(title: "新密碼有誤", message: "請重新輸入正確新密碼", preferredStyle: .alert)
+                sendMailErrorAlert.addAction(UIAlertAction(title: "確定", style: .default) { _ in })
+                self.present(sendMailErrorAlert, animated: true) {}
+            } else {
+                changePWD()
+            }
         }
     }
     @IBAction func logOut(_ sender: Any) {
@@ -90,14 +101,43 @@ class SettingViewController: UIViewController {
         self.present(vc!, animated: true, completion: nil)
     }
     func changePWD() {
-        currentUser.updatePassword(newPasswordSecondValue, completion: { (error) in
-            newPasswordFirst.value = ""
-            newPasswordSecond.value = ""
-            if error == nil {
-                SCLAlertView().showSuccess("修改成功！", subTitle: "\n已經成功更新您的密碼") // todo
-            } else {
-                SCLAlertView().showError("哎唷！", subTitle: "\n更新密碼失敗，請稍後再試", colorStyle: Constants.Color.errorColorUInt)
+        if newPWD.text == newPWDConfirm.text {
+            updatePassword(with: newPWD.text!, email: (FIRAuth.auth()?.currentUser?.email!)!, currentPassword: oldPWD.text!, completion: { ( error) in
+                if error != nil {
+                    print(error ?? "ERROR")
+                } else {
+                    self.newPWD.text = ""
+                    self.newPWDConfirm.text = ""
+                    self.newPWD.isHidden = true
+                    self.newPWDConfirm.isHidden = true
+                    self.oldPWD.isHidden = true
+                    self.changePWDBtn.setTitle("更改密碼", for: .normal)
+                }
+            })
+        } else {
+            let sendMailErrorAlert = UIAlertController(title: "新密碼有誤", message: "請重新輸入正確新密碼", preferredStyle: .alert)
+            sendMailErrorAlert.addAction(UIAlertAction(title: "確定", style: .default) { _ in })
+            self.present(sendMailErrorAlert, animated: true) {}
+        }
+    }
+
+    typealias UpdatePasswordResult = (_ error: Error?) -> Void
+    func updatePassword(with newPassword: String, email: String, currentPassword: String, completion: @escaping UpdatePasswordResult) {
+        let credential = FIREmailPasswordAuthProvider.credential(withEmail: email, password: currentPassword)
+        FIRAuth.auth()?.currentUser?.reauthenticate(with: credential, completion: { (error) in
+            if error != nil {
+                print(error ?? "")
+                completion(error)
+                return
             }
+            FIRAuth.auth()?.currentUser?.updatePassword(newPassword, completion: { (error) in
+                if error != nil {
+                    print(error ?? "")
+                    completion(error)
+                    return
+                }
+                completion(nil)
+            })
         })
     }
 }

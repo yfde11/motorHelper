@@ -546,44 +546,6 @@
             </objects>
             <point key="canvasLocation" x="1870" y="453"/>
         </scene>
-        <!--Code Scanner View Controller-->
-        <scene sceneID="ItR-YC-dX8">
-            <objects>
-                <viewController id="pK5-fa-30c" customClass="QRCodeScannerViewController" customModule="MotorHelper" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="n1W-Fk-xL0"/>
-                        <viewControllerLayoutGuide type="bottom" id="hnY-2U-Mw7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="I7b-jZ-j7j">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lbd-qv-hfg">
-                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="aSz-wL-QFy"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Lbd-qv-hfg" secondAttribute="trailing" id="5uJ-LL-1QY"/>
-                            <constraint firstItem="Lbd-qv-hfg" firstAttribute="leading" secondItem="I7b-jZ-j7j" secondAttribute="leading" id="CCA-8o-E1n"/>
-                            <constraint firstItem="hnY-2U-Mw7" firstAttribute="top" secondItem="Lbd-qv-hfg" secondAttribute="bottom" id="n2a-gD-IOD"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="messageLabel" destination="Lbd-qv-hfg" id="GkP-5X-knP"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rja-A7-lJL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4257" y="-229"/>
-        </scene>
         <!--新增車行-->
         <scene sceneID="5Qj-G2-3MH">
             <objects>
@@ -776,13 +738,19 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入新密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hw7-si-gwW">
-                                <rect key="frame" x="20" y="194" width="335" height="30"/>
+                                <rect key="frame" x="20" y="214" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請再次輸入新密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BkI-sm-YIV">
-                                <rect key="frame" x="20" y="254" width="335" height="30"/>
+                                <rect key="frame" x="20" y="264" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入目前密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EeI-kY-Bez">
+                                <rect key="frame" x="20" y="164" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -792,9 +760,10 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="jMd-XS-VbQ" secondAttribute="trailing" constant="100" id="5fO-A2-08D"/>
                             <constraint firstItem="UUZ-U0-bsC" firstAttribute="leading" secondItem="8le-du-583" secondAttribute="leading" constant="100" id="6fI-O1-6pN"/>
-                            <constraint firstItem="BkI-sm-YIV" firstAttribute="top" secondItem="Hw7-si-gwW" secondAttribute="bottom" constant="30" id="D9W-MP-qdf"/>
+                            <constraint firstItem="BkI-sm-YIV" firstAttribute="top" secondItem="Hw7-si-gwW" secondAttribute="bottom" constant="20" id="D9W-MP-qdf"/>
                             <constraint firstItem="Vf2-iE-TRd" firstAttribute="top" secondItem="MIc-0M-NYu" secondAttribute="bottom" constant="20" id="JBN-ub-mE9"/>
                             <constraint firstAttribute="trailing" secondItem="UUZ-U0-bsC" secondAttribute="trailing" constant="100" id="JOe-ho-KpF"/>
+                            <constraint firstItem="EeI-kY-Bez" firstAttribute="leading" secondItem="8le-du-583" secondAttribute="leading" constant="20" id="JdR-tG-hNy"/>
                             <constraint firstItem="Vf2-iE-TRd" firstAttribute="leading" secondItem="8le-du-583" secondAttribute="leading" constant="20" id="K8k-Rd-SbD"/>
                             <constraint firstItem="jMd-XS-VbQ" firstAttribute="leading" secondItem="8le-du-583" secondAttribute="leading" constant="100" id="Oup-5b-s66"/>
                             <constraint firstItem="2nW-C3-8Wh" firstAttribute="top" secondItem="yOf-cX-A0I" secondAttribute="bottom" constant="30" id="VXY-gn-89Q"/>
@@ -805,7 +774,9 @@
                             <constraint firstAttribute="trailing" secondItem="BkI-sm-YIV" secondAttribute="trailing" constant="20" id="h7O-RB-kpo"/>
                             <constraint firstItem="Wq8-93-evt" firstAttribute="leading" secondItem="8le-du-583" secondAttribute="leading" constant="100" id="lbG-dR-UrT"/>
                             <constraint firstItem="jMd-XS-VbQ" firstAttribute="top" secondItem="Wq8-93-evt" secondAttribute="bottom" constant="50" id="nXx-1f-YRt"/>
-                            <constraint firstItem="Wq8-93-evt" firstAttribute="top" secondItem="BkI-sm-YIV" secondAttribute="bottom" constant="50" id="rbY-gR-GqU"/>
+                            <constraint firstItem="Wq8-93-evt" firstAttribute="top" secondItem="BkI-sm-YIV" secondAttribute="bottom" constant="40" id="rbY-gR-GqU"/>
+                            <constraint firstAttribute="trailing" secondItem="EeI-kY-Bez" secondAttribute="trailing" constant="20" id="uXi-zB-dR2"/>
+                            <constraint firstItem="Hw7-si-gwW" firstAttribute="top" secondItem="EeI-kY-Bez" secondAttribute="bottom" constant="20" id="uxV-2O-rd0"/>
                             <constraint firstItem="BkI-sm-YIV" firstAttribute="leading" secondItem="8le-du-583" secondAttribute="leading" constant="20" id="v4f-UD-IDg"/>
                             <constraint firstAttribute="trailing" secondItem="yOf-cX-A0I" secondAttribute="trailing" constant="100" id="vQg-dZ-Oi9"/>
                             <constraint firstItem="UUZ-U0-bsC" firstAttribute="top" secondItem="jMd-XS-VbQ" secondAttribute="bottom" constant="50" id="xdT-Vw-e4o"/>
@@ -821,6 +792,7 @@
                         <outlet property="logOutBtn" destination="yOf-cX-A0I" id="xX3-hy-5qr"/>
                         <outlet property="newPWD" destination="Hw7-si-gwW" id="OrL-UY-O6P"/>
                         <outlet property="newPWDConfirm" destination="BkI-sm-YIV" id="hyX-uK-tAp"/>
+                        <outlet property="oldPWD" destination="EeI-kY-Bez" id="gfx-kL-EnT"/>
                         <outlet property="request" destination="jMd-XS-VbQ" id="W1U-SH-Kpi"/>
                     </connections>
                 </viewController>
