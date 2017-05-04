@@ -104,10 +104,16 @@ class SettingViewController: UIViewController {
         if newPWD.text == newPWDConfirm.text {
             updatePassword(with: newPWD.text!, email: (FIRAuth.auth()?.currentUser?.email!)!, currentPassword: oldPWD.text!, completion: { ( error) in
                 if error != nil {
-                    print(error ?? "ERROR")
+                    self.newPWD.text = ""
+                    self.newPWDConfirm.text = ""
+                    self.oldPWD.text = ""
+                    let sendMailErrorAlert = UIAlertController(title: "Error", message: "請確認輸入的舊密碼正確", preferredStyle: .alert)
+                    sendMailErrorAlert.addAction(UIAlertAction(title: "確定", style: .default) { _ in })
+                    self.present(sendMailErrorAlert, animated: true) {}
                 } else {
                     self.newPWD.text = ""
                     self.newPWDConfirm.text = ""
+                    self.oldPWD.text = ""
                     self.newPWD.isHidden = true
                     self.newPWDConfirm.isHidden = true
                     self.oldPWD.isHidden = true
