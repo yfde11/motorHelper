@@ -21,6 +21,7 @@ class AddStoreViewController: UIViewController {
     weak var delegate: buttonIsClick?
     var ref: FIRDatabaseReference?
     let userID = FIRAuth.auth()?.currentUser?.uid
+    let userMail = FIRAuth.auth()?.currentUser?.email
 
     @IBOutlet weak var storePhoneNumber: UITextField!
     @IBOutlet weak var storeAddressTextfield: UITextField!
@@ -50,7 +51,7 @@ class AddStoreViewController: UIViewController {
             let sendStoreInfo = ["address": "\(storeAddressTextfield.text!)",
                 "phoneNumber": "\(storePhoneNumber.text!)",
                 "storeName": "\(storeNameTextfield.text!)"]
-            let sendStoreComment = ["userID": "\(userID!)",
+            let sendStoreComment = ["userID": "\(userMail!)",
                 "userComment": "\(storeComments.text!)"]
             ref?.child("stores").childByAutoId().setValue(sendStoreInfo, withCompletionBlock: { ( _, snap) in
                 print(snap)
