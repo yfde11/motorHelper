@@ -12,14 +12,8 @@
 
 ## ScreenShot
 
-<img src="https://github.com/yfde11/motorHelper/blob/master/screenshot/Simulator%20Screen%20Shot%208%20May%202017,%204.42.41%20PM.png?raw=true" width="25%" height="25%">
-<img src="https://github.com/yfde11/motorHelper/blob/master/screenshot/Simulator%20Screen%20Shot%208%20May%202017,%204.42.48%20PM.png?raw=true" width="25%" height="25%">
-<img src="https://github.com/yfde11/motorHelper/blob/master/screenshot/Simulator%20Screen%20Shot%208%20May%202017,%204.53.35%20PM.png?raw=true" width="25%" height="25%">
-<img src="https://github.com/yfde11/motorHelper/blob/master/screenshot/Simulator%20Screen%20Shot%208%20May%202017,%204.53.39%20PM.png?raw=true" width="25%" height="25%">
-<img src="https://github.com/yfde11/motorHelper/blob/master/screenshot/Simulator%20Screen%20Shot%208%20May%202017,%204.53.52%20PM.png?raw=true" width="25%" height="25%">
-<img src="https://github.com/yfde11/motorHelper/blob/master/screenshot/Simulator%20Screen%20Shot%208%20May%202017,%204.54.07%20PM.png?raw=true" width="25%" height="25%">
-<img src="https://github.com/yfde11/motorHelper/blob/master/screenshot/Simulator%20Screen%20Shot%208%20May%202017,%204.54.15%20PM.png?raw=true" width="25%" height="25%">
-<img src="https://github.com/yfde11/motorHelper/blob/master/screenshot/Simulator%20Screen%20Shot%208%20May%202017,%205.02.40%20PM.png?raw=true" width="25%" height="25%">
+<img src="https://github.com/yfde11/motorHelper/blob/master/screenshot/Simulator%20Screen%20Shot%208%20May%202017,%204.42.41%20PM.png?raw=true" width="20%" height="20%"><img src="https://github.com/yfde11/motorHelper/blob/master/screenshot/Simulator%20Screen%20Shot%208%20May%202017,%204.42.48%20PM.png?raw=true" width="20%" height="20%"><img src="https://github.com/yfde11/motorHelper/blob/master/screenshot/Simulator%20Screen%20Shot%208%20May%202017,%204.53.35%20PM.png?raw=true" width="20%" height="20%"><img src="https://github.com/yfde11/motorHelper/blob/master/screenshot/Simulator%20Screen%20Shot%208%20May%202017,%204.53.39%20PM.png?raw=true" width="20%" height="20%">
+<img src="https://github.com/yfde11/motorHelper/blob/master/screenshot/Simulator%20Screen%20Shot%208%20May%202017,%204.53.52%20PM.png?raw=true" width="20%" height="20%"><img src="https://github.com/yfde11/motorHelper/blob/master/screenshot/Simulator%20Screen%20Shot%208%20May%202017,%204.54.07%20PM.png?raw=true" width="20%" height="20%"><img src="https://github.com/yfde11/motorHelper/blob/master/screenshot/Simulator%20Screen%20Shot%208%20May%202017,%204.54.15%20PM.png?raw=true" width="20%" height="20%"><img src="https://github.com/yfde11/motorHelper/blob/master/screenshot/Simulator%20Screen%20Shot%208%20May%202017,%205.02.40%20PM.png?raw=true" width="20%" height="20%">
 
 ## Libraries
 * Alamofire
