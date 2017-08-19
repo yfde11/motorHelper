@@ -105,8 +105,9 @@ class OilPriceViewController: UIViewController {
         return monStr
     }
     @IBAction func reload(_ sender: Any) {
-        if productName92.text == "" {
+        if oilPriceTime.text == "有效期限000" {
             getOilInfo(date: Date())
+            print("我有跑更新可是沒顯示")
         } else {
             let alertController = UIAlertController(title: "已更新", message: "目前為最新油價", preferredStyle: .alert)
             let jumpAction = UIAlertAction(title: "ＯＫ", style: .default)
